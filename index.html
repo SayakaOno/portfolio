@@ -7,6 +7,9 @@
 		<link rel="stylesheet" href="styles.css">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.6/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.6/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.js"></script>
   </head>
   <body>
 		<header>
@@ -78,58 +81,7 @@
 					<div class="wrapper">
 						<h2>About Me</h2>
 					</div>
-					<div class="wrapper">
-						<section>
-							<h2>Contact</h2>
-							<div class="form-group row">
-							  <label for="example-text-input" class="col-2 col-form-label">Name</label>
-							  <div class="col-10">
-							    <input class="form-control" type="text" value="" id="example-text-input">
-							  </div>
-							</div>
-							<div class="form-group row">
-							  <label for="example-email-input" class="col-2 col-form-label">Email address</label>
-							  <div class="col-10">
-							    <input class="form-control" type="email" value="" id="example-email-input">
-							  </div>
-							</div>
-							<div class="form-group row">
-								<label for="message" class="col-2 col-form-label">Message</label>
-								<div class="col-10">
-    							<textarea class="form-control" id="message" rows="3"></textarea>
-								</div>
-							</div>
-							<div class="container">
-							  <form>
-							    <div class="form-group row has-success">
-							      <label for="inputHorizontalSuccess" class="col-sm-2 col-form-label">Email</label>
-							      <div class="col-sm-10">
-							        <input type="email" class="form-control form-control-success" id="inputHorizontalSuccess" placeholder="name@example.com">
-							        <div class="form-control-feedback">Success! You've done it.</div>
-							        <small class="form-text text-muted">Example help text that remains unchanged.</small>
-							      </div>
-							    </div>
-							    <div class="form-group row has-warning">
-							      <label for="inputHorizontalWarning" class="col-sm-2 col-form-label">Email</label>
-							      <div class="col-sm-10">
-							        <input type="email" class="form-control form-control-warning" id="inputHorizontalWarning" placeholder="name@example.com">
-							        <div class="form-control-feedback">Shucks, check the formatting of that and try again.</div>
-							        <small class="form-text text-muted">Example help text that remains unchanged.</small>
-							      </div>
-							    </div>
-							    <div class="form-group row has-danger">
-							      <label for="inputHorizontalDnger" class="col-sm-2 col-form-label">Email</label>
-							      <div class="col-sm-10">
-							        <input type="email" class="form-control form-control-danger" id="inputHorizontalDnger" placeholder="name@example.com">
-							        <div class="form-control-feedback">Sorry, that username's taken. Try another?</div>
-							        <small class="form-text text-muted">Example help text that remains unchanged.</small>
-							      </div>
-							    </div>
-									<button type="submit" class="btn btn-primary">Send</button>
-							  </form>
-							</div>
-						</section>
-					</div>
+					<div class="contact wrapper"></div>
 				</main>
 				<!-- <div class="wrapper"> -->
 					<footer>
@@ -141,7 +93,72 @@
 						<p>&copy<?php echo date().Year ?> Sayaka Ono</p>
 					</footer>
 				<!-- </div> -->
-		<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+
+		
+<script type="text/babel">
+	class Contact extends React.Component{
+		render(){
+			return(
+				<section>
+					<h2>Contact</h2>
+					<div className="form-group row">
+						<label for="example-text-input" className="col-2 col-form-label">Name</label>
+						<div className="col-10">
+							<input className="form-control" type="text" value="" id="example-text-input" />
+						</div>
+					</div>
+					<div className="form-group row">
+						<label for="example-email-input" className="col-2 col-form-label">Email address</label>
+						<div className="col-10">
+							<input className="form-control" type="email" value="" id="example-email-input" />
+						</div>
+					</div>
+					<div className="form-group row">
+						<label for="message" className="col-2 col-form-label">Message</label>
+						<div className="col-10">
+							<textarea className="form-control" id="message" rows="3"/>
+						</div>
+					</div>
+					<div className="container">
+						<form>
+							<div className="form-group row has-success">
+								<label for="inputHorizontalSuccess" className="col-sm-2 col-form-label">Email</label>
+								<div className="col-sm-10">
+									<input type="email" className="form-control form-control-success" id="inputHorizontalSuccess" placeholder="name@example.com" />
+									<div className="form-control-feedback">Success! You've done it.</div>
+									<small className="form-text text-muted">Example help text that remains unchanged.</small>
+								</div>
+							</div>
+							<div className="form-group row has-warning">
+								<label for="inputHorizontalWarning" className="col-sm-2 col-form-label">Email</label>
+								<div className="col-sm-10">
+									<input type="email" className="form-control form-control-warning" id="inputHorizontalWarning" placeholder="name@example.com" />
+									<div className="form-control-feedback">Shucks, check the formatting of that and try again.</div>
+									<small className="form-text text-muted">Example help text that remains unchanged.</small>
+								</div>
+							</div>
+							<div className="form-group row has-danger">
+								<label for="inputHorizontalDnger" className="col-sm-2 col-form-label">Email</label>
+								<div className="col-sm-10">
+									<input type="email" className="form-control form-control-danger" id="inputHorizontalDnger" placeholder="name@example.com" />
+									<div className="form-control-feedback">Sorry, that username's taken. Try another?</div>
+									<small className="form-text text-muted">Example help text that remains unchanged.</small>
+								</div>
+							</div>
+							<button type="submit" className="btn btn-primary">Send</button>
+						</form>
+					</div>
+				</section>
+			)
+		}
+	}
+
+	ReactDOM.render(
+		<Contact />,
+		document.querySelector(".contact.wrapper")
+	)
+</script>
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 	</body>
