@@ -9,7 +9,7 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 		<script src="https://unpkg.com/react@16.0.0/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@16.0.0/umd/react-dom.development.js"></script>
-    <script src="https://unpkg.com/babel-standalone@6.26.0"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js"></script>
   </head>
   <body>
 		<header>
@@ -96,11 +96,59 @@
 
 		
 <script type="text/babel">
+	function ValidateEmail(mail) {
+		if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail)){
+			return (true)
+		}
+		console.log("You have entered an invalid email address!")
+		return (false)
+	}
+
 	class Contact extends React.Component {
-		state = { name: '', email: '', message: '' };
+		state = {
+			name: {text: '', error: true},
+			email: {text: '', error: true},
+			message: {text: '', error: true}
+		};
+
+		formClass = (name, element) => {
+			let classes = {
+				div: {success: "form-group row has-success", error: "form-group row has-warning"},
+				input: {success: "form-control form-control-success", error: "form-control"}
+			}
+			return this.state[name].error
+			 ? classes[element].error
+			 : classes[element].success
+		}
 
 		handleChange = e => {
-			this.setState({[e.target.name]: e.target.value});
+			const {target} = e;
+			this.setState(() => {
+				let error = false;
+				if(target.name === 'email' && target.value) {
+					error = !ValidateEmail(target.value);
+				} else if (!target.value) {
+					error = true;
+				}
+				return {
+					[target.name]: {text: target.value, error}
+				}
+			});
+		}
+
+		renderButton = () => {
+			for (let key in this.state) {
+				if (this.state[key].error) {
+					return null;
+				}
+			}			
+			return (
+				<button
+					type="submit"
+					className="btn btn-outline-success">
+					Send
+				</button>
+			);
 		}
 
 		render(){
@@ -109,28 +157,56 @@
 					<h2>Contact</h2>
 					<div className="container">
 						<form>
-							<div className="form-group row has-success">
-								<label htmlFor="inputHorizontalSuccess" className="col-2 col-sm-4 col-form-label">Name</label>
+							<div className={this.formClass('name', 'div')}>
+								<label
+									htmlFor="name"
+									className="col-4 col-sm-2">
+										Name
+								</label>
 								<div className="col-10 col-sm-10">
-									<input type="email" className="form-control form-control-success" id="inputHorizontalSuccess" placeholder="name" />
-									<div className="form-control-feedback">Success! You've done it.</div>
+									<input
+										id="name"
+										type="text"
+										className={this.formClass('name', 'input')}
+										value={this.state.name.text}
+										onChange={this.handleChange}
+										name="name"/>
 								</div>
 							</div>
-							<div className="form-group row has-warning">
-								<label htmlFor="inputHorizontalWarning" className="col-2 col-sm-4 col-form-label">Email</label>
+							<div className={this.formClass('email', 'div')}>
+								<label
+								htmlFor="email"
+								className="col-4 col-sm-2">
+									Email
+								</label>
 								<div className="col-10 col-sm-10">
-									<input type="email" className="form-control form-control-warning" id="inputHorizontalWarning" placeholder="email" />
-									<div className="form-control-feedback">Shucks, check the formatting of that and try again.</div>
+									<input
+										id="email"
+										type="email"
+										className={this.formClass('email', 'input')}
+										value={this.state.email.text}
+										onChange={this.handleChange}
+										name="email" />
 								</div>
 							</div>
-							<div className="form-group row has-danger">
-								<label htmlFor="inputHorizontalDnger" className="col-2 col-sm-4 col-form-label">Message</label>
+							<div className={this.formClass('message', 'div')}>
+								<label
+									htmlFor="message"
+									className="col-4 col-sm-2">
+									Message
+								</label>
 								<div className="col-10 col-sm-10">
-									<textarea type="email" className="form-control form-control-danger" id="inputHorizontalDnger" placeholder="message" rows="3" />
-									<div className="form-control-feedback">Sorry, that username's taken. Try another?</div>
+									<textarea
+										id="message"
+										type="email"
+										className={this.formClass('message', 'input')}
+										rows="3"
+										value={this.state.message.text}
+										onChange={this.handleChange}
+										name="message"/>
 								</div>
 							</div>
-							<button type="submit" className="btn btn-primary">Send</button>
+							{this.renderButton()}
 						</form>
 					</div>
 				</section>
