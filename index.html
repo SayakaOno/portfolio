@@ -7,9 +7,9 @@
 		<link rel="stylesheet" href="styles.css">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.6/react.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.6/react-dom.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.js"></script>
+		<script src="https://unpkg.com/react@16.0.0/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16.0.0/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.26.0"></script>
   </head>
   <body>
 		<header>
@@ -96,53 +96,38 @@
 
 		
 <script type="text/babel">
-	class Contact extends React.Component{
+	class Contact extends React.Component {
+		state = { name: '', email: '', message: '' };
+
+		handleChange = e => {
+			this.setState({[e.target.name]: e.target.value});
+		}
+
 		render(){
 			return(
 				<section>
 					<h2>Contact</h2>
-					<div className="form-group row">
-						<label for="example-text-input" className="col-2 col-form-label">Name</label>
-						<div className="col-10">
-							<input className="form-control" type="text" value="" id="example-text-input" />
-						</div>
-					</div>
-					<div className="form-group row">
-						<label for="example-email-input" className="col-2 col-form-label">Email address</label>
-						<div className="col-10">
-							<input className="form-control" type="email" value="" id="example-email-input" />
-						</div>
-					</div>
-					<div className="form-group row">
-						<label for="message" className="col-2 col-form-label">Message</label>
-						<div className="col-10">
-							<textarea className="form-control" id="message" rows="3"/>
-						</div>
-					</div>
 					<div className="container">
 						<form>
 							<div className="form-group row has-success">
-								<label for="inputHorizontalSuccess" className="col-sm-2 col-form-label">Email</label>
-								<div className="col-sm-10">
-									<input type="email" className="form-control form-control-success" id="inputHorizontalSuccess" placeholder="name@example.com" />
+								<label htmlFor="inputHorizontalSuccess" className="col-2 col-sm-4 col-form-label">Name</label>
+								<div className="col-10 col-sm-10">
+									<input type="email" className="form-control form-control-success" id="inputHorizontalSuccess" placeholder="name" />
 									<div className="form-control-feedback">Success! You've done it.</div>
-									<small className="form-text text-muted">Example help text that remains unchanged.</small>
 								</div>
 							</div>
 							<div className="form-group row has-warning">
-								<label for="inputHorizontalWarning" className="col-sm-2 col-form-label">Email</label>
-								<div className="col-sm-10">
-									<input type="email" className="form-control form-control-warning" id="inputHorizontalWarning" placeholder="name@example.com" />
+								<label htmlFor="inputHorizontalWarning" className="col-2 col-sm-4 col-form-label">Email</label>
+								<div className="col-10 col-sm-10">
+									<input type="email" className="form-control form-control-warning" id="inputHorizontalWarning" placeholder="email" />
 									<div className="form-control-feedback">Shucks, check the formatting of that and try again.</div>
-									<small className="form-text text-muted">Example help text that remains unchanged.</small>
 								</div>
 							</div>
 							<div className="form-group row has-danger">
-								<label for="inputHorizontalDnger" className="col-sm-2 col-form-label">Email</label>
-								<div className="col-sm-10">
-									<input type="email" className="form-control form-control-danger" id="inputHorizontalDnger" placeholder="name@example.com" />
+								<label htmlFor="inputHorizontalDnger" className="col-2 col-sm-4 col-form-label">Message</label>
+								<div className="col-10 col-sm-10">
+									<textarea type="email" className="form-control form-control-danger" id="inputHorizontalDnger" placeholder="message" rows="3" />
 									<div className="form-control-feedback">Sorry, that username's taken. Try another?</div>
-									<small className="form-text text-muted">Example help text that remains unchanged.</small>
 								</div>
 							</div>
 							<button type="submit" className="btn btn-primary">Send</button>

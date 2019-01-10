@@ -6,101 +6,171 @@ Author: Richard Clark - http://richclarkdesign.com
 Twitter: @rich_clark
 */
 
-html, body, div, span, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-abbr, address, cite, code,
-del, dfn, em, img, ins, kbd, q, samp,
-small, strong, sub, sup, var,
-b, i,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section, summary,
-time, mark, audio, video {
-    margin:0;
-    padding:0;
-    border:0;
-    outline:0;
-    font-size:100%;
-    vertical-align:baseline;
-    background:transparent;
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
 }
 
 body {
-    line-height:1;
+  line-height: 1;
 }
 
-article,aside,details,figcaption,figure,
-footer,header,hgroup,menu,nav,section {
-    display:block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
 
 nav ul {
-    list-style:none;
+  list-style: none;
 }
 
-blockquote, q {
-    quotes:none;
+blockquote,
+q {
+  quotes: none;
 }
 
-blockquote:before, blockquote:after,
-q:before, q:after {
-    content:'';
-    content:none;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
 }
 
 a {
-    margin:0;
-    padding:0;
-    font-size:100%;
-    vertical-align:baseline;
-    background:transparent;
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
 }
 
 /* change colours to suit your needs */
 ins {
-    background-color:#ff9;
-    color:#000;
-    text-decoration:none;
+  background-color: #ff9;
+  color: #000;
+  text-decoration: none;
 }
 
 /* change colours to suit your needs */
 mark {
-    background-color:#ff9;
-    color:#000;
-    font-style:italic;
-    font-weight:bold;
+  background-color: #ff9;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
 }
 
 del {
-    text-decoration: line-through;
+  text-decoration: line-through;
 }
 
-abbr[title], dfn[title] {
-    border-bottom:1px dotted;
-    cursor:help;
+abbr[title],
+dfn[title] {
+  border-bottom: 1px dotted;
+  cursor: help;
 }
 
 table {
-    border-collapse:collapse;
-    border-spacing:0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 /* change border colour to suit your needs */
 hr {
-    display:block;
-    height:1px;
-    border:0;
-    border-top:1px solid #cccccc;
-    margin:1em 0;
-    padding:0;
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #cccccc;
+  margin: 1em 0;
+  padding: 0;
 }
 
-input, select {
-    vertical-align:middle;
+input,
+select {
+  vertical-align: middle;
 }
-
 
 /* MY CODE */
 
@@ -130,10 +200,10 @@ body {
   color: var(--text-color);
 }
 
-
 * {
   text-decoration: none;
-  font-family: "Roboto","Helvetica Neue","Helvetica",Helvetica,Arial,sans-serif;
+  font-family: "Roboto", "Helvetica Neue", "Helvetica", Helvetica, Arial,
+    sans-serif;
 }
 
 main {
@@ -271,7 +341,7 @@ p {
 .index-banner {
   width: 100%;
   height: calc(100vh - 100px);
-  background-image: url('img/banner.jpg');
+  background-image: url("img/banner.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -284,7 +354,8 @@ p {
   vertical-align: middle;
 }
 
-.index-banner, .index-banner p {
+.index-banner,
+.index-banner p {
   color: #fff;
 }
 
@@ -300,7 +371,7 @@ p {
 .index-banner h1 {
   /* font-family: arial; */
   font-size: 28px;
-  font-weight:  100;
+  font-weight: 100;
   font-style: italic;
   line-height: 40px;
   /* text-align: center; */
@@ -317,7 +388,7 @@ p {
 .index-links div h3 {
   font-family: arial;
   font-size: 28px;
-  font-weight:  600;
+  font-weight: 600;
   line-height: 100px;
   color: #111;
   text-align: center;
@@ -378,7 +449,7 @@ p {
 .cases-links h2 {
   font-family: arial;
   font-size: 28px;
-  font-weight:  600;
+  font-weight: 600;
   color: #262626;
   text-transform: uppercase;
 }
@@ -395,7 +466,7 @@ p {
   padding-top: 45%;
   font-family: arial;
   font-size: 24px;
-  font-weight:  600;
+  font-weight: 600;
   color: #111;
   text-align: center;
   text-transform: uppercase;
@@ -412,7 +483,7 @@ p {
 .case-vid h2 {
   font-family: arial;
   font-size: 28px;
-  font-weight:  600;
+  font-weight: 600;
   color: #262626;
   text-align: center;
   text-transform: uppercase;
@@ -432,7 +503,7 @@ p {
 .case-vid article h3 {
   font-family: arial;
   font-size: 28px;
-  font-weight:  600;
+  font-weight: 600;
   color: #111;
   text-transform: uppercase;
   padding-bottom: 25px;
@@ -441,7 +512,7 @@ p {
 .case-vid article div p {
   font-family: arial;
   font-size: 16px;
-  font-weight:  600;
+  font-weight: 600;
   line-height: 24px;
   color: #111;
   text-transform: uppercase;
@@ -452,7 +523,7 @@ p {
 /* CONTACT */
 
 form {
-  width: 300px;
+  /* width: 300px; */
 }
 
 input {
@@ -464,12 +535,14 @@ textarea {
   max-height: 100px;
 }
 
-input, textarea {
+input,
+textarea {
   outline: none;
   border: 1px solid #ddd;
 }
 
-input:focus, textarea:focus {
+input:focus,
+textarea:focus {
   box-shadow: 0 0 4px rgba(255, 0, 0, 0.5);
   border: 1px solid rgb(255, 0, 0);
 }
@@ -496,7 +569,8 @@ input:focus, textarea:focus {
   clear: both;
 }
 
-#about aside, #about main section {
+#about aside,
+#about main section {
   float: left;
 }
 
@@ -562,6 +636,4 @@ footer p {
 }
 
 @media only screen and (min-width: 1000px) {
-
-
 }
