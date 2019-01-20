@@ -3,47 +3,60 @@ import React from "react";
 class Portfolio extends React.Component {
   render() {
     return (
-      <div class="wrapper">
+      <div className="wrapper">
         <h2>Projects</h2>
-        <section class="cases-boxs">
+        <div>
+          <i class="filter icon" />
+        </div>
+        <div>
+          <span>Web site</span>
+          <span>Web application</span>
+          <span>React</span>
+          <span>Redux</span>
+          <span>WordPress</span>
+          <span>jQuery</span>
+          <span>PHP</span>
+          <span>API</span>
+        </div>
+        <section className="cases-boxs">
           <a href="case1.html">
-            <div class="cases-link">
-              <p>case1</p>
+            <div className="cases-link">
+              <p>English practice</p>
             </div>
           </a>
           <a href="cases1.html">
-            <div class="cases-link">
-              <p>case1</p>
+            <div className="cases-link">
+              <p>Translator</p>
             </div>
           </a>
           <a href="cases1.html">
-            <div class="cases-link">
-              <p>case1</p>
+            <div className="cases-link">
+              <p>犬猫譲渡センター</p>
             </div>
           </a>
           <a href="cases1.html">
-            <div class="cases-link">
-              <p>case1</p>
+            <div className="cases-link">
+              <p>Image search</p>
             </div>
           </a>
         </section>
-        <section class="index-links">
+        {/* <section className="index-links">
           <a href="portfolio.html">
-            <div class="index-boxlink-square">
+            <div className="index-boxlink-square">
               <h3>Portfolio</h3>
             </div>
           </a>
           <a href="about.html">
-            <div class="index-boxlink-rectangle">
+            <div className="index-boxlink-rectangle">
               <h3>About</h3>
             </div>
           </a>
           <a href="contact.html">
-            <div class="index-boxlink-square">
+            <div className="index-boxlink-square">
               <h3>Contact</h3>
             </div>
           </a>
-        </section>
+        </section> */}
       </div>
     );
   }

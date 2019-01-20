@@ -61,8 +61,9 @@ class Contact extends React.Component {
 
   render() {
     return (
-      <section>
+      <section className="wrapper contact">
         <h2>Contact</h2>
+        <p>Please feel free to contact me !</p>
         <div className="container">
           <form>
             <div className={this.formClass("name", "div")}>
