@@ -3,7 +3,7 @@ import React from "react";
 const Header = () => {
   return (
     <header>
-      <a href="index.html" class="header-brand">
+      <a href="index.html" className="header-brand">
         sayaka
       </a>
       <nav>
@@ -19,11 +19,11 @@ const Header = () => {
           </li>
         </ul>
       </nav>
-      <div class="progress">
+      <div className="progress">
         <div
-          class="progress-bar"
+          className="progress-bar"
           role="progressbar"
-          style="width: 100%; height: 1px;"
+          style={{ width: "100%", height: "1px" }}
           aria-valuenow="25"
           aria-valuemin="0"
           aria-valuemax="100"

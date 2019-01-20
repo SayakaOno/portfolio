@@ -3,18 +3,15 @@ import React from "react";
 const Footer = () => {
   return (
     <footer>
-      <div class="footer-sm">
+      <div className="footer-sm">
         <a href="">
-          <i class="fab fa-github" />
+          <i className="fab fa-github" />
         </a>
         <a href="">
-          <i class="fab fa-twitter-square" />
-        </a>
-        <a href="">
-          <i class="fab fa-github" />
+          <i className="fab fa-twitter-square" />
         </a>
       </div>
-      {/* <p>&copy<?php echo date().Year ?> Sayaka Ono</p> */}
+      <p>&copy;{` ${new Date().getFullYear()} Sayaka Ono`}</p>
     </footer>
   );
 };
