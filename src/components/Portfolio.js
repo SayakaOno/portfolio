@@ -1,6 +1,6 @@
 import React from "react";
 
-class Portfolio extends React.COmponent {
+class Portfolio extends React.Component {
   render() {
     return (
       <div class="wrapper">
