@@ -45,8 +45,13 @@ const Project = props => {
           <p>{data.history.en}</p>
         </React.Fragment>
       ) : null}
-      <img src="" />
-      <a className="button ui" href={data.url} target="_blank">
+      <img src="" alt="" />
+      <a
+        className="button ui"
+        href={data.url}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         Demo
       </a>
     </div>

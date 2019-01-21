@@ -29,7 +29,7 @@ class Portfolio extends React.Component {
       <div className="wrapper">
         <h2>Portfolio</h2>
         <div>
-          <i class="filter icon" />
+          <i className="filter icon" />
         </div>
         <div>
           <span>Web site</span>

@@ -4,11 +4,11 @@ const Footer = () => {
   return (
     <footer>
       <div className="footer-sm">
-        <a href="">
-          <i className="fab fa-github" />
+        <a href="https://github.com/SayakaOno">
+          <i className="github icon" />
         </a>
-        <a href="">
-          <i className="fab fa-twitter-square" />
+        <a href="https://www.linkedin.com/in/sayakaono/">
+          <i className="linkedin icon" />
         </a>
       </div>
       <p>&copy;{` ${new Date().getFullYear()} Sayaka Ono`}</p>

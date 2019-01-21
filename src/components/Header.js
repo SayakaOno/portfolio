@@ -7,13 +7,13 @@ const Header = () => {
       <Link to="/" className="header-brand">
         <span>sayaka</span>
         <div className="decoration">
-          <a class="ui red empty circular label" />
-          <a class="ui orange empty circular label" />
-          <a class="ui yellow empty circular label" />
-          <a class="ui olive empty circular label" />
-          <a class="ui green empty circular label" />
-          <a class="ui teal empty circular label" />
-          <a class="ui blue empty circular label" />
+          <span className="ui red empty circular label" />
+          <span className="ui orange empty circular label" />
+          <span className="ui yellow empty circular label" />
+          <span className="ui olive empty circular label" />
+          <span className="ui green empty circular label" />
+          <span className="ui teal empty circular label" />
+          <span className="ui blue empty circular label" />
         </div>
       </Link>
 
