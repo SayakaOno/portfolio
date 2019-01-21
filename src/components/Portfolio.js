@@ -1,6 +1,7 @@
 import React from "react";
 import Modal from "./Modal";
 import Project from "./Project";
+import { portfolioData } from "../data";
 
 class Portfolio extends React.Component {
   state = { selectedProject: null };
@@ -42,44 +43,14 @@ class Portfolio extends React.Component {
           <span>API</span>
         </div>
         <section className="cases-boxs" onClick={this.handleClick}>
-          <div id={0} className="project-box">
-            <div className="cases-link">
-              <p>English practice</p>
+          {portfolioData.map((data, index) => (
+            <div key={data.name.en} id={index} className="project-box">
+              <div className="cases-link">
+                <p>{data.name.en}</p>
+              </div>
             </div>
-          </div>
-          <div id={1} className="project-box">
-            <div className="cases-link">
-              <p>Translator</p>
-            </div>
-          </div>
-          <div id={2} className="project-box">
-            <div className="cases-link">
-              <p>犬猫譲渡センター</p>
-            </div>
-          </div>
-          <div id={3} className="project-box">
-            <div className="cases-link">
-              <p>Image search</p>
-            </div>
-          </div>
+          ))}
         </section>
-        {/* <section className="index-links">
-          <a href="portfolio.html">
-            <div className="index-boxlink-square">
-              <h3>Portfolio</h3>
-            </div>
-          </a>
-          <a href="about.html">
-            <div className="index-boxlink-rectangle">
-              <h3>About</h3>
-            </div>
-          </a>
-          <a href="contact.html">
-            <div className="index-boxlink-square">
-              <h3>Contact</h3>
-            </div>
-          </a>
-        </section> */}
       </div>
     );
   }
