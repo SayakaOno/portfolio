@@ -18,10 +18,13 @@ class Portfolio extends React.Component {
   };
 
   render() {
+    const lang = this.props.language;
+
     return this.state.selectedProject ? (
       <Modal onDismiss={() => this.setState({ selectedProject: null })}>
         <Project
           id={this.state.selectedProject}
+          language={lang}
           onDismiss={() => this.setState({ selectedProject: null })}
           selectProject={this.selectProject}
         />
@@ -44,9 +47,9 @@ class Portfolio extends React.Component {
         </div>
         <section className="cases-boxs" onClick={this.handleClick}>
           {portfolioData.map((data, index) => (
-            <div key={data.name.en} id={index} className="project-box">
+            <div key={data.name[lang]} id={index} className="project-box">
               <div className="cases-link">
-                <p>{data.name.en}</p>
+                <p>{data.name[lang]}</p>
               </div>
             </div>
           ))}

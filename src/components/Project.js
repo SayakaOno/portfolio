@@ -3,6 +3,8 @@ import { portfolioData } from "../data";
 
 const Project = props => {
   const data = portfolioData[props.id];
+  const lang = props.language;
+
   return (
     <div className="project">
       <i className="times icon" onClick={props.onDismiss} />
@@ -10,7 +12,7 @@ const Project = props => {
         <div
           className="ui icon button left"
           onClick={() => props.selectProject(`${+props.id - 1}`)}
-          data-tooltip={portfolioData[+props.id - 1].name.en}
+          data-tooltip={portfolioData[+props.id - 1].name[lang]}
           data-position="bottom left"
           data-variation="mini"
         >
@@ -21,16 +23,16 @@ const Project = props => {
         <div
           className="ui icon button right"
           onClick={() => props.selectProject(+props.id + 1)}
-          data-tooltip={portfolioData[+props.id + 1].name.en}
+          data-tooltip={portfolioData[+props.id + 1].name[lang]}
           data-position="bottom right"
           data-variation="mini"
         >
           <i className="angle right icon" />
         </div>
       ) : null}
-      <h1>{data.name.en}</h1>
+      <h1>{data.name[lang]}</h1>
       <div className="category">
-        <i>{`${data.category.en} / ${data.duration}, ${data.date}`}</i>
+        <i>{`${data.category[lang]} / ${data.duration}, ${data.date}`}</i>
       </div>
       <div className="skills">
         {data.skills.map(skill => (
@@ -40,11 +42,11 @@ const Project = props => {
         ))}
       </div>
       <h2>Summary</h2>
-      <p>{data.summary.en}</p>
+      <p>{data.summary[lang]}</p>
       {data.history ? (
         <React.Fragment>
           <h2>How this was born</h2>
-          <p>{data.history.en}</p>
+          <p>{data.history[lang]}</p>
         </React.Fragment>
       ) : null}
       <img src="" alt="" />

@@ -184,7 +184,7 @@ li::first-letter {
 li::selection {
 }
 li::before {
-  content: attr(href);
+  /* content: attr(href); */
   /* img works! url(img) */
 }
 /* transition
@@ -249,22 +249,24 @@ header .decoration {
 }
 
 header nav {
-  overflow: hidden;
-  padding-bottom: 20px;
+  /* overflow: hidden; */
+  /* padding-bottom: 20px; */
+  float: left;
 }
 
 header nav ul {
-  display: block;
+  /* display: block;
   margin: 0 auto;
-  width: fit-content;
+  width: fit-content; */
+  margin-bottom: 0;
 }
 
 header nav ul li {
-  display: inline-bock;
+  /* display: inline-bock; */
   float: left;
   list-style: none;
   padding: 0 16px;
-  position: relative;
+  /* position: relative; */
 }
 
 header nav ul li a {
@@ -299,56 +301,70 @@ header nav ul li ul li a:hover {
 }
 
 header .header-brand {
-  margin: 31px 0;
+  margin: 10px 0;
   text-align: left;
   line-height: 38px;
-  padding: 0 20px 0 40px;
-  border-right: 3px solid #111;
+  padding: 0 20px 0 20px;
+  /* border-right: 3px solid #111; */
   float: left;
 }
 
-header nav ul {
-  margin: 20px 0 0 20px;
+/* header nav ul {
   float: left;
-}
+} */
 
-header nav ul li {
+/* header nav ul li {
   display: inline-bock;
   float: left;
   list-style: none;
   padding: 0 16px;
-}
+} */
 
 header {
   overflow: hidden;
 }
 
-/* header:after {
+.header-content {
+  position: relative;
+  max-width: 1170px;
+  margin: 0 auto;
+}
+
+.header-content:after {
   display: table;
   clear: both;
   content: "";
-} */
+}
+
+header .lang {
+  position: absolute;
+  margin-right: 20px;
+  top: 25%;
+  right: 0;
+  padding: 5px;
+}
+header .lang:hover {
+  cursor: pointer;
+}
+
+header nav ul li a {
+  line-height: 60px;
+}
 
 @media only screen and (min-width: 1000px) {
   header .header-brand {
-    margin: 31px 0;
+    margin: 10px 0;
     text-align: left;
     line-height: 38px;
-    padding: 0 20px 0 40px;
-    border-right: 3px solid #111;
+    /* border-right: 3px solid #111; */
     float: left;
   }
 
-  header nav ul {
-    margin: 20px 0 0 20px;
+  /* header nav ul {
     float: left;
-  }
+  } */
 
-  header nav ul li a {
-    line-height: 60px;
-  }
-
-  header .header-cases {
+  /* header .header-cases {
     display: block;
     font-family: arial;
     font-size: 16px;
@@ -360,14 +376,14 @@ header {
     margin-right: 40px;
     margin-top: 30px;
     padding: 0 20px;
-  }
+  } */
 
-  header nav ul li {
+  /* header nav ul li {
     display: inline-bock;
     float: left;
     list-style: none;
     padding: 0 16px;
-  }
+  } */
 }
 
 /* FOOTER */

@@ -1,7 +1,9 @@
 import React from "react";
 import { about } from "../data";
 
-const About = () => {
+const About = props => {
+  const lang = props.language;
+
   return (
     <div className="about wrapper">
       <h2>About me</h2>
@@ -25,7 +27,7 @@ const About = () => {
             <li>SEO</li>
           </ul>
         </div>
-        <div className="col-7">{about.main.en}</div>
+        <div className="col-7">{about.main[lang]}</div>
       </div>
     </div>
   );
