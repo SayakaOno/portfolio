@@ -627,7 +627,7 @@ p {
   font-size: 15px;
 }
 .project .ui.button.icon {
-  background-color: #fff !important;
+  background-color: transparent !important;
 }
 .project .ui.button.icon {
   position: fixed;

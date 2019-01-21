@@ -2,6 +2,7 @@ import React from "react";
 import { portfolioData } from "../data";
 
 const Project = props => {
+  const data = portfolioData[props.id];
   return (
     <div className="project">
       <i class="times icon" onClick={props.onDismiss} />
@@ -27,24 +28,25 @@ const Project = props => {
           <i class="angle right icon" />
         </div>
       ) : null}
-      <h1>{portfolioData[+props.id].name.en}</h1>
+      <h1>{data.name.en}</h1>
       <div className="category">
-        <i>Website</i>
+        <i>{`${data.category.en} / ${data.duration}, ${data.date}`}</i>
       </div>
       <div className="skills">
-        <span class="ui basic label">PHP</span>
-        <span class="ui grey label">API</span>
+        {data.skills.map(skill => (
+          <span class="ui basic label">{skill}</span>
+        ))}
       </div>
       <h2>Summary</h2>
-      <p>THIs is......</p>
-      <h2>How this was born</h2>
-      <p>THIs is......</p>
+      <p>{data.summary.en}</p>
+      {data.history ? (
+        <React.Fragment>
+          <h2>How this was born</h2>
+          <p>{data.history.en}</p>
+        </React.Fragment>
+      ) : null}
       <img src="" />
-      <a
-        className="button ui"
-        href={portfolioData[+props.id].url}
-        target="_blank"
-      >
+      <a className="button ui" href={data.url} target="_blank">
         Demo
       </a>
     </div>
