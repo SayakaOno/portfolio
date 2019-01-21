@@ -1,10 +1,33 @@
 import React from "react";
+import Modal from "./Modal";
+import Project from "./Project";
 
 class Portfolio extends React.Component {
+  state = { selectedProject: null };
+
+  handleClick = e => {
+    if (e.target.className !== "project-box") {
+      return;
+    }
+    this.selectProject(e.target.id);
+  };
+
+  selectProject = id => {
+    this.setState({ selectedProject: id });
+  };
+
   render() {
-    return (
+    return this.state.selectedProject ? (
+      <Modal onDismiss={() => this.setState({ selectedProject: null })}>
+        <Project
+          id={this.state.selectedProject}
+          onDismiss={() => this.setState({ selectedProject: null })}
+          selectProject={this.selectProject}
+        />
+      </Modal>
+    ) : (
       <div className="wrapper">
-        <h2>Projects</h2>
+        <h2>Portfolio</h2>
         <div>
           <i class="filter icon" />
         </div>
@@ -18,27 +41,27 @@ class Portfolio extends React.Component {
           <span>PHP</span>
           <span>API</span>
         </div>
-        <section className="cases-boxs">
-          <a href="case1.html">
+        <section className="cases-boxs" onClick={this.handleClick}>
+          <div id={0} className="project-box">
             <div className="cases-link">
               <p>English practice</p>
             </div>
-          </a>
-          <a href="cases1.html">
+          </div>
+          <div id={1} className="project-box">
             <div className="cases-link">
               <p>Translator</p>
             </div>
-          </a>
-          <a href="cases1.html">
+          </div>
+          <div id={2} className="project-box">
             <div className="cases-link">
               <p>犬猫譲渡センター</p>
             </div>
-          </a>
-          <a href="cases1.html">
+          </div>
+          <div id={3} className="project-box">
             <div className="cases-link">
               <p>Image search</p>
             </div>
-          </a>
+          </div>
         </section>
         {/* <section className="index-links">
           <a href="portfolio.html">
