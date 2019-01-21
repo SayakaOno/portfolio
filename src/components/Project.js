@@ -5,27 +5,27 @@ const Project = props => {
   const data = portfolioData[props.id];
   return (
     <div className="project">
-      <i class="times icon" onClick={props.onDismiss} />
+      <i className="times icon" onClick={props.onDismiss} />
       {+props.id - 1 < 0 ? null : (
         <div
-          class="ui icon button left"
+          className="ui icon button left"
           onClick={() => props.selectProject(`${+props.id - 1}`)}
           data-tooltip={portfolioData[+props.id - 1].name.en}
           data-position="bottom left"
           data-variation="mini"
         >
-          <i class="angle left icon" />
+          <i className="angle left icon" />
         </div>
       )}
       {+props.id + 1 < portfolioData.length ? (
         <div
-          class="ui icon button right"
+          className="ui icon button right"
           onClick={() => props.selectProject(+props.id + 1)}
           data-tooltip={portfolioData[+props.id + 1].name.en}
           data-position="bottom right"
           data-variation="mini"
         >
-          <i class="angle right icon" />
+          <i className="angle right icon" />
         </div>
       ) : null}
       <h1>{data.name.en}</h1>
@@ -34,7 +34,9 @@ const Project = props => {
       </div>
       <div className="skills">
         {data.skills.map(skill => (
-          <span class="ui basic label">{skill}</span>
+          <span key={skill} className="ui basic label">
+            {skill}
+          </span>
         ))}
       </div>
       <h2>Summary</h2>
@@ -47,7 +49,7 @@ const Project = props => {
       ) : null}
       <img src="" alt="" />
       <a
-        className="button ui"
+        className="button ui secondary"
         href={data.url}
         target="_blank"
         rel="noopener noreferrer"

@@ -2,7 +2,6 @@ import React from "react";
 import { about } from "../data";
 
 const About = () => {
-  console.log(about.main.en);
   return (
     <div className="about wrapper">
       <h2>About me</h2>
