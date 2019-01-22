@@ -50,6 +50,10 @@ class Portfolio extends React.Component {
             <div key={data.name[lang]} id={index} className="project-box">
               <div className="cases-link">
                 <p>{data.name[lang]}</p>
+                <img
+                  src={require(`../img/${data.image}`)}
+                  alt={data.name[lang]}
+                />
               </div>
             </div>
           ))}

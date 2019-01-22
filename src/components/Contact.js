@@ -78,6 +78,7 @@ class Contact extends React.Component {
                   value={this.state.name.text}
                   onChange={this.handleChange}
                   name="name"
+                  autoComplete="off"
                 />
               </div>
             </div>
@@ -93,6 +94,7 @@ class Contact extends React.Component {
                   value={this.state.email.text}
                   onChange={this.handleChange}
                   name="email"
+                  autoComplete="off"
                 />
               </div>
             </div>
@@ -112,7 +114,7 @@ class Contact extends React.Component {
                 />
               </div>
             </div>
-            {this.renderButton()}
+            <div className="button-container">{this.renderButton()}</div>
           </form>
         </div>
       </section>

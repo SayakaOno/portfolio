@@ -585,6 +585,13 @@ p {
   text-transform: uppercase;
 }
 
+.cases-link img {
+  width: 100%;
+  border: solid 1px #eee;
+  border-top: none;
+  border-radius: 5px;
+}
+
 .cases-boxs {
   display: flex;
   flex-flow: row wrap;
@@ -603,9 +610,9 @@ p {
 .cases-boxs .project-box {
   text-align: center;
   flex-basis: 45%;
-  height: 200px;
+  height: 350px;
   margin: 10px;
-  background-color: yellow;
+  overflow: hidden;
 }
 
 .cases-boxs .project-box:hover {
@@ -706,6 +713,11 @@ p {
   margin-top: 50px !important;
   width: 100px;
 }
+.project img {
+  width: 100%;
+  border: 1px solid #eee;
+  border-top: none;
+}
 
 /* CONTACT */
 
@@ -787,5 +799,32 @@ textarea:focus {
   width: 70%;
 }
 
-@media only screen and (min-width: 1000px) {
+/* CONTACT */
+/* .contact {
+  background-color: #1b1c1d;
+  color: rgba(255, 255, 255, 0.9);
+  max-height: 100vh;
+  max-width: 400px;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  border-radius: 0.28571429rem;
+  scroll-y: auto;s
 }
+.contact .row {
+  display: block !important;
+}
+.contact.col-10 .contact.col-sm-10 {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+.contact .button-container {
+  height: 80px;
+}
+
+@media (min-width: 576px) {
+  .contact .col-sm-10 {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+} */

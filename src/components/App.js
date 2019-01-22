@@ -42,6 +42,7 @@ class App extends React.Component {
             render={() => <Contact language={this.state.language} />}
           />
           <Footer />
+          {/* <Contact /> */}
         </React.Fragment>
       </BrowserRouter>
     );
