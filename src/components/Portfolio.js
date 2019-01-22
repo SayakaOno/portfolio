@@ -7,10 +7,11 @@ class Portfolio extends React.Component {
   state = { selectedProject: null };
 
   handleClick = e => {
-    if (e.target.className !== "project-box") {
+    const projectBox = e.target.closest(".project-box");
+    if (!projectBox) {
       return;
     }
-    this.selectProject(e.target.id);
+    this.selectProject(projectBox.id);
   };
 
   selectProject = id => {
