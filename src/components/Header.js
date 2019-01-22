@@ -24,7 +24,7 @@ class Header extends React.Component {
           <nav>
             <ul>
               <li>
-                <Link to="/portfolio">Projects</Link>
+                <Link to="/portfolio">Portfolio</Link>
               </li>
               <li>
                 <Link to="/about">About</Link>
