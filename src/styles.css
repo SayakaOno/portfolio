@@ -197,6 +197,7 @@ li::before {
 }
 body {
   color: var(--text-color);
+  min-width: 240px !important;
 }
 * {
   text-decoration: none;
@@ -208,6 +209,12 @@ main {
 }
 p {
   color: #111;
+}
+#root {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 /* Header */
@@ -298,11 +305,11 @@ header nav ul li a {
 footer {
   /* width: calc(100% - 80px); */
   background-color: #f3f3f3;
-  padding: 70px 0 70px;
 }
 .footer-sm {
   text-align: center;
   margin-bottom: 20px;
+  padding: 60px 0 60px;
 }
 .footer-sm a {
   display: inline-block;
@@ -313,10 +320,9 @@ footer {
   font-size: 1.5em;
 }
 footer p {
-  font-size: 1em;
+  font-size: 0.8em;
   color: #818181;
   text-align: center;
-  padding-bottom: 10px;
 }
 
 /* MODAL */
@@ -388,6 +394,20 @@ footer p {
 }
 
 /* Portfolio */
+.filter {
+  text-align: center;
+}
+.filter .ui.label {
+  color: rgba(0, 0, 0, 0.87) !important;
+  border: 1px solid #e8e8e8;
+}
+.filter .ui.label.basic {
+  color: rgba(34, 36, 38, 0.15) !important;
+}
+.filter .ui.label.basic:hover {
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.87) !important;
+}
 .cases-boxs {
   display: flex;
   flex-flow: row wrap;
@@ -395,18 +415,45 @@ footer p {
 }
 .cases-boxs .project-box {
   text-align: center;
-  flex-basis: 45%;
+  flex-basis: 47%;
   margin: 10px;
   overflow: hidden;
+  position: relative;
 }
 .cases-boxs .project-box:hover {
   cursor: pointer;
+}
+.cases-boxs .project-box.dimmer::after {
+  content: "";
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.55);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: background-color 0.1s ease;
+  transition-property: background-color;
+  transition-duration: 0.1s;
+  transition-timing-function: ease;
+  transition-delay: 0s;
 }
 .cases-link img {
   width: 100%;
   border: solid 1px #eee;
   border-top: none;
   border-radius: 5px;
+}
+@media only screen and (max-width: 767px) {
+  .cases-boxs .project-box {
+    flex-basis: 450px;
+  }
+  .cases-boxs .project-box.dimmer {
+    display: none;
+  }
+  .no-match {
+    text-align: center;
+    padding: 40px 0;
+  }
 }
 
 /* PROJECT */

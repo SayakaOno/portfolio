@@ -18,9 +18,9 @@ class Header extends React.Component {
               <span className="ui green empty circular label" />
               <span className="ui teal empty circular label" />
               <span className="ui blue empty circular label" />
-              <span class="ui violet empty circular label" />
-              <span class="ui purple empty circular label" />
-              <span class="ui pink empty circular label" />
+              <span className="ui violet empty circular label" />
+              <span className="ui purple empty circular label" />
+              <span className="ui pink empty circular label" />
             </div>
           </Link>
 

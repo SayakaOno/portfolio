@@ -49,7 +49,7 @@ const Project = props => {
           <p>{data.history[lang]}</p>
         </React.Fragment>
       ) : null}
-      <img src={require(`../img/${data.image}`)} alt={data.name[lang]} />
+      <img src={data.image} alt={data.name[lang]} />
       <a
         className="button ui secondary"
         href={data.url}

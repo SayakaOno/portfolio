@@ -11,7 +11,10 @@ const Footer = () => {
           <i className="linkedin icon" />
         </a>
       </div>
-      <p>&copy;{` ${new Date().getFullYear()} Sayaka Ono`}</p>
+      <p>
+        Made with <i className="heart icon" /> &copy;
+        {` ${new Date().getFullYear()} Sayaka Ono`}
+      </p>
     </footer>
   );
 };
