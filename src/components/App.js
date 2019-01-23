@@ -12,7 +12,7 @@ class App extends React.Component {
 
   handleLanguageChange = () => {
     this.setState(prevState => {
-      return { language: prevState.language === "en" ? "jp" : "en" };
+      return { language: prevState.language === "en" ? "ja" : "en" };
     });
   };
 
