@@ -61,7 +61,7 @@ class Contact extends React.Component {
 
   render() {
     return (
-      <section className="wrapper contact">
+      <div className="wrapper contact page">
         <h2>Contact</h2>
         <p>Please feel free to contact me !</p>
         <div className="container">
@@ -117,7 +117,7 @@ class Contact extends React.Component {
             <div className="button-container">{this.renderButton()}</div>
           </form>
         </div>
-      </section>
+      </div>
     );
   }
 }

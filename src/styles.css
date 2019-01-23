@@ -303,7 +303,6 @@ header nav ul li a {
 
 /* FOOTER */
 footer {
-  /* width: calc(100% - 80px); */
   background-color: #f3f3f3;
 }
 .footer-sm {
@@ -334,6 +333,11 @@ footer p {
 #modal .dimmer.modals {
   position: fixed;
   overflow-y: auto;
+}
+
+.wrapper.page {
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 /* HOME */

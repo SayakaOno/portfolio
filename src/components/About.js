@@ -1,30 +1,19 @@
 import React from "react";
-import { about } from "../data";
+import { about, mySkills } from "../data";
 
 const About = props => {
   const lang = props.language;
 
   return (
-    <div className="about wrapper">
+    <div className="about wrapper page">
       <h2>About me</h2>
       <div className="row">
         <div className="col-3">
           <h3>Skills</h3>
           <ul>
-            <li>JavaScript</li>
-            <li>React</li>
-            <li>Redux</li>
-            <li>PHP</li>
-            <li>Java</li>
-            <li>MySQL</li>
-            <li>MongoDB</li>
-            <li>Android</li>
-            <li>HTML5</li>
-            <li>CSS3</li>
-            <li>WordPress</li>
-            <li>shopify</li>
-            <li>Magento(back-end)</li>
-            <li>SEO</li>
+            {mySkills.map(skill => (
+              <li key={skill}>{skill}</li>
+            ))}
           </ul>
         </div>
         <div className="col-7">{about.main[lang]}</div>

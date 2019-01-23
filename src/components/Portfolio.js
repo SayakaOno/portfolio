@@ -96,6 +96,19 @@ class Portfolio extends React.Component {
     return "ui basic label tiny";
   };
 
+  renderModal = lang => {
+    return (
+      <Modal onDismiss={() => this.setState({ selectedProject: null })}>
+        <Project
+          id={this.state.selectedProject}
+          language={lang}
+          onDismiss={() => this.setState({ selectedProject: null })}
+          selectProject={this.selectProject}
+        />
+      </Modal>
+    );
+  };
+
   renderNoMatchProjectsFound = () => {
     if (this.state.showNotFound) {
       return <div className="no-match">No matching projects found...</div>;
@@ -108,16 +121,9 @@ class Portfolio extends React.Component {
     const lang = this.props.language;
 
     return this.state.selectedProject ? (
-      <Modal onDismiss={() => this.setState({ selectedProject: null })}>
-        <Project
-          id={this.state.selectedProject}
-          language={lang}
-          onDismiss={() => this.setState({ selectedProject: null })}
-          selectProject={this.selectProject}
-        />
-      </Modal>
+      this.renderModal(lang)
     ) : (
-      <div className="wrapper">
+      <div className="wrapper portfolio page">
         <h2>Portfolio</h2>
         <div className="filter">
           <i className="filter icon" />
