@@ -50,6 +50,9 @@ class Portfolio extends React.Component {
   };
 
   handleSelectElements = e => {
+    if (!e.target.closest("span")) {
+      return;
+    }
     let showNotFound = false;
     const skill = e.target.closest("span").innerHTML;
     this.setState(prevState => {

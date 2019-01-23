@@ -4,10 +4,18 @@ const Footer = () => {
   return (
     <footer>
       <div className="footer-sm">
-        <a href="https://github.com/SayakaOno">
+        <a
+          href="https://github.com/SayakaOno"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <i className="github icon" />
         </a>
-        <a href="https://www.linkedin.com/in/sayakaono/">
+        <a
+          href="https://www.linkedin.com/in/sayakaono/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <i className="linkedin icon" />
         </a>
       </div>

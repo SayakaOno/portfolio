@@ -503,6 +503,14 @@ footer p {
 .project h1 {
   text-align: center;
   margin-bottom: 10px;
+  font-size: 2em;
+}
+.project h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+.project p {
+  margin-bottom: 20px;
 }
 .project .category {
   text-align: center;
