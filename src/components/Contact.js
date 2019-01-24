@@ -1,4 +1,7 @@
 import React from "react";
+import axios from "axios";
+// just for the test
+const API_PATH = "http://localhost:32773/contact.php";
 
 function ValidateEmail(mail) {
   if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail)) {
@@ -9,11 +12,20 @@ function ValidateEmail(mail) {
 }
 
 class Contact extends React.Component {
-  state = {
-    name: { text: "", error: true },
-    email: { text: "", error: true },
-    message: { text: "", error: true }
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: { text: "", error: true },
+      email: { text: "", error: true },
+      message: { text: "", error: true },
+      mailSent: null,
+      errorMessage: null
+    };
+  }
+
+  componentWillUnmount() {
+    this.setState({ mailSent: null, error: null });
+  }
 
   formClass = (name, element) => {
     let classes = {
@@ -47,16 +59,52 @@ class Contact extends React.Component {
   };
 
   renderButton = () => {
-    for (let key in this.state) {
+    for (let key of ["name", "email", "message"]) {
       if (this.state[key].error) {
         return null;
       }
     }
     return (
-      <button type="submit" className="btn btn-outline-success">
+      <button
+        type="submit"
+        className="btn btn-outline-success"
+        onClick={this.handleSubmit}
+      >
         Send
       </button>
     );
+  };
+
+  renderResultMessage = () => {
+    if (this.state.mailSent) {
+      return "Thank you for contacting me.";
+    } else if (this.state.errorMessage) {
+      return this.state.errorMessage;
+    } else {
+      return null;
+    }
+  };
+
+  handleSubmit = async e => {
+    e.preventDefault();
+    const { name, email, message } = this.state;
+    const response = await axios({
+      method: "post",
+      url: `${API_PATH}`,
+      headers: { "content-type": "application/json" },
+      data: { name: name.text, email: email.text, message: message.text }
+    });
+    if (!response || response.data.message) {
+      this.setState({ errorMessage: response.data.message });
+    } else {
+      this.setState({
+        mailSent: response.data.sent,
+        error: response.data.error ? response.data.error : null,
+        name: { text: "", error: true },
+        email: { text: "", error: true },
+        message: { text: "", error: true }
+      });
+    }
   };
 
   render() {
@@ -73,6 +121,7 @@ class Contact extends React.Component {
               <div className="col-10 col-sm-10">
                 <input
                   id="name"
+                  ref={this.nameInput}
                   type="text"
                   className={this.formClass("name", "input")}
                   value={this.state.name.text}
@@ -89,6 +138,7 @@ class Contact extends React.Component {
               <div className="col-10 col-sm-10">
                 <input
                   id="email"
+                  ref={this.emailInput}
                   type="email"
                   className={this.formClass("email", "input")}
                   value={this.state.email.text}
@@ -105,6 +155,7 @@ class Contact extends React.Component {
               <div className="col-10 col-sm-10">
                 <textarea
                   id="message"
+                  ref={this.messageInput}
                   type="email"
                   className={this.formClass("message", "input")}
                   rows="5"
@@ -116,6 +167,7 @@ class Contact extends React.Component {
             </div>
             <div className="button-container">{this.renderButton()}</div>
           </form>
+          <div className="result-message">{this.renderResultMessage()}</div>
         </div>
       </div>
     );
