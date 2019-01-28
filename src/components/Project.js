@@ -19,7 +19,7 @@ const Project = props => {
           <i className="angle left icon" />
         </div>
       )}
-      {+props.id + 1 < portfolioData.length ? (
+      {+props.id + 1 < portfolioData.length && (
         <div
           className="ui icon button right"
           onClick={() => props.selectProject(+props.id + 1)}
@@ -29,7 +29,7 @@ const Project = props => {
         >
           <i className="angle right icon" />
         </div>
-      ) : null}
+      )}
       <h1>{data.name[lang]}</h1>
       <div className="category">
         <i>{`${data.category[lang]} / ${data.duration}, ${data.date}`}</i>
@@ -43,12 +43,12 @@ const Project = props => {
       </div>
       <h2>Summary</h2>
       <p>{data.summary[lang]}</p>
-      {data.history ? (
+      {data.history && (
         <React.Fragment>
           <h2>How this was born</h2>
           <p>{data.history[lang]}</p>
         </React.Fragment>
-      ) : null}
+      )}
       <img src={data.image} alt={data.name[lang]} />
       <a
         className="button ui secondary"

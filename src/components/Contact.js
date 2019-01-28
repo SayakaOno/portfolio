@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 // just for the test
-const API_PATH = "http://localhost:32773/contact.php";
+const API_PATH = "http://localhost:8888/contact.php";
 
 function ValidateEmail(mail) {
   if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail)) {
@@ -99,7 +99,7 @@ class Contact extends React.Component {
     } else {
       this.setState({
         mailSent: response.data.sent,
-        error: response.data.error ? response.data.error : null,
+        error: response.data.error && response.data.error,
         name: { text: "", error: true },
         email: { text: "", error: true },
         message: { text: "", error: true }
