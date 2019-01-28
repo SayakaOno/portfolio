@@ -1,5 +1,7 @@
 import React from "react";
 import axios from "axios";
+import Footer from "../components/Footer";
+
 // just for the test
 const API_PATH = "http://localhost:8888/contact.php";
 
@@ -109,67 +111,70 @@ class Contact extends React.Component {
 
   render() {
     return (
-      <div className="wrapper contact page">
-        <h2>Contact</h2>
-        <p>Please feel free to contact me !</p>
-        <div className="container">
-          <form>
-            <div className={this.formClass("name", "div")}>
-              <label htmlFor="name" className="col-4 col-sm-2">
-                Name
-              </label>
-              <div className="col-10 col-sm-10">
-                <input
-                  id="name"
-                  ref={this.nameInput}
-                  type="text"
-                  className={this.formClass("name", "input")}
-                  value={this.state.name.text}
-                  onChange={this.handleChange}
-                  name="name"
-                  autoComplete="off"
-                />
+      <React.Fragment>
+        <div className="wrapper contact page">
+          <h2>Contact</h2>
+          <p>Please feel free to contact me !</p>
+          <div className="container">
+            <form>
+              <div className={this.formClass("name", "div")}>
+                <label htmlFor="name" className="col-4 col-sm-2">
+                  Name
+                </label>
+                <div className="col-10 col-sm-10">
+                  <input
+                    id="name"
+                    ref={this.nameInput}
+                    type="text"
+                    className={this.formClass("name", "input")}
+                    value={this.state.name.text}
+                    onChange={this.handleChange}
+                    name="name"
+                    autoComplete="off"
+                  />
+                </div>
               </div>
-            </div>
-            <div className={this.formClass("email", "div")}>
-              <label htmlFor="email" className="col-4 col-sm-2">
-                Email
-              </label>
-              <div className="col-10 col-sm-10">
-                <input
-                  id="email"
-                  ref={this.emailInput}
-                  type="email"
-                  className={this.formClass("email", "input")}
-                  value={this.state.email.text}
-                  onChange={this.handleChange}
-                  name="email"
-                  autoComplete="off"
-                />
+              <div className={this.formClass("email", "div")}>
+                <label htmlFor="email" className="col-4 col-sm-2">
+                  Email
+                </label>
+                <div className="col-10 col-sm-10">
+                  <input
+                    id="email"
+                    ref={this.emailInput}
+                    type="email"
+                    className={this.formClass("email", "input")}
+                    value={this.state.email.text}
+                    onChange={this.handleChange}
+                    name="email"
+                    autoComplete="off"
+                  />
+                </div>
               </div>
-            </div>
-            <div className={this.formClass("message", "div")}>
-              <label htmlFor="message" className="col-4 col-sm-2">
-                Message
-              </label>
-              <div className="col-10 col-sm-10">
-                <textarea
-                  id="message"
-                  ref={this.messageInput}
-                  type="email"
-                  className={this.formClass("message", "input")}
-                  rows="5"
-                  value={this.state.message.text}
-                  onChange={this.handleChange}
-                  name="message"
-                />
+              <div className={this.formClass("message", "div")}>
+                <label htmlFor="message" className="col-4 col-sm-2">
+                  Message
+                </label>
+                <div className="col-10 col-sm-10">
+                  <textarea
+                    id="message"
+                    ref={this.messageInput}
+                    type="email"
+                    className={this.formClass("message", "input")}
+                    rows="5"
+                    value={this.state.message.text}
+                    onChange={this.handleChange}
+                    name="message"
+                  />
+                </div>
               </div>
-            </div>
-            <div className="button-container">{this.renderButton()}</div>
-          </form>
-          <div className="result-message">{this.renderResultMessage()}</div>
+              <div className="button-container">{this.renderButton()}</div>
+            </form>
+            <div className="result-message">{this.renderResultMessage()}</div>
+          </div>
         </div>
-      </div>
+        <Footer />
+      </React.Fragment>
     );
   }
 }
