@@ -491,10 +491,6 @@ figcaption.hover-mask {
   right: 0;
   opacity: 0;
   color: #fff;
-  padding: 30px;
-}
-figure.hover-parent:hover .hover-mask {
-  opacity: 1;
 }
 figcaption.hover-mask {
   padding-bottom: 0;
@@ -513,22 +509,24 @@ figcaption.hover-mask {
   align-content: center;
   justify-content: center;
 }
+
 figure.hover-parent:hover .hover-mask {
-  color: #fff;
-  padding-bottom: 30px;
   opacity: 1;
   -webkit-transform: scale(1);
   transform: scale(1);
 }
-figure.hover-parent:hover .hover-mask h3 {
+figure.hover-parent .hover-mask h3 {
   font-size: 1.5em;
   color: #fff;
   margin-bottom: 20px;
   flex-basis: 100%;
 }
-figure.hover-parent:hover .hover-mask p {
+figure.hover-parent .hover-mask p {
   color: #fff;
   flex-basis: 100%;
+}
+figure.cases-link.hover-parent:hover img {
+  transform: scale(1.1);
 }
 
 /* PROJECT */
