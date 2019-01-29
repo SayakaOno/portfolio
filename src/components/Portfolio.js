@@ -142,10 +142,13 @@ class Portfolio extends React.Component {
               id={index}
               className={this.projectBoxClassName(data)}
             >
-              <div className="cases-link">
-                <p>{data.name[lang]}</p>
+              <figure className="cases-link hover-parent">
                 <img src={data.image} alt={data.name[lang]} />
-              </div>
+                <figcaption className="hover-mask">
+                  <h3>{data.name[lang]}</h3>
+                  <p>{data.category[lang]}</p>
+                </figcaption>
+              </figure>
             </div>
           ))}
         </section>

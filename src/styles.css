@@ -222,7 +222,6 @@ p {
   opacity: 0;
   z-index: 1;
 }
-
 .fade-enter.fade-enter-active {
   opacity: 1;
   transition: opacity 250ms ease-in;
@@ -432,6 +431,7 @@ footer p {
   text-align: center;
   flex-basis: 47%;
   margin: 10px;
+  margin-bottom: 30px;
   overflow: hidden;
   position: relative;
 }
@@ -469,6 +469,66 @@ footer p {
     text-align: center;
     padding: 40px 0;
   }
+}
+/* animation */
+figure img {
+  -webkit-transition: all 0.35s;
+  transition: all 0.35s;
+}
+figure.hover-parent:hover img {
+  filter: brightness(0.4);
+  -webkit-filter: brightness(0.4);
+}
+figure.hover-parent {
+  position: relative;
+  overflow: hidden;
+}
+figcaption.hover-mask {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  color: #fff;
+  padding: 30px;
+}
+figure.hover-parent:hover .hover-mask {
+  opacity: 1;
+}
+figcaption.hover-mask {
+  padding-bottom: 0;
+  width: 80%;
+  height: 80%;
+  left: 10%;
+  top: 10%;
+  border-bottom: 1px solid #fff;
+  border-top: 1px solid #fff;
+  -webkit-transform: scale(0, 1);
+  transform: scale(0, 1);
+  transition: opacity 0.35s;
+  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+}
+figure.hover-parent:hover .hover-mask {
+  color: #fff;
+  padding-bottom: 30px;
+  opacity: 1;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+figure.hover-parent:hover .hover-mask h3 {
+  font-size: 1.5em;
+  color: #fff;
+  margin-bottom: 20px;
+  flex-basis: 100%;
+}
+figure.hover-parent:hover .hover-mask p {
+  color: #fff;
+  flex-basis: 100%;
 }
 
 /* PROJECT */
