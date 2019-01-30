@@ -1,6 +1,7 @@
 import React from "react";
 import Modal from "./Modal";
 import Project from "./Project";
+import Footer from "../components/Footer";
 import { portfolioData, elements } from "../data";
 
 class Portfolio extends React.Component {
@@ -75,6 +76,13 @@ class Portfolio extends React.Component {
     });
   };
 
+  handleClear = e => {
+    if (!e.target.closest(".clear-filter-button")) {
+      return;
+    }
+    this.setState({ selectedElements: [] });
+  };
+
   selectProject = id => {
     this.setState({ selectedProject: id });
   };
@@ -87,6 +95,16 @@ class Portfolio extends React.Component {
       }
     }
     return "project-box";
+  };
+
+  handleOrder = data => {
+    const elements = [data.category.en, ...data.skills];
+    for (let element of this.state.selectedElements) {
+      if (!elements.includes(element)) {
+        return null;
+      }
+    }
+    return { order: -4 };
   };
 
   labelClassName = element => {
@@ -123,37 +141,48 @@ class Portfolio extends React.Component {
     return this.state.selectedProject ? (
       this.renderModal(lang)
     ) : (
-      <div className="wrapper portfolio page">
-        <h2>Portfolio</h2>
-        <div className="filter">
-          <i className="filter icon" />
-          <div onClick={this.handleSelectElements}>
-            {elements.map(element => (
-              <span className={this.labelClassName(element)} key={element}>
-                {element}
-              </span>
-            ))}
-          </div>
-        </div>
-        <section className="cases-boxs" onClick={this.handleClick}>
-          {portfolioData.map((data, index) => (
-            <div
-              key={data.name[lang]}
-              id={index}
-              className={this.projectBoxClassName(data)}
-            >
-              <figure className="cases-link hover-parent">
-                <img src={data.image} alt={data.name[lang]} />
-                <figcaption className="hover-mask">
-                  <h3>{data.name[lang]}</h3>
-                  <p>{data.category[lang]}</p>
-                </figcaption>
-              </figure>
+      <React.Fragment>
+        <div className="wrapper portfolio page">
+          <h2>Portfolio</h2>
+          <div className="filter">
+            <div className="filter-tags" onClick={this.handleSelectElements}>
+              {elements.map(element => (
+                <span className={this.labelClassName(element)} key={element}>
+                  {element}
+                </span>
+              ))}
             </div>
-          ))}
-        </section>
-        {this.renderNoMatchProjectsFound()}
-      </div>
+            <div className="filter-icon">
+              {this.state.selectedElements.length > 0 && (
+                <div className="clear-filter-button" onClick={this.handleClear}>
+                  <i className="ban icon" />
+                  clear filter
+                </div>
+              )}
+            </div>
+          </div>
+          <section className="cases-boxs" onClick={this.handleClick}>
+            {portfolioData.map((data, index) => (
+              <div
+                key={data.name[lang]}
+                id={index}
+                className={this.projectBoxClassName(data)}
+                style={this.handleOrder(data)}
+              >
+                <figure className="cases-link hover-parent">
+                  <img src={data.image} alt={data.name[lang]} />
+                  <figcaption className="hover-mask">
+                    <h3>{data.name[lang]}</h3>
+                    <p>{data.category[lang]}</p>
+                  </figcaption>
+                </figure>
+              </div>
+            ))}
+          </section>
+          {this.renderNoMatchProjectsFound()}
+        </div>
+        <Footer />
+      </React.Fragment>
     );
   }
 }

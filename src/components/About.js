@@ -9,16 +9,14 @@ const About = props => {
     <React.Fragment>
       <div className="about wrapper page">
         <h2>About me</h2>
-        <div className="row">
-          <div className="col-3">
-            <h3>Skills</h3>
-            <ul>
-              {mySkills.map(skill => (
-                <li key={skill}>{skill}</li>
-              ))}
-            </ul>
-          </div>
-          <div className="col-7">{about.main[lang]}</div>
+        <div className="">{about.main[lang]}</div>
+        <div className="">
+          <h3>Skills</h3>
+          <ul>
+            {mySkills.map(skill => (
+              <li key={skill}>{skill}</li>
+            ))}
+          </ul>
         </div>
       </div>
       <Footer />

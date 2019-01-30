@@ -347,7 +347,7 @@ footer p {
 
 .wrapper.page {
   padding-top: 50px;
-  padding-bottom: 50px;
+  padding-bottom: 150px;
 }
 
 /* HOME */
@@ -410,13 +410,34 @@ footer p {
 /* Portfolio */
 .filter {
   text-align: center;
+  margin-bottom: 50px;
+}
+.filter-icon {
+  height: 30px;
+}
+.filter.icon {
+  margin-bottom: 20px;
+}
+.filter-tags {
+  margin-bottom: 10px;
+}
+.clear-filter-button {
+  border: 1px solid #e8e8e8;
+  border-radius: 5px;
+  display: inline-block;
+  padding: 5px 10px;
+  height: 30px;
+}
+.clear-filter-button:hover {
+  cursor: pointer;
 }
 .filter .ui.label {
   color: rgba(0, 0, 0, 0.87) !important;
   border: 1px solid #e8e8e8;
+  margin-bottom: 5px;
 }
 .filter .ui.label.basic {
-  color: rgba(34, 36, 38, 0.15) !important;
+  color: rgba(0, 0, 0, 0.87) !important;
 }
 .filter .ui.label.basic:hover {
   cursor: pointer;
@@ -434,6 +455,7 @@ footer p {
   margin-bottom: 30px;
   overflow: hidden;
   position: relative;
+  transition: all ease-in;
 }
 .cases-boxs .project-box:hover {
   cursor: pointer;
