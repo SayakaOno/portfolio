@@ -633,6 +633,41 @@ figure.cases-link.hover-parent:hover img {
   border-top: none;
 }
 
+/* ABOUT */
+.about h3 {
+  margin-bottom: 5px;
+}
+.about-container {
+  display: flex;
+}
+.about-container .image {
+  width: 30%;
+  margin: 0 30px;
+}
+.about-container img {
+  width: 100%;
+  height: auto;
+  filter: brightness(0.4);
+  -webkit-filter: brightness(0.4);
+}
+.about-container .main-content {
+  width: 65%;
+}
+.about .main-content > div {
+  margin-bottom: 20px;
+}
+.about ul.skills li {
+  list-style: none;
+  display: inline-block;
+}
+.about ul.skills li:after {
+  content: "/";
+  padding: 0 3px;
+}
+.about ul.skills li:last-child:after {
+  content: "";
+}
+
 /* CONTACT */
 .contact p {
   text-align: center;
