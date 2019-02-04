@@ -1,20 +1,37 @@
-import React from "react";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
-import { TransitionGroup, CSSTransition } from "react-transition-group";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
-import Home from "../components/Home";
-import Portfolio from "../components/Portfolio";
-import About from "../components/About";
-import Contact from "../components/Contact";
+import React from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
+import { Link } from 'react-router-dom';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import Home from '../components/Home';
+import Portfolio from '../components/Portfolio';
+import About from '../components/About';
+import Contact from '../components/Contact';
 
 class App extends React.Component {
-  state = { language: "en" };
+  constructor(props) {
+    super(props);
+    this.state = { language: 'en' };
+
+    this.humbergerNav = React.createRef();
+    this.inputBox = React.createRef();
+  }
 
   handleLanguageChange = () => {
     this.setState(prevState => {
-      return { language: prevState.language === "en" ? "ja" : "en" };
+      return { language: prevState.language === 'en' ? 'ja' : 'en' };
     });
+  };
+
+  toggleMenu = e => {
+    if (e.target.closest('ul#menu') && !e.target.closest('ul#menu li')) {
+      return;
+    }
+    this.humbergerNav.current.classList.toggle('open');
+    if (e.target.closest('ul#menu li')) {
+      this.inputBox.current.checked = !this.inputBox.current.checked;
+    }
   };
 
   render() {
@@ -23,6 +40,44 @@ class App extends React.Component {
         <Route
           render={({ location }) => (
             <React.Fragment>
+              <nav
+                ref={this.humbergerNav}
+                role='navigation'
+                className='humberger-menu'
+              >
+                <div id='menuToggle' onClick={this.toggleMenu}>
+                  <input ref={this.inputBox} type='checkbox' />
+                  <span />
+                  <span />
+                  <span />
+                  <ul id='menu'>
+                    <li>
+                      <Link className='item' to='/portfolio'>
+                        Portfolio
+                      </Link>
+                    </li>
+                    <li>
+                      <Link className='item' to='/about'>
+                        About
+                      </Link>
+                    </li>
+                    <li>
+                      <Link className='item' to='/contact'>
+                        Contact
+                      </Link>
+                    </li>
+                    <li>
+                      <div
+                        className='item language'
+                        onClick={this.handleLanguageChange}
+                      >
+                        {this.state.language === 'en' ? '日本語' : 'English'}
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </nav>
+
               <Header
                 onLanguageChange={this.handleLanguageChange}
                 language={this.state.language}
@@ -31,27 +86,27 @@ class App extends React.Component {
               <TransitionGroup>
                 <CSSTransition
                   key={location.key}
-                  classNames="fade"
+                  classNames='fade'
                   timeout={300}
                 >
                   <Switch location={location}>
                     <Route
-                      path="/"
+                      path='/'
                       exact
                       render={() => <Home language={this.state.language} />}
                     />
                     <Route
-                      path="/portfolio"
+                      path='/portfolio'
                       render={() => (
                         <Portfolio language={this.state.language} />
                       )}
                     />
                     <Route
-                      path="/about"
+                      path='/about'
                       render={() => <About language={this.state.language} />}
                     />
                     <Route
-                      path="/contact"
+                      path='/contact'
                       render={() => <Contact language={this.state.language} />}
                     />
                   </Switch>
