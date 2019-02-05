@@ -507,7 +507,7 @@ footer p {
 /* HOME */
 .index-banner {
   width: 100%;
-  height: calc(100vh - 65px);
+  height: calc(100vh);
   background-image: url('../src/img/banner.jpg');
   background-repeat: no-repeat;
   background-position: center;
@@ -540,7 +540,8 @@ footer p {
   /* text-align: center; */
   text-shadow: 2px 2px 8px #111;
 }
-.wrapper {
+.wrapper,
+.home.index-banner {
   padding-top: 115px !important;
 }
 
