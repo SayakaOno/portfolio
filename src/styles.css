@@ -384,6 +384,8 @@ header {
   height: 65px;
   z-index: 1000;
   overflow: hidden;
+  border-bottom: 1px solid #d1d5da;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.075);
 }
 .header-content {
   position: relative;
@@ -452,6 +454,9 @@ header nav ul li a {
   text-transform: uppercase;
   padding-top: 20px !important;
   display: inline-block;
+}
+header nav ul li a:focus {
+  text-decoration: none;
 }
 
 @media only screen and (max-width: 767px) {
@@ -608,6 +613,7 @@ footer p {
   overflow: hidden;
   position: relative;
   transition: all ease-in;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
 }
 .cases-boxs .project-box:hover {
   cursor: pointer;
@@ -824,7 +830,7 @@ figure.cases-link.hover-parent:hover img {
 .contact p {
   text-align: center;
   font-size: 16px;
-  margin-bottom: 30px;
+  margin-bottom: 60px;
 }
 form {
   max-width: 550px !important;
@@ -844,12 +850,16 @@ textarea {
 }
 input:focus,
 textarea:focus {
-  box-shadow: 0 0 4px rgba(255, 0, 0, 0.5);
+  border-color: #85b7d9 !important;
 }
 .contact .btn {
   display: block !important;
   margin: 0 auto;
-  margin-top: 20px;
+  margin-top: 50px;
+}
+.has-warning .form-control,
+.has-success .form-control {
+  border: 1px solid rgba(34, 36, 38, 0.15);
 }
 
 /* ABOUT */
