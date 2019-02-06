@@ -1,42 +1,20 @@
-import React from "react";
-import { portfolioData } from "../data";
+import React from 'react';
+import { portfolioData } from '../data';
 
 const Project = props => {
   const data = portfolioData[props.id];
   const lang = props.language;
 
   return (
-    <div className="project">
-      <i className="times icon" onClick={props.onDismiss} />
-      {+props.id - 1 < 0 ? null : (
-        <div
-          className="ui icon button left"
-          onClick={() => props.selectProject(`${+props.id - 1}`)}
-          data-tooltip={portfolioData[+props.id - 1].name[lang]}
-          data-position="bottom left"
-          data-variation="mini"
-        >
-          <i className="angle left icon" />
-        </div>
-      )}
-      {+props.id + 1 < portfolioData.length && (
-        <div
-          className="ui icon button right"
-          onClick={() => props.selectProject(+props.id + 1)}
-          data-tooltip={portfolioData[+props.id + 1].name[lang]}
-          data-position="bottom right"
-          data-variation="mini"
-        >
-          <i className="angle right icon" />
-        </div>
-      )}
+    <div className='project'>
+      <i className='times icon' onClick={props.onDismiss} />
       <h1>{data.name[lang]}</h1>
-      <div className="category">
+      <div className='category'>
         <i>{`${data.category[lang]} / ${data.duration}, ${data.date}`}</i>
       </div>
-      <div className="skills">
+      <div className='skills'>
         {data.skills.map(skill => (
-          <span key={skill} className="ui basic label">
+          <span key={skill} className='ui basic label'>
             {skill}
           </span>
         ))}
@@ -51,13 +29,45 @@ const Project = props => {
       )}
       <img src={data.image} alt={data.name[lang]} />
       <a
-        className="button ui secondary"
+        className='button ui secondary'
         href={data.url}
-        target="_blank"
-        rel="noopener noreferrer"
+        target='_blank'
+        rel='noopener noreferrer'
       >
         Demo
       </a>
+      <div className='project-link'>
+        {+props.id - 1 < 0 ? null : (
+          <div
+            className='ui icon button left'
+            onClick={() => props.selectProject(`${+props.id - 1}`)}
+            data-tooltip={portfolioData[+props.id - 1].name[lang]}
+            data-position={
+              document.documentElement.clientWidth > 991
+                ? 'bottom left'
+                : 'right center'
+            }
+            data-variation='mini'
+          >
+            <i className='angle left icon' />
+          </div>
+        )}
+        {+props.id + 1 < portfolioData.length && (
+          <div
+            className='ui icon button right'
+            onClick={() => props.selectProject(+props.id + 1)}
+            data-tooltip={portfolioData[+props.id + 1].name[lang]}
+            data-position={
+              document.documentElement.clientWidth > 991
+                ? 'bottom right'
+                : 'left center'
+            }
+            data-variation='mini'
+          >
+            <i className='angle right icon' />
+          </div>
+        )}
+      </div>
     </div>
   );
 };
