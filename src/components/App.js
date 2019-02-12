@@ -3,7 +3,6 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
-import Footer from '../components/Footer';
 import Home from '../components/Home';
 import Portfolio from '../components/Portfolio';
 import About from '../components/About';
@@ -112,7 +111,6 @@ class App extends React.Component {
                   </Switch>
                 </CSSTransition>
               </TransitionGroup>
-              {/* <Footer /> */}
               {/* <Contact /> */}
             </React.Fragment>
           )}

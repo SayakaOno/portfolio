@@ -585,7 +585,7 @@ footer p {
   .vertical-center.additional .link-to-portfolio a {
     position: absolute;
     right: 150px;
-    bottom: 150px;
+    top: 65%;
   }
 }
 
@@ -611,7 +611,7 @@ footer p {
   right: 0;
   bottom: 0;
   /* background: #fff; */
-  background: #2098d1;
+  background: #1e70bf;
   -webkit-transform: scaleX(0);
   transform: scaleX(0);
   -webkit-transform-origin: 0 50%;
@@ -648,41 +648,6 @@ footer p {
 }
 
 /* Portfolio */
-.filter {
-  text-align: center;
-  margin-bottom: 50px;
-}
-.filter-icon {
-  height: 30px;
-}
-.filter.icon {
-  margin-bottom: 20px;
-}
-.filter-tags {
-  margin-bottom: 10px;
-}
-.clear-filter-button {
-  border: 1px solid #e8e8e8;
-  border-radius: 5px;
-  display: inline-block;
-  padding: 5px 10px;
-  height: 30px;
-}
-.clear-filter-button:hover {
-  cursor: pointer;
-}
-.filter .ui.label {
-  color: rgba(0, 0, 0, 0.87) !important;
-  border: 1px solid #e8e8e8;
-  margin-bottom: 5px;
-}
-.filter .ui.label.basic {
-  color: rgba(0, 0, 0, 0.87) !important;
-}
-.filter .ui.label.basic:hover {
-  cursor: pointer;
-  color: rgba(0, 0, 0, 0.87) !important;
-}
 .cases-boxs {
   display: flex;
   flex-flow: row wrap;
@@ -790,6 +755,83 @@ figure.hover-parent .hover-mask p {
 }
 figure.cases-link.hover-parent:hover img {
   transform: scale(1.1);
+}
+/* filter */
+.filter {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  transition: all 0.3s ease;
+  background-color: #1b1c1d;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.07);
+  cursor: pointer;
+}
+.filter.open {
+  background-color: rgba(0, 0, 0, 0.85);
+  padding: 18px 32px;
+  border-radius: 5px;
+  width: 300px;
+  height: 200px;
+  cursor: default;
+}
+.filter .button-copy {
+  text-align: center;
+  line-height: 50px;
+  color: #f7f7f7;
+}
+.filter.open .button-copy {
+  display: none;
+}
+.filter .cancel {
+  font-size: 12px;
+  text-align: center;
+  margin-top: 1em;
+  color: #f7f7f7;
+}
+.filter .cancel span {
+  cursor: pointer;
+}
+.filter .cancel span:hover {
+  text-decoration: underline;
+}
+.filter-icon {
+  height: 30px;
+  color: #fff;
+  padding: 5px 10px 5px 0;
+  height: 30px;
+}
+.filter.icon {
+  margin-bottom: 20px;
+}
+.filter-container {
+  display: none;
+}
+.filter.open .filter-container {
+  display: block;
+}
+.filter-tags {
+  margin-bottom: 10px;
+}
+.clear-filter-button:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+.filter .ui.label {
+  color: #fff !important;
+  border: 1px solid #1e70bf;
+  background-color: #1e70bf;
+  margin-bottom: 5px;
+}
+.filter .ui.label.basic {
+  color: rgba(0, 0, 0, 0.87) !important;
+  background-color: #fff;
+}
+.filter .ui.label.basic:hover {
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.87) !important;
 }
 
 /* PROJECT */
