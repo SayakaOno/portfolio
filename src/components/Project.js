@@ -28,14 +28,26 @@ const Project = props => {
         </React.Fragment>
       )}
       <img src={data.image} alt={data.name[lang]} />
-      <a
-        className='button ui secondary'
-        href={data.url}
-        target='_blank'
-        rel='noopener noreferrer'
-      >
-        Demo
-      </a>
+      <div className='links'>
+        <a
+          className='button ui secondary'
+          href={data.demoUrl}
+          target='_blank'
+          rel='noopener noreferrer'
+        >
+          Demo
+        </a>
+        {data.githubUrl && (
+          <a
+            className='button ui secondary'
+            href={data.githubUrl}
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            GitHub
+          </a>
+        )}
+      </div>
       <div className='project-link'>
         {+props.id - 1 < 0 ? null : (
           <div
