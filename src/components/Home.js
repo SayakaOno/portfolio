@@ -12,11 +12,22 @@ class Home extends React.Component {
     };
     this.verticalCenter = React.createRef();
     this.linkToPortfolio = React.createRef();
+    this.id = null;
+    this.showPortfolioLinkId = null;
+    this.addClassToVerticalCenterId = null;
+    this.animateTextId = null;
     this.counter = 1;
   }
 
   componentDidMount() {
-    setTimeout(this.animateText, 500);
+    this.animateTextId = setTimeout(this.animateText, 500);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.animateTextId);
+    clearInterval(this.id);
+    clearInterval(this.showPortfolioLinkId);
+    clearInterval(this.addClassToVerticalCenterId);
   }
 
   animateText = () => {
@@ -36,13 +47,13 @@ class Home extends React.Component {
   setText = (text, callback = null) => {
     let key = Object.keys(text)[0];
     let value = Object.values(text)[0];
-    let id = setInterval(() => {
+    this.id = setInterval(() => {
       if (this.counter !== value.length + 1) {
         this.setState({ [key]: value.slice(0, this.counter) });
         this.counter++;
       } else {
         this.counter = 1;
-        clearInterval(id);
+        clearInterval(this.id);
         if (callback) {
           callback();
         }
@@ -51,7 +62,10 @@ class Home extends React.Component {
   };
 
   addClassToVerticalCenter = callback => {
-    setTimeout(
+    if (!this.verticalCenter.current) {
+      return;
+    }
+    this.addClassToVerticalCenterId = setTimeout(
       () => (this.verticalCenter.current.className += ' additional'),
       700
     );
@@ -59,7 +73,10 @@ class Home extends React.Component {
   };
 
   showPortfolioLink = () => {
-    setTimeout(() => {
+    if (!this.linkToPortfolio.current) {
+      return;
+    }
+    this.showPortfolioLinkId = setTimeout(() => {
       this.linkToPortfolio.current.className += ' show';
     }, 2000);
   };
