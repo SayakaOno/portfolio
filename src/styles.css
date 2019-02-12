@@ -526,7 +526,7 @@ footer p {
 }
 .index-banner h2 {
   font-family: arial;
-  font-size: 60px;
+  font-size: 50px;
   font-weight: 900;
   line-height: 60px;
   text-shadow: 2px 2px 8px #111;
@@ -547,8 +547,6 @@ footer p {
 .vertical-center.additional {
   position: relative;
   vertical-align: top;
-  text-align: left;
-  padding-left: 100px;
   padding-top: 100px;
   animation: show 1.5s linear 0s;
 }
@@ -568,14 +566,27 @@ footer p {
   animation: show 1.5s linear 0s;
 }
 .vertical-center.additional .link-to-portfolio a {
-  position: absolute;
   border: solid 3px #fff;
   color: #fff;
   width: fit-content;
   padding: 20px;
   font-weight: bold;
-  right: 150px;
-  bottom: 150px;
+}
+@media only screen and (max-width: 767px) {
+  .vertical-center.additional .link-to-portfolio a {
+    margin-top: 40px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .vertical-center.additional {
+    padding-left: 100px;
+    text-align: left;
+  }
+  .vertical-center.additional .link-to-portfolio a {
+    position: absolute;
+    right: 150px;
+    bottom: 150px;
+  }
 }
 
 /* Sweep To Right */
