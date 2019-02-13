@@ -1,5 +1,5 @@
 import React from 'react';
-import { portfolioData } from '../data';
+import { portfolio, portfolioData } from '../data';
 
 const Project = props => {
   const data = portfolioData[props.id];
@@ -19,11 +19,11 @@ const Project = props => {
           </span>
         ))}
       </div>
-      <h2>Summary</h2>
+      <h2>{portfolio.summary[lang]}</h2>
       <p>{data.summary[lang]}</p>
       {data.history && (
         <React.Fragment>
-          <h2>How this was born</h2>
+          <h2>{portfolio.episode[lang]}</h2>
           <p>{data.history[lang]}</p>
         </React.Fragment>
       )}

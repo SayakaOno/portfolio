@@ -118,7 +118,7 @@ class Contact extends React.Component {
       <React.Fragment>
         <div className='wrapper contact page'>
           <h2>Contact</h2>
-          <p>{contactData.description[lang]}</p>
+          <p className='col-12'>{contactData.description[lang]}</p>
           <div className='container'>
             <form>
               <div className={this.formClass('name', 'div')}>

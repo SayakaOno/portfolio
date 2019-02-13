@@ -90,8 +90,8 @@ class Home extends React.Component {
             <h1>{this.state.title}</h1>
             <p>{this.state.location}</p>
             <div ref={this.linkToPortfolio} className='link-to-portfolio'>
-              <Link className='hvr-sweep-to-right' to='/portfolio'>
-                PORTFOLIO <i className='fas fa-angle-double-right' />
+              <Link className='hvr-icon-float-away pulse' to='/portfolio'>
+                PORTFOLIO <i className='fas fa-angle-double-right hvr-icon' />
               </Link>
             </div>
           </div>
