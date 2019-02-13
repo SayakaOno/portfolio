@@ -7,7 +7,7 @@ import { contactData } from '../data';
 const API_PATH = 'http://localhost:8888/contact.php';
 
 function ValidateEmail(mail) {
-  if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail)) {
+  if (/^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$/.test(mail)) {
     return true;
   }
   console.log('You have entered an invalid email address!');
