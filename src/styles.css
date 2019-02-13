@@ -585,13 +585,13 @@ footer p {
 }
 @media only screen and (min-width: 768px) {
   .vertical-center.additional {
-    padding-left: 100px;
+    padding-left: 130px;
     text-align: left;
   }
   .vertical-center.additional .link-to-portfolio a {
     position: absolute;
     right: 150px;
-    top: 65%;
+    top: 75%;
   }
 }
 
