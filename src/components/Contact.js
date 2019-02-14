@@ -100,7 +100,9 @@ class Contact extends React.Component {
       data: { name: name.text, email: email.text, message: message.text }
     });
     if (!response || response.data.message) {
-      this.setState({ errorMessage: response.data.message[lang] });
+      this.setState({
+        errorMessage: response.data.message[this.props.language]
+      });
     } else {
       this.setState({
         mailSent: response.data.sent,
