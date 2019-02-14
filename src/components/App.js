@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { HashRouter, Route, Switch } from 'react-router-dom';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import { Link } from 'react-router-dom';
 import ScrollToTop from '../components/ScrollToTop';
@@ -36,7 +36,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <BrowserRouter>
+      <HashRouter hashType='noslash'>
         <ScrollToTop>
           <Route
             render={({ location }) => (
@@ -120,7 +120,7 @@ class App extends React.Component {
             )}
           />
         </ScrollToTop>
-      </BrowserRouter>
+      </HashRouter>
     );
   }
 }
