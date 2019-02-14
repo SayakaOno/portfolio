@@ -1102,8 +1102,11 @@ textarea:focus {
 .has-success .form-control {
   border: 1px solid rgba(34, 36, 38, 0.15);
 }
-
-/* ABOUT */
+.result-message {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 1.2em;
+}
 
 /* CONTACT */
 /* .contact {

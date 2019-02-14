@@ -4,10 +4,10 @@ import Footer from '../components/Footer';
 import { contactData } from '../data';
 
 // just for the test
-const API_PATH = 'http://localhost:8888/contact.php';
+const API_PATH = 'http://sayaka38.minibird.jp/contact.php';
 
 function ValidateEmail(mail) {
-  if (/^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$/.test(mail)) {
+  if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail)) {
     return true;
   }
   console.log('You have entered an invalid email address!');
@@ -100,7 +100,7 @@ class Contact extends React.Component {
       data: { name: name.text, email: email.text, message: message.text }
     });
     if (!response || response.data.message) {
-      this.setState({ errorMessage: response.data.message });
+      this.setState({ errorMessage: response.data.message[lang] });
     } else {
       this.setState({
         mailSent: response.data.sent,
