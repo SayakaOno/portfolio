@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Footer from '../components/Footer';
+import imagesLoaded from 'imagesloaded';
 
 class Home extends React.Component {
   constructor(props) {
@@ -8,7 +9,8 @@ class Home extends React.Component {
     this.state = {
       name: '',
       title: '',
-      location: ''
+      location: '',
+      imageLoaded: false
     };
     this.verticalCenter = React.createRef();
     this.linkToPortfolio = React.createRef();
@@ -20,7 +22,15 @@ class Home extends React.Component {
   }
 
   componentDidMount() {
-    this.animateTextId = setTimeout(this.animateText, 500);
+    imagesLoaded(
+      document.querySelector('.index-banner'),
+      {
+        background: true
+      },
+      () => {
+        this.animateTextId = setTimeout(this.animateText, 500);
+      }
+    );
   }
 
   componentWillUnmount() {

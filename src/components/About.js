@@ -1,7 +1,6 @@
 import React from 'react';
 import Footer from '../components/Footer';
 import { about, mySkills, interests } from '../data';
-import image from '../img/about.jpg';
 
 const About = props => {
   const lang = props.language;
