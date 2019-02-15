@@ -966,6 +966,13 @@ figure.cases-link.hover-parent:hover img {
   .project .ui.button.icon.left {
     float: left;
   }
+  [data-tooltip][data-position='left center']:hover:after,
+  [data-tooltip][data-position='right center']:hover:after {
+    display: none !important;
+  }
+  [data-position='left center'][data-tooltip]:before {
+    display: none !important;
+  }
 }
 @media only screen and (min-width: 992px) {
   .project .ui.button.icon {
@@ -1022,6 +1029,11 @@ figure.cases-link.hover-parent:hover img {
   width: 100%;
   border: 1px solid #eee;
   border-top: none;
+}
+@media only screen and (max-width: 991px) {
+  .project {
+    font-size: smaller;
+  }
 }
 
 /* ABOUT */
