@@ -1,18 +1,35 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-const Modal = props => {
-  return ReactDOM.createPortal(
-    <div onClick={props.onDismiss} className="ui dimmer modals visible active">
+class Modal extends React.Component {
+  // const Modal = props => {
+  constructor(props) {
+    super(props);
+
+    this.modals = React.createRef();
+  }
+
+  componentDidUpdate() {
+    console.log('updated');
+    this.modals.current.scrollTo(0, 0);
+  }
+  render() {
+    return ReactDOM.createPortal(
       <div
-        onClick={e => e.stopPropagation()}
-        className="ui standard modal visible active"
+        ref={this.modals}
+        onClick={this.props.onDismiss}
+        className='ui dimmer modals visible active'
       >
-        {props.children}
-      </div>
-    </div>,
-    document.getElementById("modal")
-  );
-};
+        <div
+          onClick={e => e.stopPropagation()}
+          className='ui standard modal visible active'
+        >
+          {this.props.children}
+        </div>
+      </div>,
+      document.getElementById('modal')
+    );
+  }
+}
 
 export default Modal;
