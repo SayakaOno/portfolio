@@ -10,7 +10,6 @@ class Modal extends React.Component {
   }
 
   componentDidUpdate() {
-    console.log('updated');
     this.modals.current.scrollTo(0, 0);
   }
   render() {

@@ -194,7 +194,7 @@ select {
 #menuToggle {
   display: block;
   position: fixed;
-  top: 16px;
+  top: 20px;
   right: 0;
   padding-right: 30px;
 
@@ -381,7 +381,7 @@ header {
   left: 0;
   background-color: #fff;
   width: 100%;
-  height: 55px;
+  height: 65px;
   z-index: 1000;
   overflow: hidden;
   border-bottom: 1px solid #d1d5da;
@@ -391,7 +391,7 @@ header {
   position: relative;
   max-width: 1170px;
   margin: 0 auto;
-  margin-top: 5px;
+  margin-top: 10px;
   padding-top: 10px;
 }
 .header-content:after {
@@ -462,7 +462,10 @@ header nav ul li a:focus {
   text-decoration: none;
 }
 header .pc-menu .active {
-  color: #1e70bf;
+  color: #3a3a3a /*#1e70bf*/;
+}
+header .pc-menu a:hover {
+  color: #3a3a3a;
 }
 
 @media only screen and (max-width: 767px) {
@@ -582,6 +585,9 @@ footer p {
 @media only screen and (max-width: 767px) {
   .vertical-center.additional .link-to-portfolio a {
     margin-top: 40px;
+  }
+  .wrapper {
+    padding-top: 120px !important;
   }
 }
 @media only screen and (min-width: 768px) {
@@ -750,18 +756,6 @@ footer p {
   border-top: none;
   border-radius: 5px;
 }
-@media only screen and (max-width: 767px) {
-  .cases-boxs .project-box {
-    flex-basis: 450px;
-  }
-  .cases-boxs .project-box.dimmer {
-    display: none;
-  }
-  .no-match {
-    text-align: center;
-    padding: 40px 0;
-  }
-}
 /* animation */
 figure img {
   -webkit-transition: all 0.35s;
@@ -801,14 +795,13 @@ figcaption.hover-mask {
   align-content: center;
   justify-content: center;
 }
-
 figure.hover-parent:hover .hover-mask {
   opacity: 1;
   -webkit-transform: scale(1);
   transform: scale(1);
 }
 figure.hover-parent .hover-mask h3 {
-  font-size: 1.5em;
+  font-size: 1.2em;
   color: #fff;
   margin-bottom: 20px;
   flex-basis: 100%;
@@ -884,19 +877,38 @@ figure.cases-link.hover-parent:hover img {
   text-decoration: underline;
 }
 .filter .ui.label {
-  color: #fff !important;
-  border: 1px solid #1e70bf;
-  background-color: #1e70bf;
+  color: #111 !important;
+  background-color: #fff;
   margin-bottom: 5px;
 }
 .filter .ui.label.basic {
-  color: rgba(0, 0, 0, 0.87) !important;
-  background-color: #fff;
+  color: #fff !important;
+  background-color: transparent;
   border: 1px solid #fff;
 }
 .filter .ui.label.basic:hover {
   cursor: pointer;
-  color: rgba(0, 0, 0, 0.87) !important;
+}
+@media only screen and (max-width: 767px) {
+  .cases-boxs .project-box {
+    flex-basis: 450px;
+  }
+  .cases-boxs .project-box.dimmer {
+    display: none;
+  }
+  .no-match {
+    text-align: center;
+    padding: 40px 0;
+  }
+  .wrapper h2 {
+    font-size: 1.8em;
+    margin-bottom: 2em;
+  }
+  .filter.open {
+    padding: 18px 15px;
+    width: 220px;
+    height: 220px;
+  }
 }
 
 /* PROJECT */
@@ -926,21 +938,66 @@ figure.cases-link.hover-parent:hover img {
   background: hsla(0, 0%, 85%, 0.3) !important;
   cursor: pointer;
 }
+[data-position~='bottom'][data-tooltip]:after {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.project h1 {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 1.4em;
+}
+.project h2 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+.project p {
+  margin-bottom: 20px;
+}
+.project .category {
+  text-align: center;
+  margin-bottom: 20px;
+  line-height: 1.2em;
+}
+.project .skills {
+  text-align: center;
+  margin-bottom: 50px;
+}
+.project .skills span {
+  display: inline-block;
+  margin: 0 2px 4px 2px;
+  padding: 5px;
+  border: 1px solid #eee;
+}
 .project .links {
-  width: fit-content;
-  margin: 0 auto;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  margin-top: 50px !important;
 }
 .project .links:after {
   clear: both;
   content: '';
   display: table;
 }
-.project .links a {
-  float: left;
-  margin: 50px 20px !important;
+.project .links a.ui.button {
+  margin: 0 10px;
+  margin-bottom: 10px;
+}
+.project img {
+  width: 100%;
+  border: 1px solid #eee;
+  border-top: none;
+}
+@media only screen and (max-width: 767px) {
+  .project {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
 }
 @media only screen and (max-width: 991px) {
   .project {
+    font-size: smaller;
     padding-top: 70px;
     padding-bottom: 30px !important;
   }
@@ -966,6 +1023,9 @@ figure.cases-link.hover-parent:hover img {
   }
   .project .ui.button.icon.left {
     float: left;
+  }
+  .project .ui.label {
+    font-size: 12px !important;
   }
   [data-tooltip][data-position='left center']:hover:after,
   [data-tooltip][data-position='right center']:hover:after {
@@ -993,52 +1053,6 @@ figure.cases-link.hover-parent:hover img {
     left: 0;
   }
 }
-[data-position~='bottom'][data-tooltip]:after {
-  margin-left: 5px;
-  margin-right: 5px;
-}
-.project h1 {
-  text-align: center;
-  margin-bottom: 10px;
-  font-size: 2em;
-}
-.project h2 {
-  font-size: 1.5em;
-  margin-bottom: 10px;
-}
-.project p {
-  margin-bottom: 20px;
-}
-.project .category {
-  text-align: center;
-  margin-bottom: 20px;
-}
-.project .skills {
-  text-align: center;
-  margin-bottom: 50px;
-}
-.project .skills span {
-  display: inline-block;
-  margin: 0 5px;
-  padding: 5px;
-  border: 1px solid #eee;
-}
-.project a {
-  display: block !important;
-  margin: 0 auto !important;
-  margin-top: 50px !important;
-  width: 100px;
-}
-.project img {
-  width: 100%;
-  border: 1px solid #eee;
-  border-top: none;
-}
-@media only screen and (max-width: 991px) {
-  .project {
-    font-size: smaller;
-  }
-}
 
 /* ABOUT */
 .about h3 {
@@ -1058,8 +1072,9 @@ figure.cases-link.hover-parent:hover img {
   -webkit-filter: brightness(0.4);
 }
 .about-container .main-content {
-  width: 65%;
+  max-width: 650px;
   margin: 0 auto;
+  padding: 0 20px;
 }
 .about .main-content > div {
   margin-bottom: 20px;
@@ -1079,6 +1094,10 @@ figure.cases-link.hover-parent:hover img {
 .about ul {
   margin-bottom: 20px;
 }
+.about .skills,
+.about .interests {
+  line-height: 1.2em;
+}
 
 /* CONTACT */
 .contact.wrapper h2 {
@@ -1093,12 +1112,14 @@ form {
   max-width: 550px !important;
   margin: 0 auto;
 }
+.contact label {
+  margin-bottom: 5px;
+}
 input {
   width: 100%;
 }
 textarea {
   resize: vertical;
-  max-height: 100px;
 }
 input,
 textarea {

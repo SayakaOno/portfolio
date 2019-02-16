@@ -9,8 +9,7 @@ class Home extends React.Component {
     this.state = {
       name: '',
       title: '',
-      location: '',
-      imageLoaded: false
+      location: ''
     };
     this.verticalCenter = React.createRef();
     this.linkToPortfolio = React.createRef();
