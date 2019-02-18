@@ -286,7 +286,7 @@ select {
   right: 0;
   width: 240px;
   height: 100vh;
-  margin: -52px 0 0 -50px;
+  margin: -47px 0 0 -50px;
   padding-top: 80px;
 
   background: #1b1c1d;
@@ -547,16 +547,11 @@ footer p {
   line-height: 40px;
   text-shadow: 2px 2px 8px #111;
 }
-.home.index-banner {
-  padding-top: 65px !important;
-}
-.wrapper {
-  padding-top: 180px !important;
-}
+
 .vertical-center.additional {
   position: relative;
   vertical-align: top;
-  padding-top: 100px;
+  padding-top: 165px;
   animation: show 1.5s linear 0s;
 }
 @keyframes show {
@@ -704,6 +699,9 @@ footer p {
   transform: scaleX(1);
 } */
 
+.wrapper {
+  padding-top: 180px !important;
+}
 @media only screen and (min-width: 1000px) {
   .wrapper {
     width: 1000px;
