@@ -9,7 +9,8 @@ class Portfolio extends React.Component {
     selectedProject: null,
     selectedElements: [],
     showNotFound: false,
-    filterOpen: false
+    filterOpen: false,
+    availableElements: elements
   };
 
   componentDidMount() {
@@ -79,13 +80,40 @@ class Portfolio extends React.Component {
         };
       }
     });
+    this.availableElements();
+  };
+
+  availableElements = () => {
+    setTimeout(() => {
+      let availableElements = new Set();
+      portfolioData.forEach(data => {
+        let dimmer = false;
+        let elements = [data.category.en, ...data.skills];
+        for (let element of this.state.selectedElements) {
+          if (!elements.includes(element)) {
+            dimmer = true;
+            break;
+          }
+        }
+        if (!dimmer) {
+          elements.forEach(elem => {
+            availableElements.add(elem);
+          });
+        }
+      });
+      this.setState({ availableElements: Array.from(availableElements) });
+    }, 0);
+  };
+
+  isAvailableElement = elem => {
+    return this.state.availableElements.includes(elem);
   };
 
   handleClear = e => {
     if (!e.target.closest('.clear-filter-button')) {
       return;
     }
-    this.setState({ selectedElements: [] });
+    this.setState({ selectedElements: [], availableElements: elements });
   };
 
   selectProject = id => {
@@ -190,11 +218,17 @@ class Portfolio extends React.Component {
                 )}
               </div>
               <div className='filter-tags' onClick={this.handleSelectElements}>
-                {elements.map(element => (
-                  <span className={this.labelClassName(element)} key={element}>
-                    {element}
-                  </span>
-                ))}
+                {elements.map(
+                  element =>
+                    this.isAvailableElement(element) && (
+                      <span
+                        className={this.labelClassName(element)}
+                        key={element}
+                      >
+                        {element}
+                      </span>
+                    )
+                )}
               </div>
               <div className='cancel'>
                 <span onClick={() => this.setState({ filterOpen: false })}>

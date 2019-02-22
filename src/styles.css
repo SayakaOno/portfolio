@@ -877,6 +877,7 @@ figure.cases-link.hover-parent:hover img {
 .filter .ui.label {
   color: #111 !important;
   background-color: #fff;
+  border: 1px solid #fff;
   margin-bottom: 5px;
 }
 .filter .ui.label.basic {
