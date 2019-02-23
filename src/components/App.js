@@ -8,6 +8,7 @@ import Home from '../components/Home';
 import Portfolio from '../components/Portfolio';
 import About from '../components/About';
 import Contact from '../components/Contact';
+import NoMatch from '../components/NoMatch';
 
 class App extends React.Component {
   constructor(props) {
@@ -112,10 +113,14 @@ class App extends React.Component {
                           <Contact language={this.state.language} />
                         )}
                       />
+                      <Route
+                        render={() => (
+                          <NoMatch language={this.state.language} />
+                        )}
+                      />
                     </Switch>
                   </CSSTransition>
                 </TransitionGroup>
-                {/* <Contact /> */}
               </React.Fragment>
             )}
           />

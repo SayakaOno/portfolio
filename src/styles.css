@@ -1144,6 +1144,18 @@ textarea:focus {
   font-size: 1.2em;
 }
 
+/* 404 */
+.no-match {
+  text-align: center;
+  height: 100vh;
+}
+.no-match h2 {
+  margin-bottom: 2em !important;
+}
+.no-match p {
+  margin-bottom: 50px;
+}
+
 /* CONTACT */
 /* .contact {
   background-color: #1b1c1d;
