@@ -460,6 +460,7 @@ header nav ul li a {
 }
 header nav ul li a:focus {
   text-decoration: none;
+  color: inherit;
 }
 header .pc-menu .active {
   color: #3a3a3a /*#1e70bf*/;
@@ -1096,6 +1097,11 @@ figure.cases-link.hover-parent:hover img {
 .about .skills,
 .about .interests {
   line-height: 1.2em;
+}
+.about a {
+  color: inherit;
+  text-decoration: underline;
+  /* font-style: italic; */
 }
 
 /* CONTACT */
