@@ -13,10 +13,28 @@ import NoMatch from '../components/NoMatch';
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { language: 'en' };
+    this.state = { language: 'en', menuOpen: false };
 
     this.humbergerNav = React.createRef();
     this.inputBox = React.createRef();
+  }
+
+  componentDidMount() {
+    window.addEventListener('click', e => {
+      if (!this.state.menuOpen || e.target.closest('nav')) {
+        return;
+      }
+      this.toggleMenuOpenState();
+    });
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('click', e => {
+      if (!this.state.menuOpen || e.target.closest('nav')) {
+        return;
+      }
+      this.toggleMenuOpenState();
+    });
   }
 
   handleLanguageChange = () => {
@@ -25,14 +43,19 @@ class App extends React.Component {
     });
   };
 
+  toggleMenuOpenState = () => {
+    this.setState(prevState => {
+      return {
+        menuOpen: !prevState.menuOpen
+      };
+    });
+  };
+
   toggleMenu = e => {
     if (e.target.closest('ul#menu') && !e.target.closest('ul#menu li')) {
       return;
     }
-    this.humbergerNav.current.classList.toggle('open');
-    if (e.target.closest('ul#menu li')) {
-      this.inputBox.current.checked = !this.inputBox.current.checked;
-    }
+    this.toggleMenuOpenState();
   };
 
   render() {
@@ -45,14 +68,21 @@ class App extends React.Component {
                 <nav
                   ref={this.humbergerNav}
                   role='navigation'
-                  className='humberger-menu'
+                  className={`humberger-menu${
+                    this.state.menuOpen ? ' open' : ''
+                  }`}
                 >
-                  <div id='menuToggle' onClick={this.toggleMenu}>
-                    <input ref={this.inputBox} type='checkbox' />
+                  <div id='menuToggle'>
+                    <input
+                      ref={this.inputBox}
+                      type='checkbox'
+                      onChange={this.toggleMenu}
+                      checked={this.state.menuOpen}
+                    />
                     <span />
                     <span />
                     <span />
-                    <ul id='menu'>
+                    <ul id='menu' onClick={this.toggleMenu}>
                       <li>
                         <Link className='item' to='/portfolio'>
                           Portfolio
