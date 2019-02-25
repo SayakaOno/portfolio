@@ -490,6 +490,9 @@ footer {
   padding: 5px;
   color: #767676;
 }
+.footer-sm a:focus {
+  text-decoration: none;
+}
 .footer-sm a i {
   font-size: 1.5em;
 }
