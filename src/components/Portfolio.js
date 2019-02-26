@@ -29,7 +29,7 @@ class Portfolio extends React.Component {
     }
   }
 
-  componentWillUnMount() {
+  componentWillUnmount() {
     window.removeEventListener('resize', this.checkMatching);
   }
 
