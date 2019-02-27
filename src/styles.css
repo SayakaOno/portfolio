@@ -230,7 +230,7 @@ select {
   margin-bottom: 5px;
   position: relative;
 
-  background: #545454; /* #cdcdcd; */
+  background: #545454;
   border-radius: 3px;
 
   z-index: 1;
@@ -301,7 +301,6 @@ select {
 }
 
 #menu li {
-  /* padding: 10px 0; */
   font-size: 22px;
 }
 
@@ -319,24 +318,6 @@ select {
 }
 
 /* MY CODE */
-
-/* When we create pseudo element,
-   not a class, use '::' */
-/* Pseudo Elements */
-li::first-line {
-}
-li::first-letter {
-}
-li::selection {
-}
-li::before {
-  /* content: attr(href); */
-  /* img works! url(img) */
-}
-/* transition
--webkit-transition
--moz-transition
--o-transition */
 
 :root {
   --text-color: #111;
@@ -413,7 +394,6 @@ header a.header-brand {
   float: left;
   font-family: arial;
   font-size: 24px;
-  /* line-height: 38px; */
   font-weight: 900;
   color: #111;
   text-transform: uppercase;
@@ -423,16 +403,6 @@ header a.header-brand {
   padding: 0 20px;
   color: inherit;
   text-decoration: none;
-}
-header .decoration {
-  display: none;
-  line-height: 0;
-  margin-top: -7px;
-}
-header .decoration .ui.empty.circular.label {
-  width: 0.3em !important;
-  height: 0.3em !important;
-  padding: 0.3em !important;
 }
 header nav {
   float: left;
@@ -453,7 +423,7 @@ header nav ul li {
 header nav ul li a {
   font-family: arial;
   font-size: 16px;
-  color: #3a3a3a; /* #111 */
+  color: #3a3a3a;
   text-transform: uppercase;
   padding-top: 8px !important;
   display: inline-block;
@@ -463,7 +433,7 @@ header nav ul li a:focus {
   color: inherit;
 }
 header .pc-menu .active {
-  color: #3a3a3a /*#1e70bf*/;
+  color: #3a3a3a;
 }
 header .pc-menu a:hover {
   color: #3a3a3a;
@@ -654,54 +624,6 @@ footer p {
   -webkit-animation-timing-function: ease-out;
   animation-timing-function: ease-out;
 }
-
-/* Sweep To Right */
-/* .hvr-sweep-to-right {
-  background-color: transparent;
-  border: solid 1px #111 !important;
-  display: inline-block;
-  vertical-align: middle;
-  -webkit-transform: perspective(1px) translateZ(0);
-  transform: perspective(1px) translateZ(0);
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-  position: relative;
-  -webkit-transition-property: color;
-  transition-property: color;
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-}
-.hvr-sweep-to-right:before {
-  content: '';
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: #fff;
-  background: #1e70bf;
-  -webkit-transform: scaleX(0);
-  transform: scaleX(0);
-  -webkit-transform-origin: 0 50%;
-  transform-origin: 0 50%;
-  -webkit-transition-property: transform;
-  transition-property: transform;
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-  -webkit-transition-timing-function: ease-out;
-  transition-timing-function: ease-out;
-}
-.hvr-sweep-to-right:hover,
-.hvr-sweep-to-right:focus,
-.hvr-sweep-to-right:active {
-  color: #111 !important;
-}
-.hvr-sweep-to-right:hover:before,
-.hvr-sweep-to-right:focus:before,
-.hvr-sweep-to-right:active:before {
-  -webkit-transform: scaleX(1);
-  transform: scaleX(1);
-} */
 
 .wrapper {
   padding-top: 180px !important;
@@ -1104,7 +1026,6 @@ figure.cases-link.hover-parent:hover img {
 .about a {
   color: inherit;
   text-decoration: underline;
-  /* font-style: italic; */
 }
 
 /* CONTACT */
@@ -1164,33 +1085,3 @@ textarea:focus {
 .no-match p {
   margin-bottom: 50px;
 }
-
-/* CONTACT */
-/* .contact {
-  background-color: #1b1c1d;
-  color: rgba(255, 255, 255, 0.9);
-  max-height: 100vh;
-  max-width: 400px;
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  border-radius: 0.28571429rem;
-  scroll-y: auto;s
-}
-.contact .row {
-  display: block !important;
-}
-.contact.col-10 .contact.col-sm-10 {
-  width: 100% !important;
-  max-width: 100% !important;
-}
-.contact .button-container {
-  height: 80px;
-}
-
-@media (min-width: 576px) {
-  .contact .col-sm-10 {
-    width: 100% !important;
-    max-width: 100% !important;
-  }
-} */

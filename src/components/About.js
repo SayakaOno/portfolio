@@ -10,9 +10,6 @@ const About = props => {
       <div className='about wrapper page'>
         <h2>About me</h2>
         <div className='about-container'>
-          {/* <div className="image">
-            <img src={image} alt="" />
-          </div> */}
           <div className='main-content'>
             <div>{about.main[lang]}</div>
             <div>

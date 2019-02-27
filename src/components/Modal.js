@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 class Modal extends React.Component {
-  // const Modal = props => {
   constructor(props) {
     super(props);
 
