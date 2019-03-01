@@ -1,10 +1,10 @@
 import React from 'react';
 import axios from 'axios';
+import path from 'path';
 import Footer from '../components/Footer';
 import { contactData } from '../data';
 
-// just for the test
-const API_PATH = 'http://sayaka38.minibird.jp/contact.php';
+const API_PATH = 'https://sayaka-ono.com/contact.php';
 
 function ValidateEmail(mail) {
   if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail)) {
