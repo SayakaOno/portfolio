@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 import Footer from '../components/Footer';
 import imagesLoaded from 'imagesloaded';
 
@@ -94,6 +95,13 @@ class Home extends React.Component {
     return (
       <React.Fragment>
         <section className='index-banner home'>
+          <Helmet>
+            <title>Sayaka Ono | Web Developer</title>
+            <meta
+              name='description'
+              content='Portfolio Website of Sayaka Ono, Web Developer based in Vancouver'
+            />
+          </Helmet>
           <div ref={this.verticalCenter} className='vertical-center'>
             <h2>{this.state.name}</h2>
             <h1>{this.state.title}</h1>

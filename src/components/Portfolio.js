@@ -1,4 +1,5 @@
 import React from 'react';
+import Helmet from 'react-helmet';
 import Modal from './Modal';
 import Project from './Project';
 import Footer from '../components/Footer';
@@ -175,6 +176,13 @@ class Portfolio extends React.Component {
       this.renderModal(lang)
     ) : (
       <React.Fragment>
+        <Helmet>
+          <title>Portfolio | Sayaka Ono - Web Developer</title>
+          <meta
+            name='description'
+            content="Sayaka Ono's Portfolio of Website and Web Application."
+          />
+        </Helmet>
         <div className='wrapper portfolio page'>
           <h2>Portfolio</h2>
           <section className='cases-boxs' onClick={this.handleClick}>
