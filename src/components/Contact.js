@@ -4,7 +4,9 @@ import path from 'path';
 import Footer from '../components/Footer';
 import { contactData } from '../data';
 
-const API_PATH = 'https://sayaka-ono.com/contact.php';
+const API_PATH = path.join(window.location.href, '../contact.php');
+console.log(window.location.hostname + '/contact.php');
+console.log(path.join(window.location.href, '../contact.php'));
 
 function ValidateEmail(mail) {
   if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail)) {
@@ -118,6 +120,9 @@ class Contact extends React.Component {
     const lang = this.props.language;
     return (
       <React.Fragment>
+        <Helmet>
+          <title>Contact | Sayaka Ono - Web Developer</title>
+        </Helmet>
         <div className='wrapper contact page'>
           <h2>Contact</h2>
           <p className='col-12'>{contactData.description[lang]}</p>
