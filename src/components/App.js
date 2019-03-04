@@ -2,6 +2,7 @@ import React from 'react';
 import { HashRouter, Route, Switch } from 'react-router-dom';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 import ScrollToTop from '../components/ScrollToTop';
 import Header from '../components/Header';
 import Home from '../components/Home';
@@ -9,6 +10,8 @@ import Portfolio from '../components/Portfolio';
 import About from '../components/About';
 import Contact from '../components/Contact';
 import NoMatch from '../components/NoMatch';
+
+const API_PATH = 'https://sayaka38.minibird.jp/location.php';
 
 class App extends React.Component {
   constructor(props) {
@@ -19,7 +22,22 @@ class App extends React.Component {
     this.inputBox = React.createRef();
   }
 
-  componentDidMount() {
+  async componentDidMount() {
+    const response = await axios({
+      method: 'get',
+      url: `${API_PATH}`
+    });
+    console.log(response.data);
+    if (response && response.data == 'ja') {
+      this.setState({
+        language: 'ja'
+      });
+    } else {
+      this.setState({
+        language: 'en'
+      });
+    }
+
     window.addEventListener('click', e => {
       if (!this.state.menuOpen || e.target.closest('nav')) {
         return;
