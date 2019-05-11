@@ -560,15 +560,15 @@ footer p {
   }
 }
 @media only screen and (min-width: 768px) {
-  .vertical-center.additional {
-    padding-left: 130px;
+  /* .vertical-center.additional { */
+  /* padding-left: 130px;
     text-align: left;
   }
   .vertical-center.additional .link-to-portfolio a {
     position: absolute;
     right: 150px;
     top: 75%;
-  }
+  } */
 }
 
 .pulse:hover,
@@ -673,6 +673,9 @@ footer p {
   transition-duration: 0.1s;
   transition-timing-function: ease;
   transition-delay: 0s;
+}
+.cases-boxs .data {
+  width: 50%;
 }
 .cases-link img {
   width: 100%;

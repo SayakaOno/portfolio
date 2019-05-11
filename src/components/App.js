@@ -23,7 +23,7 @@ class App extends React.Component {
       method: 'get',
       url: `${API_PATH}`
     });
-    if (response && response.data == 'ja') {
+    if (response && response.data === 'ja') {
       this.setState({
         language: 'ja'
       });

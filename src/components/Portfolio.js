@@ -1,7 +1,8 @@
 import React from 'react';
 import Modal from './Modal';
 import Project from './Project';
-import { portfolioData, elements } from '../data';
+
+import { portfolio, portfolioData, elements } from '../data';
 
 class Portfolio extends React.Component {
   state = {
@@ -151,20 +152,71 @@ class Portfolio extends React.Component {
           <h2>Portfolio</h2>
           <section className='cases-boxs' onClick={this.handleClick}>
             {portfolioData.map((data, index) => (
-              <div
-                key={data.name[lang]}
-                id={index}
-                className={this.projectBoxClassName(data)}
-                style={this.handleOrder(data)}
-              >
-                <figure className='cases-link hover-parent'>
-                  <img src={data.image} alt={data.name[lang]} />
-                  <figcaption className='hover-mask'>
-                    <h3>{data.name[lang]}</h3>
-                    <p>{data.category[lang]}</p>
-                  </figcaption>
-                </figure>
-              </div>
+              <React.Fragment>
+                <div
+                  key={data.name[lang]}
+                  id={index}
+                  className={this.projectBoxClassName(data)}
+                >
+                  <figure className='cases-link hover-parent'>
+                    <img src={data.image} alt={data.name[lang]} />
+                    <figcaption className='hover-mask'>
+                      <h3>{data.name[lang]}</h3>
+                      <p>{data.category[lang]}</p>
+                    </figcaption>
+                  </figure>
+                </div>
+
+                {/* data start */}
+                <div className='data'>
+                  <h1>{data.name[lang]}</h1>
+                  <div className='category'>
+                    <i>{`${data.category[lang]} / ${data.duration}, ${
+                      data.date
+                    }`}</i>
+                  </div>
+                  <div className='skills'>
+                    {data.skills.map(skill => (
+                      <span key={skill} className='ui basic label'>
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                  <p>
+                    <b>{data.description[lang]}</b>
+                  </p>
+                  {/* <h3>{portfolio.summary[lang]}</h3>
+                  <p>{data.summary[lang]}</p>
+                  {data.history && (
+                    <React.Fragment>
+                      <h3>{portfolio.episode[lang]}</h3>
+                      <p>{data.history[lang]}</p>
+                    </React.Fragment>
+                  )} */}
+                  <div className='links'>
+                    <a
+                      className='button ui secondary'
+                      href={data.demoUrl}
+                      target='_blank'
+                      rel='noopener noreferrer'
+                    >
+                      Demo
+                    </a>
+                    {data.githubUrl && (
+                      <a
+                        className='button ui secondary'
+                        href={data.githubUrl}
+                        target='_blank'
+                        rel='noopener noreferrer'
+                      >
+                        GitHub
+                      </a>
+                    )}
+                  </div>
+                </div>
+
+                {/* data end */}
+              </React.Fragment>
             ))}
           </section>
         </div>

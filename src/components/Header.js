@@ -31,12 +31,12 @@ class Header extends React.Component {
             </ul>
           </nav>
 
-          <div className='lang'>
+          {/* <div className='lang'>
             <i
               className={`flag ${flag}`}
               onClick={this.props.onLanguageChange}
             />
-          </div>
+          </div> */}
         </div>
       </header>
     );
