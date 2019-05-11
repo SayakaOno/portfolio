@@ -1,8 +1,6 @@
 import React from 'react';
 import axios from 'axios';
 import path from 'path';
-import { Helmet } from 'react-helmet';
-import Footer from '../components/Footer';
 import { contactData } from '../data';
 
 const API_PATH = path.join(window.location.href, '../contact.php');
@@ -121,10 +119,7 @@ class Contact extends React.Component {
     const lang = this.props.language;
     return (
       <React.Fragment>
-        <Helmet>
-          <title>Contact | Sayaka Ono - Web Developer</title>
-        </Helmet>
-        <div className='wrapper contact page'>
+        <div id='contact' className='wrapper contact page'>
           <h2>Contact</h2>
           <p className='col-12'>{contactData.description[lang]}</p>
           <div className='container'>
@@ -185,7 +180,6 @@ class Contact extends React.Component {
             <div className='result-message'>{this.renderResultMessage()}</div>
           </div>
         </div>
-        <Footer />
       </React.Fragment>
     );
   }

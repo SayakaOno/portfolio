@@ -1,7 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { Helmet } from 'react-helmet';
-import Footer from '../components/Footer';
 import imagesLoaded from 'imagesloaded';
 
 class Home extends React.Component {
@@ -42,7 +39,7 @@ class Home extends React.Component {
 
   animateText = () => {
     let name = { name: 'Sayaka Ono' };
-    let title = { title: 'Web Developer' };
+    let title = { title: 'React Developer' };
     let location = { location: 'Vancouver' };
 
     this.setText(name, () =>
@@ -94,26 +91,18 @@ class Home extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <section className='index-banner home'>
-          <Helmet>
-            <title>Sayaka Ono | Web Developer</title>
-            <meta
-              name='description'
-              content='Portfolio Website of Sayaka Ono, Web Developer based in Vancouver'
-            />
-          </Helmet>
+        <section id='home' className='index-banner home'>
           <div ref={this.verticalCenter} className='vertical-center'>
             <h2>{this.state.name}</h2>
             <h1>{this.state.title}</h1>
             <p>{this.state.location}</p>
             <div ref={this.linkToPortfolio} className='link-to-portfolio'>
-              <Link className='hvr-icon-float-away pulse' to='/portfolio'>
+              <a className='hvr-icon-float-away pulse' href='#portfolio'>
                 PORTFOLIO <i className='fas fa-angle-double-right hvr-icon' />
-              </Link>
+              </a>
             </div>
           </div>
         </section>
-        <Footer />
       </React.Fragment>
     );
   }

@@ -1,8 +1,6 @@
 import React from 'react';
-import Helmet from 'react-helmet';
 import Modal from './Modal';
 import Project from './Project';
-import Footer from '../components/Footer';
 import { portfolioData, elements } from '../data';
 
 class Portfolio extends React.Component {
@@ -29,25 +27,6 @@ class Portfolio extends React.Component {
       this.setState({ showNotFound: true });
     }
   }
-
-  componentWillUnmount() {
-    window.removeEventListener('resize', this.checkMatching);
-  }
-
-  checkMatching = () => {
-    if (document.documentElement.clientWidth > 766) {
-      this.setState({ showNotFound: false });
-      return;
-    }
-    if (
-      this.state.showNotFound === false &&
-      document.querySelectorAll('.project-box.dimmer').length === 4
-    ) {
-      this.setState({ showNotFound: true });
-    } else {
-      this.setState({ showNotFound: false });
-    }
-  };
 
   handleClick = e => {
     const projectBox = e.target.closest('.project-box');
@@ -161,14 +140,6 @@ class Portfolio extends React.Component {
     );
   };
 
-  renderNoMatchProjectsFound = () => {
-    if (this.state.showNotFound) {
-      return <div className='no-match'>No matching projects found...</div>;
-    } else {
-      return null;
-    }
-  };
-
   render() {
     const lang = this.props.language;
 
@@ -176,14 +147,7 @@ class Portfolio extends React.Component {
       this.renderModal(lang)
     ) : (
       <React.Fragment>
-        <Helmet>
-          <title>Portfolio | Sayaka Ono - Web Developer</title>
-          <meta
-            name='description'
-            content="Sayaka Ono's Portfolio of Website and Web Application."
-          />
-        </Helmet>
-        <div className='wrapper portfolio page'>
+        <div id='portfolio' className='wrapper portfolio page'>
           <h2>Portfolio</h2>
           <section className='cases-boxs' onClick={this.handleClick}>
             {portfolioData.map((data, index) => (
@@ -203,50 +167,7 @@ class Portfolio extends React.Component {
               </div>
             ))}
           </section>
-          {this.renderNoMatchProjectsFound()}
-          <div className={`filter${this.state.filterOpen ? ' open' : ''}`}>
-            <div
-              className='button-copy'
-              onClick={() => this.setState({ filterOpen: true })}
-            >
-              <i className='fas fa-filter' />
-            </div>
-            <div className='filter-container'>
-              <div className='filter-icon'>
-                {this.state.selectedElements.length > 0 ? (
-                  <div
-                    className='clear-filter-button'
-                    onClick={this.handleClear}
-                  >
-                    <i className='ban icon' />
-                    clear filter
-                  </div>
-                ) : (
-                  'Filter'
-                )}
-              </div>
-              <div className='filter-tags' onClick={this.handleSelectElements}>
-                {elements.map(
-                  element =>
-                    this.isAvailableElement(element) && (
-                      <span
-                        className={this.labelClassName(element)}
-                        key={element}
-                      >
-                        {element}
-                      </span>
-                    )
-                )}
-              </div>
-              <div className='cancel'>
-                <span onClick={() => this.setState({ filterOpen: false })}>
-                  close
-                </span>
-              </div>
-            </div>
-          </div>
         </div>
-        <Footer />
       </React.Fragment>
     );
   }

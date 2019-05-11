@@ -1,6 +1,4 @@
 import React from 'react';
-import Helmet from 'react-helmet';
-import Footer from '../components/Footer';
 import { about, mySkills, interests } from '../data';
 
 const About = props => {
@@ -8,14 +6,7 @@ const About = props => {
 
   return (
     <React.Fragment>
-      <Helmet>
-        <title>About | Sayaka Ono - Web Developer</title>
-        <meta
-          name='description'
-          content='About Sayaka Ono, Web Developer based in Vancouver'
-        />
-      </Helmet>
-      <div className='about wrapper page'>
+      <div id='about' className='about wrapper page'>
         <h2>About me</h2>
         <div className='about-container'>
           <div className='main-content'>
@@ -37,7 +28,6 @@ const About = props => {
           </div>
         </div>
       </div>
-      <Footer />
     </React.Fragment>
   );
 };
