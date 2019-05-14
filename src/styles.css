@@ -473,7 +473,7 @@ footer p {
 }
 
 /* MODAL */
-#modal .ui.modal {
+/* #modal .ui.modal {
   max-width: 94% !important;
   margin: 10vh auto;
   height: fit-content !important;
@@ -486,22 +486,54 @@ footer p {
 
 .wrapper.page {
   padding-bottom: 150px;
-}
+} */
 
 /* HOME */
 .index-banner {
   width: 100%;
   height: calc(100vh);
   background-image: url('../src/img/banner.jpg');
+  /* background-color: #0275d8; */
+  /* background-color: lightblue; */
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   display: table;
   text-align: center;
 }
+.ui.four.cards {
+  width: 300px;
+  margin: 0 auto;
+}
+.ui.four.cards > .card {
+  /* width: 200px; */
+  width: 100%;
+  margin: 10px auto;
+  color: #000;
+  font-weight: bold;
+  font-family: Lato, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  padding: 20px;
+  display: block;
+}
+.ui.cards a.card:hover {
+  -webkit-transform: translateX(1px);
+  transform: translateX(1px);
+}
+.ui.four.cards > .card input {
+  display: inline-block;
+  width: fit-content;
+  vertical-align: top;
+  margin-right: 5px;
+}
 .vertical-center {
   display: table-cell;
   vertical-align: middle;
+}
+.top-container {
+  width: fit-content;
+  padding: 50px 70px;
+  background-color: rgba(255, 255, 255, 0.6);
+  margin: 0 auto;
 }
 .index-banner,
 .index-banner p {
@@ -515,17 +547,17 @@ footer p {
   text-shadow: 2px 2px 8px #111;
 }
 .index-banner h1 {
-  font-size: 28px;
+  font-size: 34px;
   font-weight: 100;
   font-style: italic;
   line-height: 40px;
   text-shadow: 2px 2px 8px #111;
+  margin-bottom: 15px;
 }
 
 .vertical-center.additional {
   position: relative;
-  vertical-align: top;
-  padding-top: 165px;
+  vertical-align: middle;
   animation: show 1.5s linear 0s;
 }
 @keyframes show {
@@ -548,13 +580,15 @@ footer p {
   border: solid 3px #fff;
   color: #fff;
   width: fit-content;
+  margin-top: 40px;
+
   padding: 20px;
   font-weight: bold;
 }
 @media only screen and (max-width: 767px) {
-  .vertical-center.additional .link-to-portfolio a {
+  /* .vertical-center.additional .link-to-portfolio a {
     margin-top: 40px;
-  }
+  } */
   .wrapper {
     padding-top: 120px !important;
   }
@@ -642,6 +676,9 @@ footer p {
 }
 
 /* Portfolio */
+#portfolio h1 {
+  font-size: 1.5em;
+}
 .cases-boxs {
   display: flex;
   flex-flow: row wrap;
@@ -675,7 +712,8 @@ footer p {
   transition-delay: 0s;
 }
 .cases-boxs .data {
-  width: 50%;
+  width: 48%;
+  margin: 10px;
 }
 .cases-link img {
   width: 100%;
@@ -684,7 +722,7 @@ footer p {
   border-radius: 5px;
 }
 /* animation */
-figure img {
+/* figure img {
   -webkit-transition: all 0.35s;
   transition: all 0.35s;
 }
@@ -739,7 +777,7 @@ figure.hover-parent .hover-mask p {
 }
 figure.cases-link.hover-parent:hover img {
   transform: scale(1.1);
-}
+} */
 /* filter */
 .filter {
   position: fixed;
@@ -985,8 +1023,9 @@ figure.cases-link.hover-parent:hover img {
 /* ABOUT */
 .about h3 {
   margin-bottom: 5px;
+  font-size: 1.5em;
 }
-.about-container {
+/* .about-container {
   display: flex;
 }
 .about-container .image {
@@ -998,23 +1037,23 @@ figure.cases-link.hover-parent:hover img {
   height: auto;
   filter: brightness(0.4);
   -webkit-filter: brightness(0.4);
-}
+} */
 .about-container .main-content {
   max-width: 650px;
   margin: 0 auto;
   padding: 0 20px;
 }
-.about .main-content > div {
+/* .about .main-content > div {
   margin-bottom: 20px;
-}
-.about ul.skills li {
+} */
+/* .about ul.skills li {
   list-style: none;
   display: inline-block;
-}
-.about ul.skills li:after {
+} */
+/* .about ul.skills li:after {
   content: '/';
   padding: 0 3px;
-}
+} */
 .about ul.skills li:last-child:after {
   content: '';
 }
@@ -1030,7 +1069,28 @@ figure.cases-link.hover-parent:hover img {
   color: inherit;
   text-decoration: underline;
 }
-
+.about .description {
+  margin-bottom: 50px !important;
+}
+.about .description li {
+  margin-bottom: 10px;
+  list-style: none;
+}
+.about .description li:before {
+  content: '\f14a'; /* FontAwesome Unicode */
+  font-family: 'Font Awesome 5 Free';
+  display: inline-block;
+  margin-left: -1.3em; /* same as padding-left set on li */
+  width: 1.3em; /* same as padding-left set on li */
+  /* background-color: #495057;
+  color: #fff; */
+}
+.about .skills-container {
+  display: flex;
+}
+.about .skills-container div {
+  width: 33%;
+}
 /* CONTACT */
 .contact.wrapper h2 {
   margin-bottom: 1em !important;
