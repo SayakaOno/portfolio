@@ -370,7 +370,7 @@ header {
 }
 .header-content {
   position: relative;
-  max-width: 1170px;
+  max-width: 950px;
   margin: 0 auto;
   margin-top: 10px;
   padding-top: 10px;
@@ -400,7 +400,7 @@ header a.header-brand {
   display: block;
   margin: 0 auto;
   text-align: center;
-  padding: 0 20px;
+  margin-right: 20px;
   color: inherit;
   text-decoration: none;
 }
@@ -670,15 +670,18 @@ footer p {
 }
 @media only screen and (min-width: 1000px) {
   .wrapper {
-    width: 1000px;
+    width: 950px;
     margin: 0 auto;
   }
 }
 .wrapper h2 {
   font-size: 2em;
-  text-align: center;
-  margin-bottom: 3em;
+  text-align: left;
+  margin-bottom: 2em;
   text-transform: uppercase;
+}
+#contact h2 {
+  text-align: center;
 }
 
 /* Portfolio */
@@ -688,12 +691,13 @@ footer p {
 .cases-boxs {
   display: flex;
   flex-flow: row wrap;
-  justify-content: center;
+  justify-content: left;
 }
 .cases-boxs .project-box {
   text-align: center;
   flex-basis: 47%;
   margin: 10px;
+  margin-left: 0;
   margin-bottom: 30px;
   overflow: hidden;
   position: relative;
@@ -1028,7 +1032,7 @@ figure.cases-link.hover-parent:hover img {
 
 /* ABOUT */
 .about h3 {
-  margin-bottom: 5px;
+  margin-bottom: 15px;
   font-size: 1.5em;
 }
 /* .about-container {
@@ -1045,8 +1049,7 @@ figure.cases-link.hover-parent:hover img {
   -webkit-filter: brightness(0.4);
 } */
 .about-container .main-content {
-  max-width: 650px;
-  margin: 0 auto;
+  width: fit-content;
   padding: 0 20px;
 }
 /* .about .main-content > div {
@@ -1077,26 +1080,42 @@ figure.cases-link.hover-parent:hover img {
 }
 .about .description {
   margin-bottom: 50px !important;
+  font-size: 1.5em;
 }
-.about .description li {
-  margin-bottom: 10px;
+/* .about .description li {
+  margin-bottom: 0px;
+  list-style: none;
+} */
+.about .bullet {
+  margin-bottom: 70px;
+}
+.about .bullet ul li {
+  display: flex;
+  margin-bottom: 20px;
   list-style: none;
 }
-.about .description li:before {
-  content: '\f14a'; /* FontAwesome Unicode */
-  font-family: 'Font Awesome 5 Free';
-  display: inline-block;
-  margin-left: -1.3em; /* same as padding-left set on li */
-  width: 1.3em; /* same as padding-left set on li */
-  /* background-color: #495057;
-  color: #fff; */
+.about ul li span {
+  font-size: 1.4em;
+  display: block;
+  margin-bottom: 5px;
+}
+.about ul li i {
+  margin-right: 5px;
+  font-size: 1.4em;
 }
 .about .skills-container {
-  display: flex;
+  font-size: 1.2em;
 }
-.about .skills-container div {
-  width: 33%;
+.about .skills-container dt {
+  margin-bottom: 5px;
 }
+.about .skills-container dd {
+  margin-bottom: 15px;
+}
+.about .skills {
+  margin-bottom: 70px;
+}
+
 /* CONTACT */
 .contact.wrapper h2 {
   margin-bottom: 1em !important;

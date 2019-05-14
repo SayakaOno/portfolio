@@ -239,7 +239,7 @@ class Portfolio extends React.Component {
               }
             })}
             <button
-              class='button ui secondary'
+              className='button ui secondary'
               onClick={this.handleNumberOfProject}
             >
               {this.state.numberOfDisplayedProjects === numberOfProjects
