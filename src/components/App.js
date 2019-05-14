@@ -42,7 +42,7 @@ class App extends React.Component {
     });
 
     window.addEventListener('scroll', () => {
-      if (window.scrollY > window.innerHeight) {
+      if (window.scrollY >= window.innerHeight) {
         this.headerBar.current.style.display = 'block';
       } else if (window.scrollY < window.innerHeight) {
         this.headerBar.current.style.display = 'none';
@@ -83,7 +83,7 @@ class App extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <div ref={this.headerBar}>
+        <div ref={this.headerBar} style={{ display: 'none' }}>
           <nav
             ref={this.humbergerNav}
             role='navigation'
