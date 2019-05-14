@@ -12,10 +12,11 @@ const API_PATH = 'https://sayaka38.minibird.jp/location.php';
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { language: 'en', menuOpen: false };
+    this.state = { language: 'en', menuOpen: false, displayHeader: false };
 
     this.humbergerNav = React.createRef();
     this.inputBox = React.createRef();
+    this.headerBar = React.createRef();
   }
 
   async componentDidMount() {
@@ -38,6 +39,14 @@ class App extends React.Component {
         return;
       }
       this.toggleMenuOpenState();
+    });
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > window.innerHeight) {
+        this.headerBar.current.style.display = 'block';
+      } else if (window.scrollY < window.innerHeight) {
+        this.headerBar.current.style.display = 'none';
+      }
     });
   }
 
@@ -74,53 +83,54 @@ class App extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <nav
-          ref={this.humbergerNav}
-          role='navigation'
-          className={`humberger-menu${this.state.menuOpen ? ' open' : ''}`}
-        >
-          <div id='menuToggle'>
-            <input
-              ref={this.inputBox}
-              type='checkbox'
-              onChange={this.toggleMenu}
-              checked={this.state.menuOpen}
-            />
-            <span />
-            <span />
-            <span />
-            <ul id='menu' onClick={this.toggleMenu}>
-              <li>
-                <a className='item' to='/portfolio'>
-                  Portfolio
-                </a>
-              </li>
-              <li>
-                <a className='item' to='/about'>
-                  About
-                </a>
-              </li>
-              <li>
-                <a className='item' to='/contact'>
-                  Contact
-                </a>
-              </li>
-              <li>
-                <div
-                  className='item language'
-                  onClick={this.handleLanguageChange}
-                >
-                  {this.state.language === 'en' ? '日本語' : 'English'}
-                </div>
-              </li>
-            </ul>
-          </div>
-        </nav>
-
-        <Header
-          onLanguageChange={this.handleLanguageChange}
-          language={this.state.language}
-        />
+        <div ref={this.headerBar}>
+          <nav
+            ref={this.humbergerNav}
+            role='navigation'
+            className={`humberger-menu${this.state.menuOpen ? ' open' : ''}`}
+          >
+            <div id='menuToggle'>
+              <input
+                ref={this.inputBox}
+                type='checkbox'
+                onChange={this.toggleMenu}
+                checked={this.state.menuOpen}
+              />
+              <span />
+              <span />
+              <span />
+              <ul id='menu' onClick={this.toggleMenu}>
+                <li>
+                  <a className='item' to='/portfolio'>
+                    Portfolio
+                  </a>
+                </li>
+                <li>
+                  <a className='item' to='/about'>
+                    About
+                  </a>
+                </li>
+                <li>
+                  <a className='item' to='/contact'>
+                    Contact
+                  </a>
+                </li>
+                <li>
+                  <div
+                    className='item language'
+                    onClick={this.handleLanguageChange}
+                  >
+                    {this.state.language === 'en' ? '日本語' : 'English'}
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </nav>
+          <Header
+            onLanguageChange={this.handleLanguageChange}
+            language={this.state.language}
+          />
+        </div>
 
         <Home language={this.state.language} />
         <Portfolio language={this.state.language} />
