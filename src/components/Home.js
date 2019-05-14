@@ -30,13 +30,13 @@ class Home extends React.Component {
       () => {
         this.animateText();
         setTimeout(() => {
-          this.input1.current.checked = true;
+          this.input1.current.className = 'fas fa-check-square';
         }, 1500);
         setTimeout(() => {
-          this.input2.current.checked = true;
+          this.input2.current.className = 'fas fa-check-square';
         }, 2000);
         setTimeout(() => {
-          this.input3.current.checked = true;
+          this.input3.current.className = 'fas fa-check-square';
         }, 2500);
       }
       // () => {
@@ -117,19 +117,16 @@ class Home extends React.Component {
                 PORTFOLIO <i className='fas fa-angle-double-right hvr-icon' />
               </a>
             </div> */}
-              <div class='ui four cards'>
-                <a class='card' href='#portfolio'>
-                  <input ref={this.input1} type='checkbox' />
-                  Vancouver
-                </a>
-                <a class='card' href='#about'>
-                  <input ref={this.input2} type='checkbox' />
-                  checkbox2
-                </a>
-                <a class='card' href='#contact'>
-                  <input ref={this.input3} type='checkbox' />
-                  checkbox3
-                </a>
+              <div className='ui four cards'>
+                <div className='input' href='#portfolio'>
+                  <i className='far fa-square' ref={this.input1} /> Checkbox1
+                </div>
+                <div className='input' href='#about'>
+                  <i className='far fa-square' ref={this.input2} /> Vancouver2
+                </div>
+                <div className='input' href='#contact'>
+                  <i className='far fa-square' ref={this.input3} /> Checkbox3
+                </div>
               </div>
             </div>
           </div>

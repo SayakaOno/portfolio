@@ -504,6 +504,7 @@ footer p {
 .ui.four.cards {
   width: 300px;
   margin: 0 auto;
+  font-size: 20px;
 }
 .ui.four.cards > .card {
   /* width: 200px; */
@@ -519,11 +520,16 @@ footer p {
   -webkit-transform: translateX(1px);
   transform: translateX(1px);
 }
-.ui.four.cards > .card input {
+.ui.four.cards input {
   display: inline-block;
   width: fit-content;
   vertical-align: top;
   margin-right: 5px;
+}
+.ui.four.cards .input {
+  width: 300px;
+  display: block;
+  margin-bottom: 5px;
 }
 .vertical-center {
   display: table-cell;
@@ -532,7 +538,7 @@ footer p {
 .top-container {
   width: fit-content;
   padding: 50px 70px;
-  background-color: rgba(255, 255, 255, 0.6);
+  /* background-color: rgba(255, 255, 255, 0.6); */
   margin: 0 auto;
 }
 .index-banner,
