@@ -18,7 +18,9 @@ class About extends React.Component {
 
   componentDidMount() {
     window.addEventListener('scroll', event => {
-      if (this.state.iconChange) return;
+      if (this.state.iconChange) {
+        return;
+      }
       let coords = this.aboutRef.current.getBoundingClientRect();
       if (coords.top < 0) {
         setTimeout(() => {
@@ -39,8 +41,8 @@ class About extends React.Component {
         setTimeout(() => {
           this.checkboxRef5.current.className = 'fas fa-utensils';
         }, 2500);
+        this.setState({ iconChange: true });
       }
-      this.setState({ iconChange: true });
     });
   }
 

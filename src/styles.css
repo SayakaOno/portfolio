@@ -373,6 +373,7 @@ header {
   max-width: 950px;
   margin: 0 auto;
   margin-top: 10px;
+  padding: 0 2rem;
   padding-top: 10px;
 }
 .header-content:after {
@@ -574,10 +575,10 @@ footer p {
     opacity: 1;
   }
 }
-.vertical-center .link-to-portfolio {
+/* .vertical-center .link-to-portfolio {
   display: none;
-}
-.vertical-center.additional .link-to-portfolio.show {
+} */
+/* .vertical-center.additional .link-to-portfolio.show {
   display: block;
   animation: show 1.5s linear 0s;
 }
@@ -590,7 +591,7 @@ footer p {
 
   padding: 20px;
   font-weight: bold;
-}
+} */
 @media only screen and (max-width: 767px) {
   /* .vertical-center.additional .link-to-portfolio a {
     margin-top: 40px;
@@ -666,6 +667,7 @@ footer p {
 }
 
 .wrapper {
+  padding: 0 2rem;
   padding-top: 180px !important;
 }
 @media only screen and (min-width: 1000px) {
@@ -687,6 +689,7 @@ footer p {
 /* Portfolio */
 #portfolio h1 {
   font-size: 1.5em;
+  margin-bottom: 10px;
 }
 .cases-boxs {
   display: flex;
@@ -730,6 +733,16 @@ footer p {
   border: solid 1px #eee;
   border-top: none;
   border-radius: 5px;
+}
+.portfolio .links {
+  margin-top: 30px;
+}
+.portfolio .ui.basic.label {
+  padding: 4px 8px !important;
+  font-weight: 400 !important;
+}
+.portfolio .data p {
+  padding: 3px;
 }
 /* animation */
 /* figure img {
@@ -789,7 +802,7 @@ figure.cases-link.hover-parent:hover img {
   transform: scale(1.1);
 } */
 /* filter */
-.filter {
+/* .filter {
   position: fixed;
   right: 20px;
   bottom: 20px;
@@ -864,27 +877,39 @@ figure.cases-link.hover-parent:hover img {
 }
 .filter .ui.label.basic:hover {
   cursor: pointer;
-}
+} */
 @media only screen and (max-width: 767px) {
-  .cases-boxs .project-box {
-    flex-basis: 450px;
+  .cases-boxs {
+    display: block;
+    margin: 0 auto;
+    max-width: 450px;
+  }
+  .cases-boxs .data {
+    width: 100%;
+    /* text-align: center; */
+    margin-bottom: 70px;
   }
   .cases-boxs .project-box.dimmer {
     display: none;
   }
-  .no-match {
+  .portfolio .data + button {
+    display: block;
+    margin: 0 auto;
+  }
+  /* .no-match {
     text-align: center;
     padding: 40px 0;
-  }
+  } */
   .wrapper h2 {
     font-size: 1.8em;
     margin-bottom: 2em;
+    text-align: center;
   }
-  .filter.open {
+  /* .filter.open {
     padding: 18px 15px;
     width: 220px;
     height: 220px;
-  }
+  } */
 }
 
 /* PROJECT */
