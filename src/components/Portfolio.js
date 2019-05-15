@@ -170,12 +170,8 @@ class Portfolio extends React.Component {
             {portfolioData.map((data, index) => {
               if (index < this.state.numberOfDisplayedProjects) {
                 return (
-                  <React.Fragment>
-                    <div
-                      key={data.name[lang]}
-                      id={index}
-                      className={this.projectBoxClassName(data)}
-                    >
+                  <React.Fragment key={data.name[lang]}>
+                    <div id={index} className={this.projectBoxClassName(data)}>
                       <figure className='cases-link hover-parent'>
                         <img src={data.image} alt={data.name[lang]} />
                         {/* <figcaption className='hover-mask'>
@@ -188,21 +184,23 @@ class Portfolio extends React.Component {
                     {/* data start */}
                     <div className='data'>
                       <h1>{data.name[lang]}</h1>
-                      <div className='category'>
-                        <i>{`${data.category[lang]} / ${data.duration}, ${
-                          data.date
-                        }`}</i>
-                      </div>
+                      {/* <div className='category'>
+                        <i>{`${data.category[lang]}`}</i>
+                      </div> */}
                       <div className='skills'>
+                        {/* {data.skills.map(skill => skill + ', ')} */}
                         {data.skills.map(skill => (
                           <span key={skill} className='ui basic label'>
                             {skill}
                           </span>
                         ))}
                       </div>
-                      <p>
-                        <b>{data.description[lang]}</b>
-                      </p>
+                      <p>{data.description[lang]}</p>
+                      {data.additionalDescription ? (
+                        <p>
+                          <i>{data.additionalDescription[lang]}</i>
+                        </p>
+                      ) : null}
                       {/* <h3>{portfolio.summary[lang]}</h3>
                   <p>{data.summary[lang]}</p>
                   {data.history && (
@@ -213,7 +211,7 @@ class Portfolio extends React.Component {
                   )} */}
                       <div className='links'>
                         <a
-                          className='button ui secondary'
+                          className='button ui'
                           href={data.demoUrl}
                           target='_blank'
                           rel='noopener noreferrer'
@@ -222,7 +220,7 @@ class Portfolio extends React.Component {
                         </a>
                         {data.githubUrl && (
                           <a
-                            className='button ui secondary'
+                            className='button ui'
                             href={data.githubUrl}
                             target='_blank'
                             rel='noopener noreferrer'
@@ -239,7 +237,7 @@ class Portfolio extends React.Component {
               }
             })}
             <button
-              className='button ui secondary'
+              className='ui grey basic button'
               onClick={this.handleNumberOfProject}
             >
               {this.state.numberOfDisplayedProjects === numberOfProjects

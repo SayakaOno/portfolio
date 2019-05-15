@@ -878,6 +878,9 @@ figure.cases-link.hover-parent:hover img {
 .filter .ui.label.basic:hover {
   cursor: pointer;
 } */
+.portfolio .data + button {
+  margin-top: 30px;
+}
 @media only screen and (max-width: 767px) {
   .cases-boxs {
     display: block;
