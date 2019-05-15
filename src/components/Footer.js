@@ -1,26 +1,13 @@
-import React from "react";
+import React from 'react';
 
 const Footer = () => {
   return (
     <footer>
-      <div className="footer-sm">
-        <a
-          href="https://github.com/SayakaOno"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <i className="github icon" />
-        </a>
-        <a
-          href="https://www.linkedin.com/in/sayakaono/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <i className="linkedin icon" />
-        </a>
-      </div>
-      <p>
-        Made with <i className="heart icon" /> &copy;
+      <p className='message'>
+        <i className='fas fa-check-square' /> Thank you for visiting my site!
+      </p>
+      <p className='copylight'>
+        Made with <i className='heart icon' /> &copy;
         {` ${new Date().getFullYear()} Sayaka Ono`}
       </p>
     </footer>

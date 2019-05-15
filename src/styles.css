@@ -483,6 +483,9 @@ header .pc-menu a:hover {
 /* FOOTER */
 footer {
   background-color: #1b1c1d;
+  margin-top: 100px;
+  height: 150px;
+  padding: 50px 0;
 }
 .footer-sm {
   text-align: center;
@@ -501,9 +504,15 @@ footer {
   font-size: 1.5em;
 }
 footer p {
-  font-size: 0.8em;
   color: rgba(255, 255, 255, 0.5);
   text-align: center;
+  margin-bottom: 10px;
+}
+footer .message {
+  font-size: 1.2em;
+}
+footer .copylight {
+  font-size: 0.7em;
 }
 
 /* MODAL */
