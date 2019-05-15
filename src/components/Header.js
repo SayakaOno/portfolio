@@ -31,6 +31,23 @@ class Header extends React.Component {
             </ul>
           </nav>
 
+          <div className='sns_icons'>
+            <a
+              href='https://github.com/SayakaOno'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              <i className='github icon' />
+            </a>
+            <a
+              href='https://www.linkedin.com/in/sayakaono/'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              <i className='linkedin icon' />
+            </a>
+          </div>
+
           {/* <div className='lang'>
             <i
               className={`flag ${flag}`}

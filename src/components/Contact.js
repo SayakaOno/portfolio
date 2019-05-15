@@ -65,7 +65,11 @@ class Contact extends React.Component {
   renderButton = lang => {
     for (let key of ['name', 'email', 'message']) {
       if (this.state[key].error) {
-        return null;
+        return (
+          <button type='submit' className='ui disabled button'>
+            {contactData.send[lang]}
+          </button>
+        );
       }
     }
     return (
@@ -117,14 +121,11 @@ class Contact extends React.Component {
       <React.Fragment>
         <div id='contact' className='wrapper contact page'>
           <h2>Contact</h2>
-          <p className='col-12'>{contactData.description[lang]}</p>
+          {contactData.description[lang]}
           <div className='container'>
             <form>
               <div className={this.formClass('name', 'div')}>
-                <label htmlFor='name' className='col-12 col-sm-3'>
-                  {contactData.name[lang]}
-                </label>
-                <div className='col-12 col-sm-9'>
+                <div className='col-12'>
                   <input
                     id='name'
                     ref={this.nameInput}
@@ -134,14 +135,12 @@ class Contact extends React.Component {
                     onChange={this.handleChange}
                     name='name'
                     autoComplete='off'
+                    placeholder={contactData.name[lang]}
                   />
                 </div>
               </div>
               <div className={this.formClass('email', 'div')}>
-                <label htmlFor='email' className='col-12 col-sm-3'>
-                  {contactData.email[lang]}
-                </label>
-                <div className='col-12 col-sm-9'>
+                <div className='col-12'>
                   <input
                     id='email'
                     ref={this.emailInput}
@@ -151,14 +150,12 @@ class Contact extends React.Component {
                     onChange={this.handleChange}
                     name='email'
                     autoComplete='off'
+                    placeholder={contactData.email[lang]}
                   />
                 </div>
               </div>
               <div className={this.formClass('message', 'div')}>
-                <label htmlFor='message' className='col-12 col-sm-3'>
-                  {contactData.message[lang]}
-                </label>
-                <div className='col-12 col-sm-9'>
+                <div className='col-12'>
                   <textarea
                     id='message'
                     ref={this.messageInput}
@@ -168,6 +165,7 @@ class Contact extends React.Component {
                     value={this.state.message.text}
                     onChange={this.handleChange}
                     name='message'
+                    placeholder={contactData.message[lang]}
                   />
                 </div>
               </div>

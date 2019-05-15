@@ -12,9 +12,11 @@ const API_PATH = 'https://sayaka38.minibird.jp/location.php';
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { language: 'en', menuOpen: false, displayHeader: false };
+    this.state = {
+      language: 'en',
+      menuOpen: false
+    };
 
-    this.humbergerNav = React.createRef();
     this.inputBox = React.createRef();
     this.headerBar = React.createRef();
   }
@@ -85,7 +87,6 @@ class App extends React.Component {
       <React.Fragment>
         <div ref={this.headerBar} style={{ display: 'none' }}>
           <nav
-            ref={this.humbergerNav}
             role='navigation'
             className={`humberger-menu${this.state.menuOpen ? ' open' : ''}`}
           >
@@ -99,6 +100,7 @@ class App extends React.Component {
               <span />
               <span />
               <span />
+
               <ul id='menu' onClick={this.toggleMenu}>
                 <li>
                   <a className='item' to='/portfolio'>
@@ -115,12 +117,30 @@ class App extends React.Component {
                     Contact
                   </a>
                 </li>
-                <li>
+                {/* <li>
                   <div
                     className='item language'
                     onClick={this.handleLanguageChange}
                   >
                     {this.state.language === 'en' ? '日本語' : 'English'}
+                  </div>
+                </li> */}
+                <li>
+                  <div className='sm_sns_icons'>
+                    <a
+                      href='https://github.com/SayakaOno'
+                      target='_blank'
+                      rel='noopener noreferrer'
+                    >
+                      <i className='github icon' />
+                    </a>
+                    <a
+                      href='https://www.linkedin.com/in/sayakaono/'
+                      target='_blank'
+                      rel='noopener noreferrer'
+                    >
+                      <i className='linkedin icon' />
+                    </a>
                   </div>
                 </li>
               </ul>
