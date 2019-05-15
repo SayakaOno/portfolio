@@ -69,11 +69,7 @@ class Contact extends React.Component {
       }
     }
     return (
-      <button
-        type='submit'
-        className='button secondary ui btn'
-        onClick={this.handleSubmit}
-      >
+      <button type='submit' className='ui button' onClick={this.handleSubmit}>
         {contactData.send[lang]}
       </button>
     );

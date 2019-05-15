@@ -1145,6 +1145,9 @@ figure.cases-link.hover-parent:hover img {
 }
 
 /* CONTACT */
+#contact {
+  margin-bottom: 70px;
+}
 .contact.wrapper h2 {
   margin-bottom: 1em !important;
 }
@@ -1171,14 +1174,16 @@ textarea {
   outline: none;
   border: 1px solid #ddd;
 }
+.contact textarea {
+  margin-bottom: 50px;
+}
 input:focus,
 textarea:focus {
   border-color: #85b7d9 !important;
 }
-.contact .btn {
+.contact .button {
   display: block !important;
   margin: 0 auto;
-  margin-top: 50px;
 }
 .has-warning .form-control,
 .has-success .form-control {
@@ -1189,15 +1194,6 @@ textarea:focus {
   margin-top: 50px;
   font-size: 1.2em;
 }
-
-/* 404 */
-.no-match {
-  text-align: center;
-  height: 100vh;
-}
-.no-match h2 {
-  margin-bottom: 2em !important;
-}
-.no-match p {
-  margin-bottom: 50px;
+.contact .button-container {
+  height: 60px;
 }
