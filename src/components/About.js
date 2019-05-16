@@ -51,7 +51,12 @@ class About extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <div id='about' className='about wrapper page' ref={this.aboutRef}>
+        <div
+          name='about'
+          id='about'
+          className='about wrapper page'
+          ref={this.aboutRef}
+        >
           <Fade bottom>
             <h2>About me</h2>
           </Fade>

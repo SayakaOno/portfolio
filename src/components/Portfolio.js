@@ -85,7 +85,11 @@ class Portfolio extends React.Component {
           />
         )}
         <Fade bottom>
-          <div id='portfolio' className='wrapper portfolio page'>
+          <div
+            name='portfolio'
+            id='portfolio'
+            className='wrapper portfolio page'
+          >
             <h2>Portfolio</h2>
             <section className='cases-boxs' onClick={this.handleClick}>
               {portfolioData.map((data, index) => {

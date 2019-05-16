@@ -1,7 +1,57 @@
 import React from 'react';
 import Fade from 'react-reveal/Fade';
+import { Link, Events, animateScroll as scroll, scroller } from 'react-scroll';
 
 class Header extends React.Component {
+  scrollToTop = this.scrollToTop.bind(this);
+
+  componentDidMount() {
+    Events.scrollEvent.register('begin', function() {
+      console.log('begin', arguments);
+    });
+
+    Events.scrollEvent.register('end', function() {
+      console.log('end', arguments);
+    });
+  }
+  scrollToTop() {
+    scroll.scrollToTop();
+  }
+  scrollTo() {
+    scroller.scrollTo('scroll-to-element', {
+      duration: 800,
+      delay: 0,
+      smooth: 'easeInOutQuart'
+    });
+  }
+  scrollToWithContainer() {
+    let goToContainer = new Promise((resolve, reject) => {
+      Events.scrollEvent.register('end', () => {
+        resolve();
+        Events.scrollEvent.remove('end');
+      });
+
+      scroller.scrollTo('scroll-container', {
+        duration: 800,
+        delay: 0,
+        smooth: 'easeInOutQuart'
+      });
+    });
+
+    goToContainer.then(() =>
+      scroller.scrollTo('scroll-container-second-element', {
+        duration: 800,
+        delay: 0,
+        smooth: 'easeInOutQuart',
+        containerId: 'scroll-container'
+      })
+    );
+  }
+  componentWillUnmount() {
+    Events.scrollEvent.remove('begin');
+    Events.scrollEvent.remove('end');
+  }
+
   render() {
     const flag = this.props.language === 'en' ? 'jp' : 'ca';
 
@@ -9,26 +59,50 @@ class Header extends React.Component {
       <header>
         <Fade>
           <div className='header-content'>
-            <a className='header-brand' href='#home'>
+            <Link
+              className='header-brand'
+              to='home'
+              spy={true}
+              smooth={true}
+              duration={400}
+            >
               <span>sayaka</span>
-            </a>
+            </Link>
 
             <nav className='pc-menu'>
               <ul>
                 <li>
-                  <a activeClassName='active' href='#portfolio'>
+                  <Link
+                    activeClassName='active'
+                    to='portfolio'
+                    spy={true}
+                    smooth={true}
+                    duration={400}
+                  >
                     Portfolio
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a activeClassName='active' href='#about'>
+                  <Link
+                    activeClassName='active'
+                    to='about'
+                    spy={true}
+                    smooth={true}
+                    duration={400}
+                  >
                     About
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a activeClassName='active' href='#contact'>
+                  <Link
+                    activeClassName='active'
+                    to='contact'
+                    spy={true}
+                    smooth={true}
+                    duration={400}
+                  >
                     Contact
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </nav>

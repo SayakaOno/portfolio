@@ -121,7 +121,7 @@ class Contact extends React.Component {
     return (
       <React.Fragment>
         <Fade bottom>
-          <div id='contact' className='wrapper contact page'>
+          <div name='contact' id='contact' className='wrapper contact page'>
             <h2>Contact</h2>
             {contactData.description[lang]}
             <div className='container'>

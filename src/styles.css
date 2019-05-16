@@ -390,6 +390,9 @@ header {
   -o-transition: all 0.7s ease-in-out;
   transition: all 0.7s ease-in-out;
 }
+header a {
+  cursor: pointer;
+}
 .header-content {
   position: relative;
   max-width: 950px;
