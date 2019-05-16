@@ -1,4 +1,6 @@
 import React from 'react';
+import Fade from 'react-reveal/Fade';
+
 import imagesLoaded from 'imagesloaded';
 
 class Home extends React.Component {
@@ -106,31 +108,33 @@ class Home extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <section id='home' className='index-banner home'>
-          <div ref={this.verticalCenter} className='vertical-center'>
-            <div className='top-container'>
-              <h2>Sayaka Ono</h2>
-              <h1>React Developer</h1>
-              {/* <p>Vancouver</p> */}
-              {/* <div ref={this.linkToPortfolio} className='link-to-portfolio'>
+        <Fade>
+          <section id='home' className='index-banner home'>
+            <div ref={this.verticalCenter} className='vertical-center'>
+              <div className='top-container'>
+                <h2>Sayaka Ono</h2>
+                <h1>React Developer</h1>
+                {/* <p>Vancouver</p> */}
+                {/* <div ref={this.linkToPortfolio} className='link-to-portfolio'>
               <a className='hvr-icon-float-away pulse' href='#portfolio'>
                 PORTFOLIO <i className='fas fa-angle-double-right hvr-icon' />
               </a>
             </div> */}
-              <div className='ui four cards'>
-                <div className='input' href='#portfolio'>
-                  <i className='far fa-square' ref={this.input1} /> Checkbox1
-                </div>
-                <div className='input' href='#about'>
-                  <i className='far fa-square' ref={this.input2} /> Vancouver2
-                </div>
-                <div className='input' href='#contact'>
-                  <i className='far fa-square' ref={this.input3} /> Checkbox3
+                <div className='ui four cards'>
+                  <div className='input' href='#portfolio'>
+                    <i className='far fa-square' ref={this.input1} /> Checkbox1
+                  </div>
+                  <div className='input' href='#about'>
+                    <i className='far fa-square' ref={this.input2} /> Vancouver2
+                  </div>
+                  <div className='input' href='#contact'>
+                    <i className='far fa-square' ref={this.input3} /> Checkbox3
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </section>
+          </section>
+        </Fade>
       </React.Fragment>
     );
   }

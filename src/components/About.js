@@ -1,4 +1,6 @@
 import React from 'react';
+import Fade from 'react-reveal/Fade';
+
 import { about } from '../data';
 
 class About extends React.Component {
@@ -50,45 +52,50 @@ class About extends React.Component {
     return (
       <React.Fragment>
         <div id='about' className='about wrapper page' ref={this.aboutRef}>
-          <h2>About me</h2>
+          <Fade bottom>
+            <h2>About me</h2>
+          </Fade>
           <div className='about-container'>
             <div className='main-content'>
-              <p className='description'>
-                <strong>{about.new[this.lang].title}</strong>
-              </p>
-              <div className='bullet'>
-                <ul>
-                  {about.new[this.lang].bullet.map((point, index) => {
-                    let ref = 'checkboxRef' + (index + 1);
-                    return (
-                      <li key={index}>
-                        <i className='far fa-square' ref={this[ref]} />
-                        <div className='text'>
-                          <span>{point.header}</span>
-                          {point.detail}
-                        </div>
-                      </li>
-                    );
-                  })}
-                </ul>
-              </div>
-              <div className='skills'>
-                <h3>{about.skills[this.lang]}</h3>
-                <div className='skills-container'>
-                  <div>
-                    <dt>Frontend</dt>
-                    <dd>{about.sortedSkills['Frontend'].join(', ')}</dd>
-                    <dt>Backend</dt>
-                    <dd>{about.sortedSkills['Backend'].join(', ')}</dd>
-                    <dt>What else I can do</dt>
-                    <dd>{about.sortedSkills['others'].join(', ')}</dd>
-                    {/* <ul>
+              <Fade bottom>
+                <p className='description'>
+                  <strong>{about.new[this.lang].title}</strong>
+                </p>
+                <div className='bullet'>
+                  <ul>
+                    {about.new[this.lang].bullet.map((point, index) => {
+                      let ref = 'checkboxRef' + (index + 1);
+                      return (
+                        <li key={index}>
+                          <i className='far fa-square' ref={this[ref]} />
+                          <div className='text'>
+                            <span>{point.header}</span>
+                            {point.detail}
+                          </div>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </div>
+              </Fade>
+              <Fade bottom>
+                <div className='skills'>
+                  <h3>{about.skills[this.lang]}</h3>
+                  <div className='skills-container'>
+                    <div>
+                      <dt>Frontend</dt>
+                      <dd>{about.sortedSkills['Frontend'].join(', ')}</dd>
+                      <dt>Backend</dt>
+                      <dd>{about.sortedSkills['Backend'].join(', ')}</dd>
+                      <dt>What else I can do</dt>
+                      <dd>{about.sortedSkills['others'].join(', ')}</dd>
+                      {/* <ul>
                       {about.sortedSkills['Frontend'].map(skill => (
                         <li key={skill}>{skill}</li>
                       ))}
                     </ul> */}
-                  </div>
-                  {/* <div>
+                    </div>
+                    {/* <div>
                     <h4>Backend</h4>
                     <ul>
                       {about.sortedSkills['Backend'].map(skill => (
@@ -104,8 +111,9 @@ class About extends React.Component {
                       ))}
                     </ul>
                   </div> */}
+                  </div>
                 </div>
-              </div>
+              </Fade>
             </div>
           </div>
         </div>

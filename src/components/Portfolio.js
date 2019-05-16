@@ -1,5 +1,6 @@
 import React from 'react';
 
+import Fade from 'react-reveal/Fade';
 import Lightbox from 'react-image-lightbox';
 import 'react-image-lightbox/style.css';
 
@@ -83,74 +84,76 @@ class Portfolio extends React.Component {
             enableZoom={false}
           />
         )}
-        <div id='portfolio' className='wrapper portfolio page'>
-          <h2>Portfolio</h2>
-          <section className='cases-boxs' onClick={this.handleClick}>
-            {portfolioData.map((data, index) => {
-              if (index < this.state.numberOfDisplayedProjects) {
-                return (
-                  <React.Fragment key={data.name[lang]}>
-                    <div
-                      id={data.order}
-                      className={`project-box${
-                        !data.gallery.length ? ' no-gallery' : ''
-                      }`}
-                    >
-                      <figure className='cases-link hover-parent'>
-                        <img src={data.image} alt={data.name[lang]} />
-                      </figure>
-                    </div>
-
-                    <div className='data'>
-                      <h1>{data.name[lang]}</h1>
-                      <div className='skills'>
-                        {data.skills.map(skill => (
-                          <span key={skill} className='ui basic label'>
-                            {skill}
-                          </span>
-                        ))}
+        <Fade bottom>
+          <div id='portfolio' className='wrapper portfolio page'>
+            <h2>Portfolio</h2>
+            <section className='cases-boxs' onClick={this.handleClick}>
+              {portfolioData.map((data, index) => {
+                if (index < this.state.numberOfDisplayedProjects) {
+                  return (
+                    <React.Fragment key={data.name[lang]}>
+                      <div
+                        id={data.order}
+                        className={`project-box${
+                          !data.gallery.length ? ' no-gallery' : ''
+                        }`}
+                      >
+                        <figure className='cases-link hover-parent'>
+                          <img src={data.image} alt={data.name[lang]} />
+                        </figure>
                       </div>
-                      <p>{data.description[lang]}</p>
-                      {data.additionalDescription ? (
-                        <p>
-                          <i>{data.additionalDescription[lang]}</i>
-                        </p>
-                      ) : null}
-                      <div className='links'>
-                        <a
-                          className='button ui'
-                          href={data.demoUrl}
-                          target='_blank'
-                          rel='noopener noreferrer'
-                        >
-                          Demo
-                        </a>
-                        {data.githubUrl && (
+
+                      <div className='data'>
+                        <h1>{data.name[lang]}</h1>
+                        <div className='skills'>
+                          {data.skills.map(skill => (
+                            <span key={skill} className='ui basic label'>
+                              {skill}
+                            </span>
+                          ))}
+                        </div>
+                        <p>{data.description[lang]}</p>
+                        {data.additionalDescription ? (
+                          <p>
+                            <i>{data.additionalDescription[lang]}</i>
+                          </p>
+                        ) : null}
+                        <div className='links'>
                           <a
                             className='button ui'
-                            href={data.githubUrl}
+                            href={data.demoUrl}
                             target='_blank'
                             rel='noopener noreferrer'
                           >
-                            GitHub
+                            Demo
                           </a>
-                        )}
+                          {data.githubUrl && (
+                            <a
+                              className='button ui'
+                              href={data.githubUrl}
+                              target='_blank'
+                              rel='noopener noreferrer'
+                            >
+                              GitHub
+                            </a>
+                          )}
+                        </div>
                       </div>
-                    </div>
-                  </React.Fragment>
-                );
-              }
-            })}
-            <button
-              className='ui grey basic button'
-              onClick={this.handleNumberOfProject}
-            >
-              {this.state.numberOfDisplayedProjects === numberOfProjects
-                ? 'Show less'
-                : 'Show more'}
-            </button>
-          </section>
-        </div>
+                    </React.Fragment>
+                  );
+                }
+              })}
+              <button
+                className='ui grey basic button'
+                onClick={this.handleNumberOfProject}
+              >
+                {this.state.numberOfDisplayedProjects === numberOfProjects
+                  ? 'Show less'
+                  : 'Show more'}
+              </button>
+            </section>
+          </div>
+        </Fade>
       </React.Fragment>
     );
   }

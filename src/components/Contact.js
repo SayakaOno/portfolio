@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import path from 'path';
+import Fade from 'react-reveal/Fade';
 import { contactData } from '../data';
 
 const API_PATH = path.join(window.location.href, '../contact.php');
@@ -119,61 +120,65 @@ class Contact extends React.Component {
     const lang = this.props.language;
     return (
       <React.Fragment>
-        <div id='contact' className='wrapper contact page'>
-          <h2>Contact</h2>
-          {contactData.description[lang]}
-          <div className='container'>
-            <form>
-              <div className={this.formClass('name', 'div')}>
-                <div className='col-12'>
-                  <input
-                    id='name'
-                    ref={this.nameInput}
-                    type='text'
-                    className={this.formClass('name', 'input')}
-                    value={this.state.name.text}
-                    onChange={this.handleChange}
-                    name='name'
-                    autoComplete='off'
-                    placeholder={contactData.name[lang]}
-                  />
+        <Fade bottom>
+          <div id='contact' className='wrapper contact page'>
+            <h2>Contact</h2>
+            {contactData.description[lang]}
+            <div className='container'>
+              <form>
+                <div className={this.formClass('name', 'div')}>
+                  <div className='col-12'>
+                    <input
+                      id='name'
+                      ref={this.nameInput}
+                      type='text'
+                      className={this.formClass('name', 'input')}
+                      value={this.state.name.text}
+                      onChange={this.handleChange}
+                      name='name'
+                      autoComplete='off'
+                      placeholder={contactData.name[lang]}
+                    />
+                  </div>
                 </div>
-              </div>
-              <div className={this.formClass('email', 'div')}>
-                <div className='col-12'>
-                  <input
-                    id='email'
-                    ref={this.emailInput}
-                    type='email'
-                    className={this.formClass('email', 'input')}
-                    value={this.state.email.text}
-                    onChange={this.handleChange}
-                    name='email'
-                    autoComplete='off'
-                    placeholder={contactData.email[lang]}
-                  />
+                <div className={this.formClass('email', 'div')}>
+                  <div className='col-12'>
+                    <input
+                      id='email'
+                      ref={this.emailInput}
+                      type='email'
+                      className={this.formClass('email', 'input')}
+                      value={this.state.email.text}
+                      onChange={this.handleChange}
+                      name='email'
+                      autoComplete='off'
+                      placeholder={contactData.email[lang]}
+                    />
+                  </div>
                 </div>
-              </div>
-              <div className={this.formClass('message', 'div')}>
-                <div className='col-12'>
-                  <textarea
-                    id='message'
-                    ref={this.messageInput}
-                    type='email'
-                    className={this.formClass('message', 'input')}
-                    rows='5'
-                    value={this.state.message.text}
-                    onChange={this.handleChange}
-                    name='message'
-                    placeholder={contactData.message[lang]}
-                  />
+                <div className={this.formClass('message', 'div')}>
+                  <div className='col-12'>
+                    <textarea
+                      id='message'
+                      ref={this.messageInput}
+                      type='email'
+                      className={this.formClass('message', 'input')}
+                      rows='5'
+                      value={this.state.message.text}
+                      onChange={this.handleChange}
+                      name='message'
+                      placeholder={contactData.message[lang]}
+                    />
+                  </div>
                 </div>
-              </div>
-              <div className='button-container'>{this.renderButton(lang)}</div>
-            </form>
-            <div className='result-message'>{this.renderResultMessage()}</div>
+                <div className='button-container'>
+                  {this.renderButton(lang)}
+                </div>
+              </form>
+              <div className='result-message'>{this.renderResultMessage()}</div>
+            </div>
           </div>
-        </div>
+        </Fade>
       </React.Fragment>
     );
   }
