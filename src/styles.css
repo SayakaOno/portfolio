@@ -751,6 +751,9 @@ footer .copylight {
 .cases-boxs .project-box:hover {
   cursor: pointer;
 }
+.cases-boxs .project-box.no-gallery:hover {
+  cursor: initial;
+}
 .cases-boxs .project-box.dimmer::after {
   content: '';
   position: absolute;

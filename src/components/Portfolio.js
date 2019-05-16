@@ -18,7 +18,7 @@ class Portfolio extends React.Component {
 
   handleClick = e => {
     const projectBox = e.target.closest('.project-box');
-    if (!projectBox) {
+    if (!projectBox || projectBox.className === 'project-box no-gallery') {
       return;
     }
     this.selectProject(projectBox.id);
@@ -90,7 +90,12 @@ class Portfolio extends React.Component {
               if (index < this.state.numberOfDisplayedProjects) {
                 return (
                   <React.Fragment key={data.name[lang]}>
-                    <div id={data.order} className='project-box'>
+                    <div
+                      id={data.order}
+                      className={`project-box${
+                        !data.gallery.length ? ' no-gallery' : ''
+                      }`}
+                    >
                       <figure className='cases-link hover-parent'>
                         <img src={data.image} alt={data.name[lang]} />
                       </figure>
