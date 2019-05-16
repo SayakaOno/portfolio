@@ -1,149 +1,37 @@
 import React from 'react';
-import Modal from './Modal';
-import Project from './Project';
 
-import { portfolio, portfolioData, elements } from '../data';
+import Lightbox from 'react-image-lightbox';
+import 'react-image-lightbox/style.css';
+
+import { portfolioData } from '../data';
 
 const initialNumberOfDisplayedProjects = 2;
 const numberOfProjects = portfolioData.length;
 
 class Portfolio extends React.Component {
   state = {
-    // selectedProject: null,
-    selectedElements: [],
-    // showNotFound: false,
-    // filterOpen: false,
-    // availableElements: elements,
-    numberOfDisplayedProjects: initialNumberOfDisplayedProjects
+    selectedProject: null,
+    numberOfDisplayedProjects: initialNumberOfDisplayedProjects,
+    photoIndex: 0,
+    images: []
   };
 
-  // componentDidMount() {
-  //   window.addEventListener('resize', this.checkMatching);
-  // }
-
-  // componentDidUpdate() {
-  //   if (document.documentElement.clientWidth > 766) {
-  //     return;
-  //   }
-  //   if (
-  //     this.state.showNotFound === false &&
-  //     document.querySelectorAll('.project-box.dimmer').length === 4
-  //   ) {
-  //     this.setState({ showNotFound: true });
-  //   }
-  // }
-
-  // handleClick = e => {
-  //   const projectBox = e.target.closest('.project-box');
-  //   if (!projectBox) {
-  //     return;
-  //   }
-  //   this.selectProject(projectBox.id);
-  // };
-
-  // handleSelectElements = e => {
-  //   if (!e.target.closest('span')) {
-  //     return;
-  //   }
-  //   let showNotFound = false;
-  //   const skill = e.target.closest('span').innerHTML;
-  //   this.setState(prevState => {
-  //     const targetIndex = prevState.selectedElements.findIndex(
-  //       selectedElement => selectedElement === skill
-  //     );
-  //     if (targetIndex !== -1) {
-  //       return {
-  //         selectedElements: prevState.selectedElements.filter(
-  //           (skill, index) => index !== targetIndex
-  //         ),
-  //         showNotFound
-  //       };
-  //     } else {
-  //       return {
-  //         selectedElements: prevState.selectedElements.concat(skill),
-  //         showNotFound
-  //       };
-  //     }
-  //   });
-  //   this.availableElements();
-  // };
-
-  // availableElements = () => {
-  //   setTimeout(() => {
-  //     let availableElements = new Set();
-  //     portfolioData.forEach(data => {
-  //       let dimmer = false;
-  //       let elements = [data.category.en, ...data.skills];
-  //       for (let element of this.state.selectedElements) {
-  //         if (!elements.includes(element)) {
-  //           dimmer = true;
-  //           break;
-  //         }
-  //       }
-  //       if (!dimmer) {
-  //         elements.forEach(elem => {
-  //           availableElements.add(elem);
-  //         });
-  //       }
-  //     });
-  //     this.setState({ availableElements: Array.from(availableElements) });
-  //   }, 0);
-  // };
-
-  // isAvailableElement = elem => {
-  //   return this.state.availableElements.includes(elem);
-  // };
-
-  // handleClear = e => {
-  //   if (!e.target.closest('.clear-filter-button')) {
-  //     return;
-  //   }
-  //   this.setState({ selectedElements: [], availableElements: elements });
-  // };
-
-  // selectProject = id => {
-  //   this.setState({ selectedProject: id });
-  // };
-
-  projectBoxClassName = data => {
-    const elements = [data.category.en, ...data.skills];
-    for (let element of this.state.selectedElements) {
-      if (!elements.includes(element)) {
-        return 'project-box dimmer';
-      }
+  handleClick = e => {
+    const projectBox = e.target.closest('.project-box');
+    if (!projectBox) {
+      return;
     }
-    return 'project-box';
+    this.selectProject(projectBox.id);
   };
 
-  // handleOrder = data => {
-  //   const elements = [data.category.en, ...data.skills];
-  //   for (let element of this.state.selectedElements) {
-  //     if (!elements.includes(element)) {
-  //       return null;
-  //     }
-  //   }
-  //   return { order: -4 };
-  // };
+  selectProject = id => {
+    let data = portfolioData.filter(data => +data.order === +id)[0];
+    this.setState({
+      selectedProject: id,
+      images: data.gallery
+    });
+  };
 
-  // labelClassName = element => {
-  //   if (this.state.selectedElements.includes(element)) {
-  //     return 'ui label tiny';
-  //   }
-  //   return 'ui basic label tiny';
-  // };
-
-  // renderModal = lang => {
-  //   return (
-  //     <Modal onDismiss={() => this.setState({ selectedProject: null })}>
-  //       <Project
-  //         id={this.state.selectedProject}
-  //         language={lang}
-  //         onDismiss={() => this.setState({ selectedProject: null })}
-  //         selectProject={this.selectProject}
-  //       />
-  //     </Modal>
-  //   );
-  // };
   handleNumberOfProject = () => {
     let newNumber = null;
     if (this.state.numberOfDisplayedProjects === numberOfProjects) {
@@ -159,11 +47,42 @@ class Portfolio extends React.Component {
 
   render() {
     const lang = this.props.language;
+    const { photoIndex, selectedProject } = this.state;
 
-    return this.state.selectedProject ? (
-      this.renderModal(lang)
-    ) : (
+    return (
       <React.Fragment>
+        {selectedProject && (
+          <Lightbox
+            mainSrc={this.state.images[photoIndex]}
+            nextSrc={
+              this.state.images.length !== 1
+                ? this.state.images[(photoIndex + 1) % this.state.images.length]
+                : null
+            }
+            prevSrc={
+              this.state.images.length !== 1
+                ? this.state.images[
+                    (photoIndex + this.state.images.length - 1) %
+                      this.state.images.length
+                  ]
+                : null
+            }
+            onCloseRequest={() => this.setState({ selectedProject: null })}
+            onMovePrevRequest={() =>
+              this.setState({
+                photoIndex:
+                  (photoIndex + this.state.images.length - 1) %
+                  this.state.images.length
+              })
+            }
+            onMoveNextRequest={() =>
+              this.setState({
+                photoIndex: (photoIndex + 1) % this.state.images.length
+              })
+            }
+            enableZoom={false}
+          />
+        )}
         <div id='portfolio' className='wrapper portfolio page'>
           <h2>Portfolio</h2>
           <section className='cases-boxs' onClick={this.handleClick}>
@@ -171,24 +90,15 @@ class Portfolio extends React.Component {
               if (index < this.state.numberOfDisplayedProjects) {
                 return (
                   <React.Fragment key={data.name[lang]}>
-                    <div id={index} className={this.projectBoxClassName(data)}>
+                    <div id={data.order} className='project-box'>
                       <figure className='cases-link hover-parent'>
                         <img src={data.image} alt={data.name[lang]} />
-                        {/* <figcaption className='hover-mask'>
-                      <h3>{data.name[lang]}</h3>
-                      <p>{data.category[lang]}</p>
-                    </figcaption> */}
                       </figure>
                     </div>
 
-                    {/* data start */}
                     <div className='data'>
                       <h1>{data.name[lang]}</h1>
-                      {/* <div className='category'>
-                        <i>{`${data.category[lang]}`}</i>
-                      </div> */}
                       <div className='skills'>
-                        {/* {data.skills.map(skill => skill + ', ')} */}
                         {data.skills.map(skill => (
                           <span key={skill} className='ui basic label'>
                             {skill}
@@ -201,14 +111,6 @@ class Portfolio extends React.Component {
                           <i>{data.additionalDescription[lang]}</i>
                         </p>
                       ) : null}
-                      {/* <h3>{portfolio.summary[lang]}</h3>
-                  <p>{data.summary[lang]}</p>
-                  {data.history && (
-                    <React.Fragment>
-                      <h3>{portfolio.episode[lang]}</h3>
-                      <p>{data.history[lang]}</p>
-                    </React.Fragment>
-                  )} */}
                       <div className='links'>
                         <a
                           className='button ui'
@@ -230,8 +132,6 @@ class Portfolio extends React.Component {
                         )}
                       </div>
                     </div>
-
-                    {/* data end */}
                   </React.Fragment>
                 );
               }

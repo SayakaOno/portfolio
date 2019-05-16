@@ -328,7 +328,6 @@ select {
 @media only screen and (min-width: 767px) {
   .humberger-menu {
     display: none;
-    padding: ;
   }
 }
 
@@ -956,7 +955,21 @@ figure.cases-link.hover-parent:hover img {
     height: 220px;
   } */
 }
-
+/* Lightbox */
+@media only screen and (min-width: 765px) and (max-width: 991px) {
+}
+@media only screen and (min-width: 992px) {
+  .ril__inner {
+    top: 15%;
+    bottom: 15%;
+  }
+  .ril__inner img {
+    height: 100%;
+  }
+}
+.ReactModal__Overlay.ReactModal__Overlay--after-open {
+  z-index: 10000 !important;
+}
 /* PROJECT */
 .project {
   max-width: 750px;
