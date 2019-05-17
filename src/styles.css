@@ -506,7 +506,18 @@ footer p {
   margin-bottom: 10px;
 }
 footer .message {
+  width: 290px;
   font-size: 1.2em;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s linear 1200ms, opacity 1200ms;
+  margin: 0 auto;
+  text-align: left;
+}
+footer .message.show {
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0s linear 0s, opacity 1000ms;
 }
 footer .copylight {
   font-size: 0.7em;
@@ -922,7 +933,32 @@ figure.cases-link.hover-parent:hover img {
 } */
 .portfolio .data + button {
   margin-top: 30px;
+  height: 44px;
 }
+.portfolio .data + button span:after {
+  display: inline-block;
+  padding-left: 5px;
+  width: 10px;
+  vertical-align: text-bottom;
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  content: '\f107';
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s linear 300ms, opacity 300ms;
+}
+.portfolio .data + button:hover span:after {
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0s linear 0s, opacity 300ms;
+}
+.portfolio .data + button span.show-more:after {
+  content: '\f107';
+}
+.portfolio .data + button span.show-less:after {
+  content: '\f106';
+}
+
 @media only screen and (max-width: 767px) {
   .cases-boxs {
     display: block;

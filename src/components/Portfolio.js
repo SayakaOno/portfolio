@@ -155,9 +155,11 @@ class Portfolio extends React.Component {
                 className='ui grey basic button'
                 onClick={this.handleNumberOfProject}
               >
-                {this.state.numberOfDisplayedProjects === numberOfProjects
-                  ? 'Show less'
-                  : 'Show more'}
+                {this.state.numberOfDisplayedProjects === numberOfProjects ? (
+                  <span className='show-less'>Show less</span>
+                ) : (
+                  <span className='show-more'>Show more</span>
+                )}
               </button>
             </section>
           </div>
