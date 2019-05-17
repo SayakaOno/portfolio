@@ -15,6 +15,7 @@ class About extends React.Component {
     this.checkboxRef3 = React.createRef();
     this.checkboxRef4 = React.createRef();
     this.checkboxRef5 = React.createRef();
+    this.checkboxRef6 = React.createRef();
   }
   lang = this.props.language;
 
@@ -41,7 +42,10 @@ class About extends React.Component {
           this.checkboxRef5.current.className = 'fas fa-check-square';
         }, 1400);
         setTimeout(() => {
-          this.checkboxRef5.current.className = 'fas fa-utensils';
+          this.checkboxRef6.current.className = 'fas fa-check-square';
+        }, 1500);
+        setTimeout(() => {
+          this.checkboxRef6.current.className = 'fas fa-utensils';
         }, 2500);
         this.setState({ iconChange: true });
       }
@@ -57,12 +61,12 @@ class About extends React.Component {
           className='about wrapper page'
           ref={this.aboutRef}
         >
-          <Fade bottom>
+          <Fade>
             <h2>About me</h2>
           </Fade>
           <div className='about-container'>
             <div className='main-content'>
-              <Fade bottom>
+              <Fade>
                 <p className='description'>
                   <strong>{about.new[this.lang].title}</strong>
                 </p>
@@ -83,7 +87,7 @@ class About extends React.Component {
                   </ul>
                 </div>
               </Fade>
-              <Fade bottom>
+              <Fade>
                 <div className='skills'>
                   <h3>{about.skills[this.lang]}</h3>
                   <div className='skills-container'>

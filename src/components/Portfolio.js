@@ -84,7 +84,7 @@ class Portfolio extends React.Component {
             enableZoom={false}
           />
         )}
-        <Fade bottom>
+        <Fade>
           <div
             name='portfolio'
             id='portfolio'

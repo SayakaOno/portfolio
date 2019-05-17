@@ -120,7 +120,7 @@ class Contact extends React.Component {
     const lang = this.props.language;
     return (
       <React.Fragment>
-        <Fade bottom>
+        <Fade>
           <div name='contact' id='contact' className='wrapper contact page'>
             <h2>Contact</h2>
             {contactData.description[lang]}

@@ -1,14 +1,11 @@
 import React from 'react';
-import axios from 'axios';
-import { Link, Events, animateScroll as scroll, scroller } from 'react-scroll';
+import { Link } from 'react-scroll';
 import Header from '../components/Header';
 import Home from '../components/Home';
 import Portfolio from '../components/Portfolio';
 import About from '../components/About';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
-
-const API_PATH = 'https://sayaka38.minibird.jp/location.php';
 
 class App extends React.Component {
   constructor(props) {
@@ -22,66 +19,7 @@ class App extends React.Component {
     this.headerBar = React.createRef();
   }
 
-  scrollToTop = this.scrollToTop.bind(this);
-
   componentDidMount() {
-    Events.scrollEvent.register('begin', function() {
-      console.log('begin', arguments);
-    });
-
-    Events.scrollEvent.register('end', function() {
-      console.log('end', arguments);
-    });
-  }
-  scrollToTop() {
-    scroll.scrollToTop();
-  }
-  scrollTo() {
-    scroller.scrollTo('scroll-to-element', {
-      duration: 800,
-      delay: 0,
-      smooth: 'easeInOutQuart'
-    });
-  }
-  scrollToWithContainer() {
-    let goToContainer = new Promise((resolve, reject) => {
-      Events.scrollEvent.register('end', () => {
-        resolve();
-        Events.scrollEvent.remove('end');
-      });
-
-      scroller.scrollTo('scroll-container', {
-        duration: 800,
-        delay: 0,
-        smooth: 'easeInOutQuart'
-      });
-    });
-
-    goToContainer.then(() =>
-      scroller.scrollTo('scroll-container-second-element', {
-        duration: 800,
-        delay: 0,
-        smooth: 'easeInOutQuart',
-        containerId: 'scroll-container'
-      })
-    );
-  }
-
-  async componentDidMount() {
-    const response = await axios({
-      method: 'get',
-      url: `${API_PATH}`
-    });
-    if (response && response.data === 'ja') {
-      this.setState({
-        language: 'ja'
-      });
-    } else {
-      this.setState({
-        language: 'en'
-      });
-    }
-
     window.addEventListener('click', e => {
       if (!this.state.menuOpen || e.target.closest('nav')) {
         return;
@@ -90,13 +28,19 @@ class App extends React.Component {
     });
 
     window.addEventListener('scroll', () => {
-      if (window.scrollY >= window.innerHeight) {
-        this.headerBar.current.style.display = 'block';
-      } else if (window.scrollY < window.innerHeight) {
-        this.headerBar.current.style.display = 'none';
-      }
+      this.handleHeaderbarVisibility();
     });
+
+    this.handleHeaderbarVisibility();
   }
+
+  handleHeaderbarVisibility = () => {
+    if (window.scrollY >= window.innerHeight) {
+      this.headerBar.current.className = '';
+    } else {
+      this.headerBar.current.className = 'none';
+    }
+  };
 
   componentWillUnmount() {
     window.removeEventListener('click', e => {
@@ -105,8 +49,6 @@ class App extends React.Component {
       }
       this.toggleMenuOpenState();
     });
-    Events.scrollEvent.remove('begin');
-    Events.scrollEvent.remove('end');
   }
   handleLanguageChange = () => {
     this.setState(prevState => {
@@ -132,7 +74,7 @@ class App extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <div ref={this.headerBar} style={{ display: 'none' }}>
+        <div ref={this.headerBar} id='header-bar' className='none'>
           <nav
             role='navigation'
             className={`humberger-menu${this.state.menuOpen ? ' open' : ''}`}
@@ -182,14 +124,6 @@ class App extends React.Component {
                     Contact
                   </Link>
                 </li>
-                {/* <li>
-                  <div
-                    className='item language'
-                    onClick={this.handleLanguageChange}
-                  >
-                    {this.state.language === 'en' ? '日本語' : 'English'}
-                  </div>
-                </li> */}
                 <li>
                   <div className='sm_sns_icons'>
                     <a
