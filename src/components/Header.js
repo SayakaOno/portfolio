@@ -25,35 +25,17 @@ class Header extends React.Component {
             <nav className='pc-menu'>
               <ul>
                 <li>
-                  <Link
-                    activeClassName='active'
-                    to='portfolio'
-                    spy={true}
-                    smooth={true}
-                    duration={400}
-                  >
+                  <Link to='portfolio' spy={true} smooth={true} duration={400}>
                     Portfolio
                   </Link>
                 </li>
                 <li>
-                  <Link
-                    activeClassName='active'
-                    to='about'
-                    spy={true}
-                    smooth={true}
-                    duration={400}
-                  >
+                  <Link to='about' spy={true} smooth={true} duration={400}>
                     About
                   </Link>
                 </li>
                 <li>
-                  <Link
-                    activeClassName='active'
-                    to='contact'
-                    spy={true}
-                    smooth={true}
-                    duration={400}
-                  >
+                  <Link to='contact' spy={true} smooth={true} duration={400}>
                     Contact
                   </Link>
                 </li>

@@ -31,6 +31,7 @@ class Portfolio extends React.Component {
       selectedProject: id,
       images: data.gallery
     });
+    document.body.style.overflow = 'hidden';
   };
 
   handleNumberOfProject = () => {
@@ -68,7 +69,10 @@ class Portfolio extends React.Component {
                   ]
                 : null
             }
-            onCloseRequest={() => this.setState({ selectedProject: null })}
+            onCloseRequest={() => {
+              document.body.style.overflow = 'auto';
+              this.setState({ selectedProject: null });
+            }}
             onMovePrevRequest={() =>
               this.setState({
                 photoIndex:
