@@ -59,9 +59,7 @@ class About extends React.Component {
           <div className='about-container'>
             <div className='main-content'>
               <Fade>
-                <p className='description'>
-                  <strong>{about.new[this.lang].title}</strong>
-                </p>
+                <p className='description'>{about.new[this.lang].title}</p>
                 <div className='bullet'>
                   <ul>
                     {about.new[this.lang].bullet.map((point, index) => {
@@ -70,7 +68,9 @@ class About extends React.Component {
                         <li key={index}>
                           <i className='far fa-square' ref={this[ref]} />
                           <div className='text'>
-                            <span>{point.header}</span>
+                            <span>
+                              <b>{point.header}</b>
+                            </span>
                             {point.detail}
                           </div>
                         </li>

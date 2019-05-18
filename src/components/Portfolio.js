@@ -167,6 +167,8 @@ class Portfolio extends React.Component {
                       </div>
                     </React.Fragment>
                   );
+                } else {
+                  return null;
                 }
               })}
               <button

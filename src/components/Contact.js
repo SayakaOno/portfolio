@@ -5,11 +5,9 @@ import Fade from 'react-reveal/Fade';
 import { contactData } from '../data';
 
 const API_PATH = path.join(window.location.href, '../contact.php');
-console.log(window.location.hostname + '/contact.php');
-console.log(path.join(window.location.href, '../contact.php'));
 
 function ValidateEmail(mail) {
-  if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail)) {
+  if (/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(.\w{2,3})+$/.test(mail)) {
     return true;
   }
   // console.log('You have entered an invalid email address!');

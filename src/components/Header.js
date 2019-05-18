@@ -1,6 +1,6 @@
 import React from 'react';
 import Fade from 'react-reveal/Fade';
-import { Link, Events, animateScroll as scroll, scroller } from 'react-scroll';
+import { Link } from 'react-scroll';
 
 class Header extends React.Component {
   state = {
