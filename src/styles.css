@@ -554,8 +554,6 @@ footer .copylight {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  display: table;
-  text-align: center;
 }
 .ui.four.cards {
   width: 300px;
@@ -587,12 +585,8 @@ footer .copylight {
   display: block;
   margin-bottom: 5px;
 }
-.vertical-center {
-  display: table-cell;
-  vertical-align: middle;
-}
 .top-container {
-  width: fit-content;
+  max-width: 440px;
   padding: 50px 70px;
   /* background-color: rgba(255, 255, 255, 0.6); */
   margin: 0 auto;
@@ -647,6 +641,14 @@ footer .copylight {
   padding: 20px;
   font-weight: bold;
 } */
+.top-container {
+  padding: 20px;
+  text-align: left;
+  margin: 10%;
+}
+.ui.four.cards {
+  margin: 0;
+}
 @media only screen and (max-width: 767px) {
   /* .vertical-center.additional .link-to-portfolio a {
     margin-top: 40px;
@@ -656,6 +658,15 @@ footer .copylight {
   }
 }
 @media only screen and (min-width: 768px) {
+  .vertical-center {
+    max-width: 950px;
+    margin: 0 auto;
+  }
+  /* .index-banner {
+    display: table;
+    text-align: center;
+  }
+  */
   /* .vertical-center.additional { */
   /* padding-left: 130px;
     text-align: left;
