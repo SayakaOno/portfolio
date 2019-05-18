@@ -13,7 +13,11 @@ class Portfolio extends React.Component {
   state = {
     selectedProject: null,
     numberOfDisplayedProjects: initialNumberOfDisplayedProjects,
-    photoIndex: 0,
+    photoIndex1: 0,
+    photoIndex2: 0,
+    photoIndex3: 0,
+    photoIndex4: 0,
+    photoIndex5: 0,
     images: []
   };
 
@@ -49,8 +53,15 @@ class Portfolio extends React.Component {
 
   render() {
     const lang = this.props.language;
-    const { photoIndex, selectedProject } = this.state;
-
+    const { selectedProject } = this.state;
+    const key = 'photoIndex' + selectedProject;
+    const photoIndex = this.state[key];
+    let selectedProjctData = null;
+    if (selectedProject) {
+      selectedProjctData = portfolioData.filter(data => {
+        return +data.order === +selectedProject;
+      })[0];
+    }
     return (
       <React.Fragment>
         {selectedProject && (
@@ -75,17 +86,22 @@ class Portfolio extends React.Component {
             }}
             onMovePrevRequest={() =>
               this.setState({
-                photoIndex:
+                [key]:
                   (photoIndex + this.state.images.length - 1) %
                   this.state.images.length
               })
             }
             onMoveNextRequest={() =>
               this.setState({
-                photoIndex: (photoIndex + 1) % this.state.images.length
+                [key]: (photoIndex + 1) % this.state.images.length
               })
             }
             enableZoom={false}
+            imageCaption={
+              photoIndex
+                ? selectedProjctData.name[lang] + ' feature'
+                : selectedProjctData.name[lang]
+            }
           />
         )}
         <Fade>
