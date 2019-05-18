@@ -124,59 +124,55 @@ class Contact extends React.Component {
           <div name='contact' id='contact' className='wrapper contact page'>
             <h2>Contact</h2>
             {contactData.description[lang]}
-            <div className='container'>
-              <form>
-                <div className={this.formClass('name', 'div')}>
-                  <div className='col-12'>
-                    <input
-                      id='name'
-                      ref={this.nameInput}
-                      type='text'
-                      className={this.formClass('name', 'input')}
-                      value={this.state.name.text}
-                      onChange={this.handleChange}
-                      name='name'
-                      autoComplete='off'
-                      placeholder={contactData.name[lang]}
-                    />
-                  </div>
+            <form>
+              <div className={this.formClass('name', 'div')}>
+                <div className='col-12'>
+                  <input
+                    id='name'
+                    ref={this.nameInput}
+                    type='text'
+                    className={this.formClass('name', 'input')}
+                    value={this.state.name.text}
+                    onChange={this.handleChange}
+                    name='name'
+                    autoComplete='off'
+                    placeholder={contactData.name[lang]}
+                  />
                 </div>
-                <div className={this.formClass('email', 'div')}>
-                  <div className='col-12'>
-                    <input
-                      id='email'
-                      ref={this.emailInput}
-                      type='email'
-                      className={this.formClass('email', 'input')}
-                      value={this.state.email.text}
-                      onChange={this.handleChange}
-                      name='email'
-                      autoComplete='off'
-                      placeholder={contactData.email[lang]}
-                    />
-                  </div>
+              </div>
+              <div className={this.formClass('email', 'div')}>
+                <div className='col-12'>
+                  <input
+                    id='email'
+                    ref={this.emailInput}
+                    type='email'
+                    className={this.formClass('email', 'input')}
+                    value={this.state.email.text}
+                    onChange={this.handleChange}
+                    name='email'
+                    autoComplete='off'
+                    placeholder={contactData.email[lang]}
+                  />
                 </div>
-                <div className={this.formClass('message', 'div')}>
-                  <div className='col-12'>
-                    <textarea
-                      id='message'
-                      ref={this.messageInput}
-                      type='email'
-                      className={this.formClass('message', 'input')}
-                      rows='5'
-                      value={this.state.message.text}
-                      onChange={this.handleChange}
-                      name='message'
-                      placeholder={contactData.message[lang]}
-                    />
-                  </div>
+              </div>
+              <div className={this.formClass('message', 'div')}>
+                <div className='col-12'>
+                  <textarea
+                    id='message'
+                    ref={this.messageInput}
+                    type='email'
+                    className={this.formClass('message', 'input')}
+                    rows='5'
+                    value={this.state.message.text}
+                    onChange={this.handleChange}
+                    name='message'
+                    placeholder={contactData.message[lang]}
+                  />
                 </div>
-                <div className='button-container'>
-                  {this.renderButton(lang)}
-                </div>
-              </form>
-              <div className='result-message'>{this.renderResultMessage()}</div>
-            </div>
+              </div>
+              <div className='button-container'>{this.renderButton(lang)}</div>
+            </form>
+            <div className='result-message'>{this.renderResultMessage()}</div>
           </div>
         </Fade>
       </React.Fragment>

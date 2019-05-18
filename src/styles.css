@@ -480,7 +480,6 @@ header .pc-menu a:hover {
 /* FOOTER */
 footer {
   background-color: #1b1c1d;
-  margin-top: 100px;
   height: 150px;
   padding: 50px 0;
 }
@@ -521,6 +520,12 @@ footer .message.show {
 }
 footer .copylight {
   font-size: 0.7em;
+}
+@media only screen and (max-width: 767px) {
+  footer .message {
+    width: 235px;
+    font-size: 1em;
+  }
 }
 
 /* MODAL */
@@ -741,29 +746,29 @@ footer .copylight {
   font-size: 1.5em;
   margin-bottom: 10px;
 }
-.cases-boxs {
+.project-container {
   display: flex;
   flex-flow: row wrap;
   justify-content: left;
 }
-.cases-boxs .project-box {
-  text-align: center;
+.projects .project-box {
+  /* text-align: center;
   flex-basis: 47%;
   margin: 10px;
-  margin-left: 0;
-  margin-bottom: 30px;
-  overflow: hidden;
-  position: relative;
+  margin-left: 0; */
+  /* margin-bottom: 30px; */
+  /* overflow: hidden;
+  position: relative; */
   transition: all ease-in;
   box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
 }
-.cases-boxs .project-box:hover {
+.projects .project-box:hover {
   cursor: pointer;
 }
-.cases-boxs .project-box.no-gallery:hover {
+.projects .project-box.no-gallery:hover {
   cursor: initial;
 }
-.cases-boxs .project-box.dimmer::after {
+/* .projects .project-box.dimmer::after {
   content: '';
   position: absolute;
   background-color: rgba(0, 0, 0, 0.55);
@@ -776,11 +781,8 @@ footer .copylight {
   transition-duration: 0.1s;
   transition-timing-function: ease;
   transition-delay: 0s;
-}
-.cases-boxs .data {
-  width: 48%;
-  margin: 10px;
-}
+} */
+
 .cases-link img {
   width: 100%;
   border: solid 1px #eee;
@@ -788,7 +790,7 @@ footer .copylight {
   border-radius: 5px;
 }
 .portfolio .links {
-  margin-top: 30px;
+  margin-top: 10px;
 }
 .portfolio .ui.basic.label {
   padding: 4px 8px !important;
@@ -797,145 +799,58 @@ footer .copylight {
 .portfolio .data p {
   padding: 3px;
 }
-/* animation */
-/* figure img {
-  -webkit-transition: all 0.35s;
-  transition: all 0.35s;
+
+@media only screen and (max-width: 767px) {
+  .projects {
+    display: block;
+    margin: 0 auto;
+    max-width: 450px;
+  }
+  .project-container {
+    margin-bottom: 50px;
+  }
+  .projects .project-box {
+    margin-bottom: 20px;
+  }
+  .projects .data {
+    width: 100%;
+    /* text-align: center; */
+  }
+  .portfolio .project-container + button {
+    display: block;
+    margin: 0 auto;
+  }
+  .wrapper h2 {
+    font-size: 1.8em;
+    margin-bottom: 2em;
+    text-align: center;
+  }
+  .wrapper {
+    padding: 0 1.5rem;
+  }
 }
-figure.hover-parent:hover img {
-  filter: brightness(0.4);
-  -webkit-filter: brightness(0.4);
+@media only screen and (min-width: 768px) {
+  .projects .project-box {
+    text-align: center;
+    flex-basis: 47%;
+    margin: 10px;
+    margin-left: 0;
+    overflow: hidden;
+    position: relative;
+  }
+  .projects .data {
+    width: 48%;
+    margin: 10px;
+  }
+  .project-container {
+    margin-bottom: 20px;
+  }
 }
-figure.hover-parent {
-  position: relative;
-  overflow: hidden;
+.portfolio .project-container + button {
+  font-size: 0.8em;
+  /* height: 44px; */
 }
-figcaption.hover-mask {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  opacity: 0;
-  color: #fff;
-}
-figcaption.hover-mask {
-  padding-bottom: 0;
-  width: 80%;
-  height: 80%;
-  left: 10%;
-  top: 10%;
-  border-bottom: 1px solid #fff;
-  border-top: 1px solid #fff;
-  -webkit-transform: scale(0, 1);
-  transform: scale(0, 1);
-  transition: opacity 0.35s;
-  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
-  display: flex;
-  flex-wrap: wrap;
-  align-content: center;
-  justify-content: center;
-}
-figure.hover-parent:hover .hover-mask {
-  opacity: 1;
-  -webkit-transform: scale(1);
-  transform: scale(1);
-}
-figure.hover-parent .hover-mask h3 {
-  font-size: 1.2em;
-  color: #fff;
-  margin-bottom: 20px;
-  flex-basis: 100%;
-}
-figure.hover-parent .hover-mask p {
-  color: #fff;
-  flex-basis: 100%;
-}
-figure.cases-link.hover-parent:hover img {
-  transform: scale(1.1);
-} */
-/* filter */
-/* .filter {
-  position: fixed;
-  right: 20px;
-  bottom: 20px;
-  transition: all 0.3s ease;
-  background-color: #1b1c1d;
-  height: 50px;
-  width: 50px;
-  border-radius: 50%;
-  box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.07);
-  cursor: pointer;
-}
-.filter.open {
-  background-color: rgba(0, 0, 0, 0.85);
-  padding: 18px 32px;
-  border-radius: 5px;
-  width: 300px;
-  height: 200px;
-  cursor: default;
-}
-.filter .button-copy {
-  text-align: center;
-  line-height: 50px;
-  color: #f7f7f7;
-}
-.filter.open .button-copy {
-  display: none;
-}
-.filter .cancel {
-  font-size: 12px;
-  text-align: center;
-  margin-top: 1em;
-  color: #f7f7f7;
-}
-.filter .cancel span {
-  cursor: pointer;
-}
-.filter .cancel span:hover {
-  text-decoration: underline;
-}
-.filter-icon {
-  height: 30px;
-  color: #fff;
-  padding: 5px 10px 5px 0;
-  height: 30px;
-}
-.filter.icon {
-  margin-bottom: 20px;
-}
-.filter-container {
-  display: none;
-}
-.filter.open .filter-container {
-  display: block;
-}
-.filter-tags {
-  margin-bottom: 10px;
-}
-.clear-filter-button:hover {
-  cursor: pointer;
-  text-decoration: underline;
-}
-.filter .ui.label {
-  color: #111 !important;
-  background-color: #fff;
-  border: 1px solid #fff;
-  margin-bottom: 5px;
-}
-.filter .ui.label.basic {
-  color: #fff !important;
-  background-color: transparent;
-  border: 1px solid #fff;
-}
-.filter .ui.label.basic:hover {
-  cursor: pointer;
-} */
-.portfolio .data + button {
-  margin-top: 30px;
-  height: 44px;
-}
-.portfolio .data + button span:after {
+.portfolio .project-container + button span:after {
   display: inline-block;
   padding-left: 5px;
   width: 10px;
@@ -947,54 +862,18 @@ figure.cases-link.hover-parent:hover img {
   opacity: 0;
   transition: visibility 0s linear 300ms, opacity 300ms;
 }
-.portfolio .data + button:hover span:after {
+.portfolio .project-container + button:hover span:after {
   visibility: visible;
   opacity: 1;
   transition: visibility 0s linear 0s, opacity 300ms;
 }
-.portfolio .data + button span.show-more:after {
+.portfolio .project-container + button span.show-more:after {
   content: '\f107';
 }
-.portfolio .data + button span.show-less:after {
+.portfolio .project-container + button span.show-less:after {
   content: '\f106';
 }
-
-@media only screen and (max-width: 767px) {
-  .cases-boxs {
-    display: block;
-    margin: 0 auto;
-    max-width: 450px;
-  }
-  .cases-boxs .data {
-    width: 100%;
-    /* text-align: center; */
-    margin-bottom: 70px;
-  }
-  .cases-boxs .project-box.dimmer {
-    display: none;
-  }
-  .portfolio .data + button {
-    display: block;
-    margin: 0 auto;
-  }
-  /* .no-match {
-    text-align: center;
-    padding: 40px 0;
-  } */
-  .wrapper h2 {
-    font-size: 1.8em;
-    margin-bottom: 2em;
-    text-align: center;
-  }
-  /* .filter.open {
-    padding: 18px 15px;
-    width: 220px;
-    height: 220px;
-  } */
-}
 /* Lightbox */
-@media only screen and (min-width: 765px) and (max-width: 991px) {
-}
 @media only screen and (min-width: 992px) {
   .ril__inner {
     top: 15%;
@@ -1170,7 +1049,7 @@ figure.cases-link.hover-parent:hover img {
 } */
 .about-container .main-content {
   width: fit-content;
-  padding: 0 20px;
+  /* padding: 0 20px; */
 }
 /* .about .main-content > div {
   margin-bottom: 20px;
@@ -1199,7 +1078,7 @@ figure.cases-link.hover-parent:hover img {
   text-decoration: underline;
 }
 .about .description {
-  margin-bottom: 50px !important;
+  margin-bottom: 30px !important;
   font-size: 1.5em;
 }
 /* .about .description li {
@@ -1207,7 +1086,7 @@ figure.cases-link.hover-parent:hover img {
   list-style: none;
 } */
 .about .bullet {
-  margin-bottom: 70px;
+  margin-bottom: 50px;
 }
 .about .bullet ul li {
   display: flex;
@@ -1220,8 +1099,12 @@ figure.cases-link.hover-parent:hover img {
   margin-bottom: 5px;
 }
 .about ul li i {
-  margin-right: 5px;
   font-size: 1.4em;
+  margin-right: 5px;
+}
+.about ul li i:before {
+  display: inline-block;
+  width: 20px;
 }
 .about .skills-container {
   font-size: 1.2em;
@@ -1232,8 +1115,20 @@ figure.cases-link.hover-parent:hover img {
 .about .skills-container dd {
   margin-bottom: 15px;
 }
-.about .skills {
+/* .about .skills {
   margin-bottom: 70px;
+} */
+@media only screen and (max-width: 767px) {
+  .about-container .main-content {
+    margin: 0 auto;
+  }
+  .about .description {
+    margin-bottom: 30px !important;
+    font-size: 1.3em !important;
+  }
+  .about ul li span {
+    font-size: 1.2em;
+  }
 }
 
 /* CONTACT */

@@ -95,56 +95,58 @@ class Portfolio extends React.Component {
             className='wrapper portfolio page'
           >
             <h2>Portfolio</h2>
-            <section className='cases-boxs' onClick={this.handleClick}>
+            <section className='projects' onClick={this.handleClick}>
               {portfolioData.map((data, index) => {
                 if (index < this.state.numberOfDisplayedProjects) {
                   return (
                     <React.Fragment key={data.name[lang]}>
-                      <div
-                        id={data.order}
-                        className={`project-box${
-                          !data.gallery.length ? ' no-gallery' : ''
-                        }`}
-                      >
-                        <figure className='cases-link hover-parent'>
-                          <img src={data.image} alt={data.name[lang]} />
-                        </figure>
-                      </div>
-
-                      <div className='data'>
-                        <h1>{data.name[lang]}</h1>
-                        <div className='skills'>
-                          {data.skills.map(skill => (
-                            <span key={skill} className='ui basic label'>
-                              {skill}
-                            </span>
-                          ))}
+                      <div className='project-container'>
+                        <div
+                          id={data.order}
+                          className={`project-box${
+                            !data.gallery.length ? ' no-gallery' : ''
+                          }`}
+                        >
+                          <figure className='cases-link hover-parent'>
+                            <img src={data.image} alt={data.name[lang]} />
+                          </figure>
                         </div>
-                        <p>{data.description[lang]}</p>
-                        {data.additionalDescription ? (
-                          <p>
-                            <i>{data.additionalDescription[lang]}</i>
-                          </p>
-                        ) : null}
-                        <div className='links'>
-                          <a
-                            className='button ui'
-                            href={data.demoUrl}
-                            target='_blank'
-                            rel='noopener noreferrer'
-                          >
-                            Demo
-                          </a>
-                          {data.githubUrl && (
+
+                        <div className='data'>
+                          <h1>{data.name[lang]}</h1>
+                          <div className='skills'>
+                            {data.skills.map(skill => (
+                              <span key={skill} className='ui basic label'>
+                                {skill}
+                              </span>
+                            ))}
+                          </div>
+                          <p>{data.description[lang]}</p>
+                          {data.additionalDescription ? (
+                            <p>
+                              <i>{data.additionalDescription[lang]}</i>
+                            </p>
+                          ) : null}
+                          <div className='links'>
                             <a
                               className='button ui'
-                              href={data.githubUrl}
+                              href={data.demoUrl}
                               target='_blank'
                               rel='noopener noreferrer'
                             >
-                              GitHub
+                              Demo
                             </a>
-                          )}
+                            {data.githubUrl && (
+                              <a
+                                className='button ui'
+                                href={data.githubUrl}
+                                target='_blank'
+                                rel='noopener noreferrer'
+                              >
+                                GitHub
+                              </a>
+                            )}
+                          </div>
                         </div>
                       </div>
                     </React.Fragment>
