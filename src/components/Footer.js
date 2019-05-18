@@ -1,5 +1,4 @@
 import React from 'react';
-import Fade from 'react-reveal/Fade';
 
 const message = 'Thank you for visiting my site!'.split('');
 
@@ -38,7 +37,7 @@ class Footer extends React.Component {
                 setTimeout(
                   () =>
                     (this.checkbox.current.className = 'fas fa-check-square'),
-                  900
+                  200
                 );
               }
             }, 10);
@@ -52,12 +51,10 @@ class Footer extends React.Component {
   render() {
     return (
       <footer>
-        {/* <Fade> */}
         <p ref={this.message} className='message'>
           <i className='far fa-square' ref={this.checkbox} />{' '}
           {this.state.message}
         </p>
-        {/* </Fade> */}
         <p className='copylight'>
           Made with <i className='heart icon' /> &copy;
           {` ${new Date().getFullYear()} Sayaka Ono`}

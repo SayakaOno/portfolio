@@ -856,10 +856,14 @@ footer .copylight {
   .project-container {
     margin-bottom: 20px;
   }
+  .portfolio .project-container + button span:after {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s linear 300ms, opacity 300ms;
+  }
 }
 .portfolio .project-container + button {
   font-size: 0.8em;
-  /* height: 44px; */
 }
 .portfolio .project-container + button span:after {
   display: inline-block;
@@ -869,9 +873,6 @@ footer .copylight {
   font-family: 'Font Awesome 5 Free';
   font-weight: 900;
   content: '\f107';
-  visibility: hidden;
-  opacity: 0;
-  transition: visibility 0s linear 300ms, opacity 300ms;
 }
 .portfolio .project-container + button:hover span:after {
   visibility: visible;
@@ -898,7 +899,7 @@ footer .copylight {
   z-index: 10000 !important;
 }
 /* PROJECT */
-.project {
+/* .project {
   max-width: 750px;
   margin: 0 auto;
   padding: 100px 30px;
@@ -1038,41 +1039,16 @@ footer .copylight {
   .project .ui.button.icon.left {
     left: 0;
   }
-}
+} */
 
 /* ABOUT */
 .about h3 {
   margin-bottom: 15px;
   font-size: 1.5em;
 }
-/* .about-container {
-  display: flex;
-}
-.about-container .image {
-  width: 30%;
-  margin: 0 30px;
-}
-.about-container img {
-  width: 100%;
-  height: auto;
-  filter: brightness(0.4);
-  -webkit-filter: brightness(0.4);
-} */
 .about-container .main-content {
   width: fit-content;
-  /* padding: 0 20px; */
 }
-/* .about .main-content > div {
-  margin-bottom: 20px;
-} */
-/* .about ul.skills li {
-  list-style: none;
-  display: inline-block;
-} */
-/* .about ul.skills li:after {
-  content: '/';
-  padding: 0 3px;
-} */
 .about ul.skills li:last-child:after {
   content: '';
 }
@@ -1092,10 +1068,6 @@ footer .copylight {
   margin-bottom: 30px !important;
   font-size: 1.5em;
 }
-/* .about .description li {
-  margin-bottom: 0px;
-  list-style: none;
-} */
 .about .bullet {
   margin-bottom: 50px;
 }
@@ -1112,6 +1084,7 @@ footer .copylight {
 .about ul li i {
   font-size: 1.4em;
   margin-right: 5px;
+  transition: all 0ms ease-out 20ms;
 }
 .about ul li i:before {
   display: inline-block;
@@ -1126,9 +1099,6 @@ footer .copylight {
 .about .skills-container dd {
   margin-bottom: 15px;
 }
-/* .about .skills {
-  margin-bottom: 70px;
-} */
 @media only screen and (max-width: 767px) {
   .about-container .main-content {
     margin: 0 auto;

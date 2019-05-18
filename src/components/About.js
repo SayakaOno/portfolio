@@ -19,37 +19,29 @@ class About extends React.Component {
   }
   lang = this.props.language;
 
+  check = () => {
+    if (this.state.iconChange) {
+      return;
+    }
+    for (let i = 0; i < 6; i++) {
+      let ref = 'checkboxRef' + (i + 1);
+      if (
+        this[ref].current.getBoundingClientRect().top <
+        window.innerHeight * 0.35
+      ) {
+        if (i === 5) {
+          this[ref].current.className = 'fas fa-utensils';
+          this.setState({ iconChange: true });
+          window.removeEventListener('scroll', this.check);
+        } else {
+          this[ref].current.className = 'fas fa-check-square';
+        }
+      }
+    }
+  };
+
   componentDidMount() {
-    window.addEventListener('scroll', event => {
-      if (this.state.iconChange) {
-        return;
-      }
-      let coords = this.aboutRef.current.getBoundingClientRect();
-      if (coords.top < 0) {
-        setTimeout(() => {
-          this.checkboxRef1.current.className = 'fas fa-check-square';
-        }, 1000);
-        setTimeout(() => {
-          this.checkboxRef2.current.className = 'fas fa-check-square';
-        }, 1100);
-        setTimeout(() => {
-          this.checkboxRef3.current.className = 'fas fa-check-square';
-        }, 1200);
-        setTimeout(() => {
-          this.checkboxRef4.current.className = 'fas fa-check-square';
-        }, 1300);
-        setTimeout(() => {
-          this.checkboxRef5.current.className = 'fas fa-check-square';
-        }, 1400);
-        setTimeout(() => {
-          this.checkboxRef6.current.className = 'fas fa-check-square';
-        }, 1500);
-        setTimeout(() => {
-          this.checkboxRef6.current.className = 'fas fa-utensils';
-        }, 2500);
-        this.setState({ iconChange: true });
-      }
-    });
+    window.addEventListener('scroll', this.check);
   }
 
   render() {
@@ -98,28 +90,7 @@ class About extends React.Component {
                       <dd>{about.sortedSkills['Backend'].join(', ')}</dd>
                       <dt>What else I can do</dt>
                       <dd>{about.sortedSkills['others'].join(', ')}</dd>
-                      {/* <ul>
-                      {about.sortedSkills['Frontend'].map(skill => (
-                        <li key={skill}>{skill}</li>
-                      ))}
-                    </ul> */}
                     </div>
-                    {/* <div>
-                    <h4>Backend</h4>
-                    <ul>
-                      {about.sortedSkills['Backend'].map(skill => (
-                        <li key={skill}>{skill}</li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div>
-                    <h4>Others</h4>
-                    <ul>
-                      {about.sortedSkills['others'].map(skill => (
-                        <li key={skill}>{skill}</li>
-                      ))}
-                    </ul>
-                  </div> */}
                   </div>
                 </div>
               </Fade>
