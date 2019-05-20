@@ -1,6 +1,7 @@
 import React from 'react';
 import Fade from 'react-reveal/Fade';
 
+import Frontend from './Frontend';
 import { about } from '../data';
 
 class About extends React.Component {
@@ -85,6 +86,7 @@ class About extends React.Component {
                   <div className='skills-container'>
                     <div>
                       <dt>Frontend</dt>
+                      <Frontend />
                       <dd>{about.sortedSkills['Frontend'].join(', ')}</dd>
                       <dt>Backend</dt>
                       <dd>{about.sortedSkills['Backend'].join(', ')}</dd>
