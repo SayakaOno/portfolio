@@ -1,4 +1,5 @@
 import React from 'react';
+import Skill from './Skill';
 import { DATE, DATE_FROM_INDEX, MONTH } from './constants';
 
 class Frontend extends React.Component {
@@ -48,6 +49,13 @@ class Frontend extends React.Component {
             onChange={this.onBarChange}
           />
           {this.state.date ? this.formatDateFromKey(this.state.date) : null}
+          <Skill name='React' />
+          <Skill name='Redux' />
+          <Skill name='JavaScript' />
+          <Skill name='HTML5' />
+          <Skill name='CSS3' />
+          <Skill name='TypeScript' />
+          <Skill name='Flutter' />
         </div>
       </div>
     );

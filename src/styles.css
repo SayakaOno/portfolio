@@ -1172,3 +1172,89 @@ textarea:focus {
 .contact .button-container {
   height: 60px;
 }
+
+/* Skill */
+.slidecontainer {
+  width: 100%; /* Width of the outside container */
+}
+
+/* Mouse-over effects */
+.slider:hover {
+  opacity: 1; /* Fully shown on mouse-over */
+}
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 15px;
+  border-radius: 5px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #4caf50;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #4caf50;
+  cursor: pointer;
+}
+
+/* skill bar */
+.skill-bar {
+  margin-bottom: 15px;
+}
+.skill-bar:after {
+  display: table;
+  clear: both;
+  content: '';
+}
+.skill-bar h5 {
+  float: left;
+  width: 120px;
+}
+.skill-bar .bar {
+  float: left;
+  -webkit-appearance: none;
+  width: calc(100% - 120px);
+  height: 15px;
+  border-radius: 5px;
+  background: #d3d3d3;
+  outline: none;
+  position: relative;
+}
+.progress {
+  -webkit-appearance: none;
+  width: 59%;
+  height: 15px;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.7);
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+}
+.bar .logo {
+  position: absolute;
+  left: 57%;
+  top: -50%;
+  width: 30px;
+  height: 30px;
+  opacity: 1;
+}
+.bar .logo img {
+  width: 100%;
+  height: 100%;
+}

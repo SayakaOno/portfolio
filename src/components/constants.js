@@ -58,3 +58,29 @@ export const MONTH = [
   'Nov',
   'Dec'
 ];
+
+export const logos = {
+  reactLogo: '../img/react.png',
+  reduxLogo: '../img/redux.png',
+  html5Logo: '../img/html5.png',
+  css3Logo: '../img/css3.png',
+  javascriptLogo: '../img/js.png',
+  typescriptLogo: '../img/ts.png',
+  flutterLogo: '../img/flutter.png'
+};
+
+export const reactProgress = {
+  201812: 40,
+  201901: 75,
+  201902: 85,
+  201903: 75,
+  201904: 75,
+  201905: 90,
+  201906: 92,
+  201907: 94,
+  201908: 96,
+  201909: 97,
+  201910: 98,
+  201911: 99,
+  201912: 100
+};
