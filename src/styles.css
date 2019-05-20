@@ -549,69 +549,42 @@ footer .copylight {
   width: 100%;
   height: calc(100vh);
   background-image: url('../src/img/banner.jpg');
-  /* background-color: #0275d8; */
-  /* background-color: lightblue; */
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
-.ui.four.cards {
-  max-width: 300px;
-  margin: 0 auto;
-  font-size: 20px;
-}
-.ui.four.cards > .card {
-  /* width: 200px; */
-  width: 100%;
-  margin: 10px auto;
-  /* color: #000; */
-  font-weight: bold;
-  font-family: Lato, 'Helvetica Neue', Arial, Helvetica, sans-serif;
-  padding: 20px;
-  display: block;
-}
-.ui.cards a.card:hover {
-  -webkit-transform: translateX(1px);
-  transform: translateX(1px);
-}
-.ui.four.cards input {
-  display: inline-block;
-  width: fit-content;
-  vertical-align: top;
-  margin-right: 5px;
-}
-.ui.four.cards .input {
-  width: 300px;
-  display: block;
-  margin-bottom: 5px;
-}
-.top-container {
-  max-width: 440px;
-  padding: 50px 70px;
-  /* background-color: rgba(255, 255, 255, 0.6); */
-  margin: 0 auto;
-}
-.index-banner,
-.index-banner p {
+.index-banner {
   color: #fff;
+  text-shadow: 2px 2px 8px #111;
 }
 .index-banner h2 {
   font-family: arial;
-  font-size: 50px;
+  font-size: 5em;
   font-weight: 900;
-  line-height: 60px;
-  text-shadow: 2px 2px 8px #111;
+  line-height: 1.2em;
 }
 .index-banner h1 {
-  font-size: 34px;
+  font-size: 3em;
   font-weight: 100;
   font-style: italic;
-  line-height: 40px;
-  text-shadow: 2px 2px 8px #111;
+  line-height: 1.1em;
   margin-bottom: 15px;
 }
+.index-banner .checkboxes li {
+  list-style: none;
+  font-size: 2em;
+  margin-bottom: 5px;
+}
+.top-container {
+  height: 100vh;
+  text-align: left;
+  padding: 50px 90px;
+  /* background-color: rgba(255, 255, 255, 0.6); */
+  background-color: rgba(0, 0, 0, 0.2);
+  margin: 0 auto;
+}
 
-.vertical-center.additional {
+/* .vertical-center.additional {
   position: relative;
   vertical-align: middle;
   animation: show 1.5s linear 0s;
@@ -623,7 +596,7 @@ footer .copylight {
   to {
     opacity: 1;
   }
-}
+} */
 /* .vertical-center .link-to-portfolio {
   display: none;
 } */
@@ -641,20 +614,54 @@ footer .copylight {
   padding: 20px;
   font-weight: bold;
 } */
-.top-container {
+/* .top-container {
   padding: 20px;
-  text-align: left;
   margin: 10%;
-}
-.ui.four.cards {
-  margin: 0;
-}
+} */
+
 @media only screen and (max-width: 767px) {
   /* .vertical-center.additional .link-to-portfolio a {
     margin-top: 40px;
   } */
   .wrapper {
     padding-top: 120px !important;
+  }
+  .index-banner h2 {
+    font-size: 3em;
+    line-height: 1.2em;
+  }
+  .index-banner h1 {
+    font-size: 2em;
+    line-height: 1.1em;
+    margin-bottom: 15px;
+  }
+  .index-banner .checkboxes li {
+    font-size: 1.5em;
+    margin-bottom: 5px;
+  }
+  .top-container {
+    padding: 100px;
+  }
+}
+@media only screen and (max-width: 575px) {
+  .index-banner {
+    background-position: -220px;
+  }
+  .index-banner h2 {
+    font-size: 2em;
+    line-height: 1.2em;
+  }
+  .index-banner h1 {
+    font-size: 1.5em;
+    line-height: 1.1em;
+    margin-bottom: 10px;
+  }
+  .index-banner .checkboxes li {
+    font-size: 1.1em;
+    margin-bottom: 2px;
+  }
+  .top-container {
+    padding: 100px 40px;
   }
 }
 @media only screen and (min-width: 768px) {

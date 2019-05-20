@@ -36,27 +36,30 @@ class Home extends React.Component {
       <React.Fragment>
         <Fade>
           <section name='home' id='home' className='index-banner home'>
-            <div className='vertical-center'>
-              <div className='top-container'>
-                <h2>Sayaka Ono</h2>
-                <h1>React Developer</h1>
-                {/* <p>Vancouver</p> */}
-                {/* <div ref={this.linkToPortfolio} className='link-to-portfolio'>
+            <div className='top-container'>
+              <h2>Sayaka Ono</h2>
+              <h1>React Developer</h1>
+              {/* <p>Vancouver</p> */}
+              {/* <div ref={this.linkToPortfolio} className='link-to-portfolio'>
               <a className='hvr-icon-float-away pulse' href='#portfolio'>
                 PORTFOLIO <i className='fas fa-angle-double-right hvr-icon' />
               </a>
             </div> */}
-                <div className='ui four cards'>
-                  <div className='input' href='#portfolio'>
+              <div className='checkboxes'>
+                <ul>
+                  <li>
+                    {' '}
                     <i className='far fa-square' ref={this.input1} /> Checkbox1
-                  </div>
-                  <div className='input' href='#about'>
+                  </li>
+                  <li>
+                    {' '}
                     <i className='far fa-square' ref={this.input2} /> Vancouver2
-                  </div>
-                  <div className='input' href='#contact'>
+                  </li>
+                  <li>
+                    {' '}
                     <i className='far fa-square' ref={this.input3} /> Checkbox3
-                  </div>
-                </div>
+                  </li>
+                </ul>
               </div>
             </div>
           </section>
