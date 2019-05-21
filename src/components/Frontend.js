@@ -1,7 +1,12 @@
 import React from 'react';
 import Skill from './Skill';
-import { DATE, DATE_FROM_INDEX, MONTH } from './constants';
-import { skillData } from './constants';
+import {
+  DATE,
+  DATE_FROM_INDEX,
+  MONTH,
+  YEAR_WIDTH,
+  skillData
+} from './constants';
 
 class Frontend extends React.Component {
   constructor(props) {
@@ -40,7 +45,7 @@ class Frontend extends React.Component {
       let id = setInterval(() => {
         if (counter < DATE[currentDateKey]) {
           this.setState({
-            date: (counter = counter + 0.25),
+            date: (counter = counter + 1),
             intDate: Math.floor(counter)
           });
         } else {
@@ -74,22 +79,36 @@ class Frontend extends React.Component {
     return width;
   };
 
+  renderYearBar = () => {
+    let elems = [];
+    let yearWidth = YEAR_WIDTH();
+    for (let year in yearWidth) {
+      let elem = (
+        <div className='progress-bar' style={{ width: yearWidth[year] + '%' }}>
+          {year}
+        </div>
+      );
+      elems.push(elem);
+    }
+    return <React.Fragment>{elems.map(elem => elem)}</React.Fragment>;
+  };
+
   render() {
     return (
       <div ref={this.ref} id='frontend'>
-        <div class='slidecontainer'>
+        <div className='slidecontainer'>
+          {this.renderYearBar()}
           <input
             type='range'
             min='0'
             max={Object.keys(DATE).length - 1}
             value={this.state.date}
             class='slider'
-            id='myRange'
             onChange={this.onBarChange}
           />
-          <div>
-            {this.state.date ? this.formatDateFromKey(this.state.date) : null}
-          </div>
+        </div>
+        <div>
+          {this.state.date ? this.formatDateFromKey(this.state.date) : null}
         </div>
         <div className='front-skills'>
           <Skill

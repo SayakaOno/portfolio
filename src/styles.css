@@ -1110,9 +1110,6 @@ footer .copylight {
 .about .front-skills {
   margin-bottom: 40px;
 }
-.about .skills-container h5 {
-  font-weight: 500;
-}
 @media only screen and (max-width: 767px) {
   .about-container .main-content {
     margin: 0 auto;
@@ -1185,8 +1182,24 @@ textarea:focus {
   width: 100%; /* Width of the outside container */
   height: 50px;
   margin-bottom: 30px;
+  -webkit-appearance: none;
+  height: 15px;
+  background-color: rgba(0, 0, 0, 0.7);
+  outline: none;
+  /* opacity: 0.7; */
+  -webkit-transition: width 50ms ease-in, background-color 0.1s ease;
+  transition: width 50ms ease-in, background-color 0.1s ease;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  text-align: center;
+  position: relative;
 }
-
+.slidecontainer .progress-bar {
+  display: inline-block;
+  height: 15px;
+  border-right: 1px solid #fff;
+  background-color: grey;
+}
 /* Mouse-over effects */
 .slider:hover {
   opacity: 1; /* Fully shown on mouse-over */
@@ -1195,14 +1208,20 @@ textarea:focus {
   -webkit-appearance: none;
   width: 100%;
   height: 15px;
-  border-radius: 5px;
-  background: #d3d3d3;
+  /* border-radius: 5px; */
+  background: transparent;
   outline: none;
-  opacity: 0.7;
+  /* opacity: 0.7; */
   /* -webkit-transition: 0.2s;
   transition: opacity 0.2s; */
-  -webkit-transition: width 0.1s ease, background-color 0.1s ease;
-  transition: width 0.1s ease, background-color 0.1s ease;
+  /* -webkit-transition: width 0.1s ease, background-color 0.1s ease;
+  transition: width 0.1s ease, background-color 0.1s ease; */
+  position: absolute;
+  left: 0;
+  border: 0;
+}
+.slider:focus {
+  border: none;
 }
 
 .slider::-webkit-slider-thumb {
@@ -1212,15 +1231,23 @@ textarea:focus {
   height: 25px;
   border-radius: 50%;
   background: #4caf50;
+  /* background-image: url('./img/flutter.png');
+  background-position: 0; */
   cursor: pointer;
+
+  -webkit-transition: all 1000ms ease, background-color 0.1s ease;
+  transition: all 1000ms ease, background-color 0.1s ease;
 }
 
 .slider::-moz-range-thumb {
   width: 25px;
   height: 25px;
-  border-radius: 50%;
+  /* border-radius: 50%; */
   background: #4caf50;
   cursor: pointer;
+
+  -webkit-transition: all 1000ms ease, background-color 0.1s ease;
+  transition: all 1000ms ease, background-color 0.1s ease;
 }
 
 /* skill bar */
@@ -1233,18 +1260,23 @@ textarea:focus {
   content: '';
 }
 .skill-bar h5 {
+  font-size: 0.9em;
+  font-weight: bold;
   float: left;
-  width: 120px;
+  width: 85px;
+  margin-right: 25px;
+  text-align: right;
 }
 .skill-bar .bar {
   float: left;
   -webkit-appearance: none;
-  width: calc(100% - 120px);
+  width: calc(100% - 110px);
   height: 15px;
   border-radius: 5px;
   background: #d3d3d3;
   outline: none;
   position: relative;
+  margin-top: 5px;
 }
 .progress {
   -webkit-appearance: none;
@@ -1253,10 +1285,8 @@ textarea:focus {
   background-color: rgba(0, 0, 0, 0.7);
   outline: none;
   opacity: 0.7;
-  /* -webkit-transition: 0.2s;
-  transition: opacity 0.2s; */
-  -webkit-transition: left 0.1s ease, background-color 0.1s ease;
-  transition: left 0.1s ease, background-color 0.1s ease;
+  -webkit-transition: width 50ms ease-in, background-color 0.1s ease;
+  transition: width 50ms ease-in, background-color 0.1s ease;
 }
 .bar .logo {
   position: absolute;
@@ -1265,8 +1295,8 @@ textarea:focus {
   width: 30px;
   height: 30px;
   opacity: 1;
-  -webkit-transition: width 0.1s ease, background-color 0.1s ease;
-  transition: width 0.1s ease, background-color 0.1s ease;
+  -webkit-transition: left 50ms ease-in;
+  transition: left 50ms ease-in;
 }
 .bar .logo img {
   width: 100%;

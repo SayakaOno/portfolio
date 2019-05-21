@@ -51,6 +51,30 @@ export const DATE = {
 
 export const DATE_FROM_INDEX = Object.keys(DATE);
 
+export const YEAR_WIDTH = () => {
+  let map = {};
+  let result = {};
+  DATE_FROM_INDEX.forEach(date => {
+    let year = date.substring(0, 4);
+    if (map[year]) {
+      map[year] = map[year] + 1;
+    } else {
+      map[year] = 1;
+    }
+  });
+  let min = '';
+  let sum = 0;
+  for (let key in map) {
+    result[key] = Math.floor((map[key] / DATE_FROM_INDEX.length) * 100);
+    min = min ? (result[min] > result[key] ? key : min) : key;
+    sum += result[key];
+  }
+  if (sum !== 100) {
+    result[min] += 100 - sum;
+  }
+  return result;
+};
+
 export const MONTH = [
   '',
   'Jan',
