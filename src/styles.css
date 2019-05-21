@@ -1054,7 +1054,7 @@ footer .copylight {
   font-size: 1.5em;
 }
 .about-container .main-content {
-  width: fit-content;
+  width: 100%;
 }
 .about ul.skills li:last-child:after {
   content: '';
@@ -1100,11 +1100,18 @@ footer .copylight {
 .about .skills-container {
   font-size: 1.2em;
 }
-.about .skills-container dt {
+.about .skills-container h4 {
+  font-weight: 700;
   margin-bottom: 5px;
 }
-.about .skills-container dd {
+.about .skills-container h4 + p {
   margin-bottom: 15px;
+}
+.about .front-skills {
+  margin-bottom: 40px;
+}
+.about .skills-container h5 {
+  font-weight: 500;
 }
 @media only screen and (max-width: 767px) {
   .about-container .main-content {
@@ -1176,6 +1183,8 @@ textarea:focus {
 /* Skill */
 .slidecontainer {
   width: 100%; /* Width of the outside container */
+  height: 50px;
+  margin-bottom: 30px;
 }
 
 /* Mouse-over effects */
@@ -1190,8 +1199,10 @@ textarea:focus {
   background: #d3d3d3;
   outline: none;
   opacity: 0.7;
-  -webkit-transition: 0.2s;
-  transition: opacity 0.2s;
+  /* -webkit-transition: 0.2s;
+  transition: opacity 0.2s; */
+  -webkit-transition: width 0.1s ease, background-color 0.1s ease;
+  transition: width 0.1s ease, background-color 0.1s ease;
 }
 
 .slider::-webkit-slider-thumb {
@@ -1237,14 +1248,15 @@ textarea:focus {
 }
 .progress {
   -webkit-appearance: none;
-  width: 59%;
   height: 15px;
   border-radius: 5px;
   background-color: rgba(0, 0, 0, 0.7);
   outline: none;
   opacity: 0.7;
-  -webkit-transition: 0.2s;
-  transition: opacity 0.2s;
+  /* -webkit-transition: 0.2s;
+  transition: opacity 0.2s; */
+  -webkit-transition: left 0.1s ease, background-color 0.1s ease;
+  transition: left 0.1s ease, background-color 0.1s ease;
 }
 .bar .logo {
   position: absolute;
@@ -1253,6 +1265,8 @@ textarea:focus {
   width: 30px;
   height: 30px;
   opacity: 1;
+  -webkit-transition: width 0.1s ease, background-color 0.1s ease;
+  transition: width 0.1s ease, background-color 0.1s ease;
 }
 .bar .logo img {
   width: 100%;

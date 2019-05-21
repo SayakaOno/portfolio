@@ -1,35 +1,37 @@
 import React from 'react';
-import reactLogo from '../img/react.png';
-import reduxLogo from '../img/redux.png';
-import html5Logo from '../img/html5.png';
-import css3Logo from '../img/css3.png';
-import javascriptLogo from '../img/js.png';
-import typescriptLogo from '../img/ts.png';
-import flutterLogo from '../img/flutter.png';
 
-const LOGOS = {
-  reactLogo,
-  reduxLogo,
-  html5Logo,
-  css3Logo,
-  javascriptLogo,
-  typescriptLogo,
-  flutterLogo
-};
+class Skill extends React.Component {
+  constructor(props) {
+    super(props);
 
-const Skill = props => {
-  let logo = props.name.toLowerCase() + 'Logo';
-  return (
-    <div className='skill-bar'>
-      <h5>{props.name}</h5>
-      <div className='bar'>
-        <div className='progress' />
-        <div className='logo'>
-          <img alt={props.name} src={LOGOS[logo]} />
+    this.progressRef = React.createRef();
+  }
+
+  render() {
+    let { name, img, width } = this.props;
+
+    return (
+      <div className='skill-bar'>
+        <h5>{name}</h5>
+        <div className='bar'>
+          <div
+            className='progress'
+            style={{ width: width ? width + '%' : 0 }}
+          />
+          {width !== undefined ? (
+            <div
+              className='logo'
+              style={{
+                left: `calc(${width}% - 15px)`
+              }}
+            >
+              <img alt={name} src={img} width={width} />
+            </div>
+          ) : null}
         </div>
       </div>
-    </div>
-  );
-};
+    );
+  }
+}
 
 export default Skill;

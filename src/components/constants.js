@@ -1,3 +1,11 @@
+import reactLogo from '../img/react.png';
+import reduxLogo from '../img/redux.png';
+import html5Logo from '../img/html5.png';
+import css3Logo from '../img/css3.png';
+import javascriptLogo from '../img/js.png';
+import typescriptLogo from '../img/ts.png';
+import flutterLogo from '../img/flutter.png';
+
 export const DATE = {
   201609: 0,
   201610: 1,
@@ -70,17 +78,188 @@ export const logos = {
 };
 
 export const reactProgress = {
-  201812: 40,
-  201901: 75,
-  201902: 85,
-  201903: 75,
-  201904: 75,
-  201905: 90,
-  201906: 92,
-  201907: 94,
-  201908: 96,
-  201909: 97,
-  201910: 98,
-  201911: 99,
-  201912: 100
+  [DATE[201811]]: 0,
+  [DATE[201812]]: 40,
+  [DATE[201901]]: 75,
+  [DATE[201902]]: 85,
+  [DATE[201903]]: 75,
+  [DATE[201904]]: 75,
+  [DATE[201905]]: 90,
+  [DATE[201906]]: 92,
+  [DATE[201907]]: 94,
+  [DATE[201908]]: 96,
+  [DATE[201909]]: 97,
+  [DATE[201910]]: 98,
+  [DATE[201911]]: 99,
+  [DATE[201912]]: 100
+};
+
+export const reduxProgress = {
+  [DATE[201812]]: 0,
+  [DATE[201901]]: 30,
+  [DATE[201902]]: 70,
+  [DATE[201903]]: 60,
+  [DATE[201904]]: 61,
+  [DATE[201905]]: 62,
+  [DATE[201906]]: 75,
+  [DATE[201907]]: 80,
+  [DATE[201908]]: 85,
+  [DATE[201909]]: 90,
+  [DATE[201910]]: 93,
+  [DATE[201911]]: 97,
+  [DATE[201912]]: 100
+};
+
+export const javascriptProgress = {
+  [DATE[201703]]: 0,
+  [DATE[201704]]: 1,
+  [DATE[201705]]: 2,
+  [DATE[201706]]: 5,
+  [DATE[201804]]: 0,
+  [DATE[201805]]: 20,
+  [DATE[201806]]: 25,
+  [DATE[201807]]: 30,
+  [DATE[201809]]: 0,
+  [DATE[201810]]: 10,
+  [DATE[201811]]: 35,
+  [DATE[201812]]: 70,
+  [DATE[201901]]: 80,
+  [DATE[201902]]: 85,
+  [DATE[201903]]: 87,
+  [DATE[201904]]: 90,
+  [DATE[201905]]: 91,
+  [DATE[201906]]: 92,
+  [DATE[201907]]: 94,
+  [DATE[201908]]: 96,
+  [DATE[201909]]: 97,
+  [DATE[201910]]: 98,
+  [DATE[201911]]: 99,
+  [DATE[201912]]: 100
+};
+
+export const html5Progress = {
+  [DATE[201609]]: 0,
+  [DATE[201610]]: 75,
+  [DATE[201611]]: 77,
+  [DATE[201612]]: 79,
+  [DATE[201701]]: 81,
+  [DATE[201702]]: 82,
+  [DATE[201703]]: 83,
+  [DATE[201704]]: 84,
+  [DATE[201705]]: 85,
+  [DATE[201706]]: 86,
+  [DATE[201707]]: 85,
+  [DATE[201708]]: 86,
+  [DATE[201709]]: 85,
+  [DATE[201710]]: 86,
+  [DATE[201711]]: 85,
+  [DATE[201712]]: 86,
+  [DATE[201801]]: 85,
+  [DATE[201802]]: 86,
+  [DATE[201803]]: 85,
+  [DATE[201804]]: 86,
+  [DATE[201805]]: 85,
+  [DATE[201806]]: 86,
+  [DATE[201807]]: 85,
+  [DATE[201808]]: 86,
+  [DATE[201809]]: 85,
+  [DATE[201810]]: 86,
+  [DATE[201811]]: 85,
+  [DATE[201812]]: 86,
+  [DATE[201901]]: 85,
+  [DATE[201902]]: 86,
+  [DATE[201903]]: 85,
+  [DATE[201904]]: 86,
+  [DATE[201905]]: 85,
+  [DATE[201906]]: 86,
+  [DATE[201907]]: 85,
+  [DATE[201908]]: 86,
+  [DATE[201909]]: 85,
+  [DATE[201910]]: 86,
+  [DATE[201911]]: 85,
+  [DATE[201912]]: 86
+};
+
+export const css3Progress = {
+  [DATE[201609]]: 0,
+  [DATE[201610]]: 75,
+  [DATE[201611]]: 77,
+  [DATE[201612]]: 79,
+  [DATE[201701]]: 81,
+  [DATE[201702]]: 82,
+  [DATE[201703]]: 83,
+  [DATE[201704]]: 84,
+  [DATE[201705]]: 86,
+  [DATE[201706]]: 85,
+  [DATE[201707]]: 86,
+  [DATE[201708]]: 85,
+  [DATE[201709]]: 86,
+  [DATE[201710]]: 85,
+  [DATE[201711]]: 86,
+  [DATE[201712]]: 85,
+  [DATE[201801]]: 86,
+  [DATE[201802]]: 85,
+  [DATE[201803]]: 86,
+  [DATE[201804]]: 85,
+  [DATE[201805]]: 86,
+  [DATE[201806]]: 85,
+  [DATE[201807]]: 86,
+  [DATE[201808]]: 85,
+  [DATE[201809]]: 86,
+  [DATE[201810]]: 85,
+  [DATE[201811]]: 86,
+  [DATE[201812]]: 85,
+  [DATE[201901]]: 86,
+  [DATE[201902]]: 85,
+  [DATE[201903]]: 86,
+  [DATE[201904]]: 85,
+  [DATE[201905]]: 86,
+  [DATE[201906]]: 85,
+  [DATE[201907]]: 89,
+  [DATE[201908]]: 91,
+  [DATE[201909]]: 93,
+  [DATE[201910]]: 95,
+  [DATE[201911]]: 97,
+  [DATE[201912]]: 100
+};
+
+export const typescriptProgress = {
+  [DATE[201904]]: 0,
+  [DATE[201905]]: 30,
+  [DATE[201906]]: 75,
+  [DATE[201907]]: 80,
+  [DATE[201908]]: 85,
+  [DATE[201909]]: 90,
+  [DATE[201910]]: 93,
+  [DATE[201911]]: 97,
+  [DATE[201912]]: 100
+};
+
+export const flutterProgress = {
+  [DATE[201905]]: 0,
+  [DATE[201906]]: 1,
+  [DATE[201907]]: 0,
+  [DATE[201908]]: 1,
+  [DATE[201909]]: 0,
+  [DATE[201910]]: 1,
+  [DATE[201911]]: 0,
+  [DATE[201912]]: 1
+};
+
+export const skillData = {
+  react: { logo: reactLogo, progress: reactProgress, fullValue: 100 },
+  redux: { logo: reduxLogo, progress: reduxProgress, fullValue: 100 },
+  html5: { logo: html5Logo, progress: html5Progress, fullValue: 100 },
+  css3: { logo: css3Logo, progress: css3Progress, fullValue: 100 },
+  javascript: {
+    logo: javascriptLogo,
+    progress: javascriptProgress,
+    fullValue: 100
+  },
+  typescript: {
+    logo: typescriptLogo,
+    progress: typescriptProgress,
+    fullValue: 100
+  },
+  flutter: { logo: flutterLogo, progress: flutterProgress, fullValue: 100 }
 };

@@ -85,13 +85,12 @@ class About extends React.Component {
                   <h3>{about.skills[this.lang]}</h3>
                   <div className='skills-container'>
                     <div>
-                      <dt>Frontend</dt>
+                      <h4>Frontend</h4>
                       <Frontend />
-                      <dd>{about.sortedSkills['Frontend'].join(', ')}</dd>
-                      <dt>Backend</dt>
-                      <dd>{about.sortedSkills['Backend'].join(', ')}</dd>
-                      <dt>What else I can do</dt>
-                      <dd>{about.sortedSkills['others'].join(', ')}</dd>
+                      <h4>Backend</h4>
+                      <p>{about.sortedSkills['Backend'].join(', ')}</p>
+                      <h4>What else I can do</h4>
+                      <p>{about.sortedSkills['others'].join(', ')}</p>
                     </div>
                   </div>
                 </div>
