@@ -23,8 +23,6 @@ class Frontend extends React.Component {
 
   componentDidMount() {
     window.addEventListener('scroll', () => {
-      console.log(this.ref.current.getBoundingClientRect().top);
-      console.log(window.innerHeight);
       if (
         !this.state.initialAnimation &&
         this.ref.current.getBoundingClientRect().top < window.innerHeight * 0.35
@@ -82,9 +80,17 @@ class Frontend extends React.Component {
   renderYearBar = () => {
     let elems = [];
     let yearWidth = YEAR_WIDTH();
+    let first = Object.keys(yearWidth)[0];
+    let last = Object.keys(yearWidth)[Object.keys(yearWidth).length - 1];
     for (let year in yearWidth) {
       let elem = (
-        <div className='progress-bar' style={{ width: yearWidth[year] + '%' }}>
+        <div
+          key={year}
+          className={`progress-bar${
+            year === first ? ' first' : year === last ? ' last' : ''
+          }`}
+          style={{ width: yearWidth[year] + '%' }}
+        >
           {year}
         </div>
       );
@@ -96,6 +102,9 @@ class Frontend extends React.Component {
   render() {
     return (
       <div ref={this.ref} id='frontend'>
+        <div className='date'>
+          {this.state.date ? this.formatDateFromKey(this.state.date) : null}
+        </div>
         <div className='slidecontainer'>
           {this.renderYearBar()}
           <input
@@ -103,14 +112,25 @@ class Frontend extends React.Component {
             min='0'
             max={Object.keys(DATE).length - 1}
             value={this.state.date}
-            class='slider'
+            className='slider'
             onChange={this.onBarChange}
           />
+          {/* {this.state.date ? (
+            <span
+              className='ui red basic label'
+              style={{
+                left: `calc(${(this.state.date / DATE_FROM_INDEX.length) *
+                  100}% - 20px)`
+              }}
+            >
+              {this.formatDateFromKey(this.state.date)
+                .toString()
+                .substring(4, -4)}
+            </span>
+          ) : null} */}
         </div>
-        <div>
-          {this.state.date ? this.formatDateFromKey(this.state.date) : null}
-        </div>
-        <div className='front-skills'>
+
+        <div className='skill-bars'>
           <Skill
             name='React'
             width={this.getProgressWidth('react')}
