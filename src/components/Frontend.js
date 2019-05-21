@@ -4,12 +4,33 @@ import { DATE, DATE_FROM_INDEX, MONTH } from './constants';
 import { skillData } from './constants';
 
 class Frontend extends React.Component {
-  state = {
-    date: DATE[201609],
-    intDate: DATE[201609]
-  };
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      date: DATE[201609],
+      intDate: DATE[201609],
+      initialAnimation: false
+    };
+
+    this.ref = React.createRef();
+  }
 
   componentDidMount() {
+    window.addEventListener('scroll', () => {
+      console.log(this.ref.current.getBoundingClientRect().top);
+      console.log(window.innerHeight);
+      if (
+        !this.state.initialAnimation &&
+        this.ref.current.getBoundingClientRect().top < window.innerHeight * 0.35
+      ) {
+        this.setState({ initialAnimation: true });
+        this.initalAnimation();
+      }
+    });
+  }
+
+  initalAnimation = () => {
     setTimeout(() => {
       let now = new Date();
       let currentMonth = now.getMonth() + 1;
@@ -24,10 +45,11 @@ class Frontend extends React.Component {
           });
         } else {
           clearInterval(id);
+          window.removeEventListener('scroll', this.initalAnimation);
         }
       }, 50);
     }, 500);
-  }
+  };
 
   onBarChange = event => {
     let value = event.target.value;
@@ -54,7 +76,7 @@ class Frontend extends React.Component {
 
   render() {
     return (
-      <div id='frontend'>
+      <div ref={this.ref} id='frontend'>
         <div class='slidecontainer'>
           <input
             type='range'
