@@ -8,10 +8,10 @@ class Skill extends React.Component {
   }
 
   render() {
-    let { name, img, width } = this.props;
+    let { name, img, width, long } = this.props;
 
     return (
-      <div className='skill-bar'>
+      <div className={`skill-bar ${name.toLowerCase()}`}>
         <h5>{name}</h5>
         <div className='bar'>
           <div
@@ -22,10 +22,15 @@ class Skill extends React.Component {
             <div
               className='logo'
               style={{
-                left: `calc(${width}% - 15px)`
+                left: `calc(${width}% - 22px)`
               }}
             >
-              <img alt={name} src={img} width={width} />
+              <img
+                alt={name}
+                src={img}
+                width={width}
+                className={long ? ' long' : ''}
+              />
             </div>
           ) : null}
         </div>

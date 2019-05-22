@@ -1049,6 +1049,12 @@ footer .copylight {
 } */
 
 /* ABOUT */
+#about {
+  max-width: 950px;
+}
+.about-container {
+  max-width: 750px;
+}
 .about h3 {
   margin-bottom: 15px;
   font-size: 1.5em;
@@ -1101,6 +1107,7 @@ footer .copylight {
   font-size: 1.2em;
 }
 .about .skills-container h4 {
+  font-size: 1.1em;
   font-weight: 700;
   margin-bottom: 5px;
 }
@@ -1111,7 +1118,8 @@ footer .copylight {
   margin-bottom: 40px;
 }
 @media only screen and (max-width: 767px) {
-  .about-container .main-content {
+  .about-container {
+    max-width: 550px;
     margin: 0 auto;
   }
   .about .description {
@@ -1178,6 +1186,9 @@ textarea:focus {
 }
 
 /* Skill */
+/* #frontend {
+  max-width: 650px;
+} */
 .slidecontainer {
   max-width: 400px; /* Width of the outside container */
   margin: 0 auto;
@@ -1250,7 +1261,7 @@ textarea:focus {
   border-radius: 50%;
   /* background: #555; */
 
-  background: #ccc;
+  background: #bbb;
   /* background-image: url('./img/flutter.png');
   background-position: 0; */
   cursor: pointer;
@@ -1273,7 +1284,8 @@ textarea:focus {
   text-align: center;
   margin-bottom: 10px;
   color: #555;
-  font-weight: bold;
+  font-size: 0.85em;
+  height: 19px;
 }
 
 /* skill bar */
@@ -1285,6 +1297,7 @@ textarea:focus {
   clear: both;
   content: '';
 }
+
 .skill-bar h5 {
   font-size: 0.9em;
   font-weight: bold;
@@ -1299,7 +1312,7 @@ textarea:focus {
   width: calc(100% - 110px);
   height: 15px;
   border-radius: 5px;
-  background: #d3d3d3;
+  background: #ddd;
   outline: none;
   position: relative;
   margin-top: 5px;
@@ -1316,15 +1329,97 @@ textarea:focus {
 }
 .bar .logo {
   position: absolute;
-  left: 57%;
-  top: -50%;
-  width: 30px;
-  height: 30px;
+  /* left: 22px; */
+  top: -14px;
+  width: 39px;
+  height: 39px;
+  /* background-color: #fff; */
+  border-radius: 50%;
+  padding: 5px;
   opacity: 1;
   -webkit-transition: left 50ms ease-in;
   transition: left 50ms ease-in;
+  text-align: center;
+  background-color: #fff;
+  border: #000 solid 2px;
+}
+.skill-bars.slow .bar .logo,
+.skill-bars.slow .progress {
+  -webkit-transition: all 250ms ease-in;
+  transition: all 250ms ease-in;
 }
 .bar .logo img {
   width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+.bar .logo img.long {
+  width: auto;
   height: 100%;
+}
+.react img {
+  margin-left: -11px;
+  margin-top: -3px;
+  height: 135% !important;
+}
+.flutter img {
+  margin-left: -3px;
+}
+.react .progress {
+  background-color: #00deff;
+}
+.flutter .progress {
+  background-color: #1ecaff;
+}
+.redux .progress {
+  background-color: #8130c2;
+}
+.html5 .progress {
+  background-color: #ff5400;
+}
+.css3 .progress {
+  background-color: #2452fb;
+}
+.javascript .progress {
+  background-color: #fae500;
+}
+.typescript .progress {
+  background-color: #0075d3;
+}
+.react .logo {
+  border: #00deff solid 3px;
+}
+.flutter .logo {
+  border: #1ecaff solid 3px;
+}
+.redux .logo {
+  border: #8130c2 solid 3px;
+}
+.html5 .logo {
+  border: #ff5400 solid 3px;
+}
+.css3 .logo {
+  border: #2452fb solid 3px;
+}
+.javascript .logo {
+  border: #fae500 solid 3px;
+}
+.typescript .logo {
+  border: #0075d3 solid 3px;
+}
+@media only screen and (max-width: 575px) {
+  .about .skills-container h4 {
+    font-size: 1.1em;
+    font-weight: 700;
+    margin-bottom: 5px;
+  }
+  .skill-bar h5 {
+    line-height: 1.1em;
+    font-size: 0.8em;
+    width: 75px;
+    padding-top: 2px;
+  }
+  .skill-bar .bar {
+    width: calc(100% - 100px);
+  }
 }

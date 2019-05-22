@@ -23,9 +23,10 @@ class Frontend extends React.Component {
 
   componentDidMount() {
     window.addEventListener('scroll', () => {
+      console.log(this.ref.current.getBoundingClientRect().top);
       if (
         !this.state.initialAnimation &&
-        this.ref.current.getBoundingClientRect().top < window.innerHeight * 0.35
+        this.ref.current.getBoundingClientRect().top < 200
       ) {
         this.setState({ initialAnimation: true });
         this.initalAnimation();
@@ -34,24 +35,22 @@ class Frontend extends React.Component {
   }
 
   initalAnimation = () => {
-    setTimeout(() => {
-      let now = new Date();
-      let currentMonth = now.getMonth() + 1;
-      currentMonth = currentMonth < 10 ? '0' + currentMonth : currentMonth;
-      let currentDateKey = now.getFullYear() + currentMonth.toString();
-      let counter = 0;
-      let id = setInterval(() => {
-        if (counter < DATE[currentDateKey]) {
-          this.setState({
-            date: (counter = counter + 1),
-            intDate: Math.floor(counter)
-          });
-        } else {
-          clearInterval(id);
-          window.removeEventListener('scroll', this.initalAnimation);
-        }
-      }, 50);
-    }, 500);
+    let now = new Date();
+    let currentMonth = now.getMonth() + 1;
+    currentMonth = currentMonth < 10 ? '0' + currentMonth : currentMonth;
+    let currentDateKey = now.getFullYear() + currentMonth.toString();
+    let counter = 0;
+    let id = setInterval(() => {
+      if (counter < DATE[currentDateKey]) {
+        this.setState({
+          date: (counter = counter + 1),
+          intDate: Math.floor(counter)
+        });
+      } else {
+        clearInterval(id);
+        window.removeEventListener('scroll', this.initalAnimation);
+      }
+    }, 50);
   };
 
   onBarChange = event => {
@@ -66,13 +65,13 @@ class Frontend extends React.Component {
     return month + ' ' + year;
   };
 
-  getProgressWidth = key => {
+  getProgressWidth = data => {
     let date = this.state.intDate;
     let width = 0;
-    if (skillData[key].progress[date] === undefined) {
+    if (data.progress[date] === undefined) {
       width = undefined;
-    } else if (skillData[key].progress[date]) {
-      width = (skillData[key].progress[date] / skillData[key].fullValue) * 100;
+    } else if (data.progress[date]) {
+      width = (data.progress[date] / data.fullValue) * 100;
     }
     return width;
   };
@@ -129,43 +128,19 @@ class Frontend extends React.Component {
             </span>
           ) : null} */}
         </div>
-
-        <div className='skill-bars'>
-          <Skill
-            name='React'
-            width={this.getProgressWidth('react')}
-            img={skillData.react.logo}
-          />
-          <Skill
-            name='Redux'
-            width={this.getProgressWidth('redux')}
-            img={skillData.redux.logo}
-          />
-          <Skill
-            name='JavaScript'
-            width={this.getProgressWidth('javascript')}
-            img={skillData.javascript.logo}
-          />
-          <Skill
-            name='HTML5'
-            width={this.getProgressWidth('html5')}
-            img={skillData.html5.logo}
-          />
-          <Skill
-            name='CSS3'
-            width={this.getProgressWidth('css3')}
-            img={skillData.css3.logo}
-          />
-          <Skill
-            name='TypeScript'
-            width={this.getProgressWidth('typescript')}
-            img={skillData.typescript.logo}
-          />
-          <Skill
-            name='Flutter'
-            width={this.getProgressWidth('flutter')}
-            img={skillData.flutter.logo}
-          />
+        <div
+          className={`skill-bars${this.state.initialAnimation ? ' slow' : ''}`}
+        >
+          {skillData.map(skill => {
+            return (
+              <Skill
+                name={skill.name}
+                width={this.getProgressWidth(skill)}
+                img={skill.logo}
+                long={skill.logoLong}
+              />
+            );
+          })}
         </div>
       </div>
     );

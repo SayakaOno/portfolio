@@ -270,20 +270,54 @@ export const flutterProgress = {
   [DATE[201912]]: 1
 };
 
-export const skillData = {
-  react: { logo: reactLogo, progress: reactProgress, fullValue: 100 },
-  redux: { logo: reduxLogo, progress: reduxProgress, fullValue: 100 },
-  html5: { logo: html5Logo, progress: html5Progress, fullValue: 100 },
-  css3: { logo: css3Logo, progress: css3Progress, fullValue: 100 },
-  javascript: {
+export const skillData = [
+  {
+    name: 'React',
+    logo: reactLogo,
+    logoLong: true,
+    progress: reactProgress,
+    fullValue: 100
+  },
+  {
+    name: 'Redux',
+    logo: reduxLogo,
+    logoLong: false,
+    progress: reduxProgress,
+    fullValue: 100
+  },
+  {
+    name: 'HTML5',
+    logo: html5Logo,
+    logoLong: false,
+    progress: html5Progress,
+    fullValue: 100
+  },
+  {
+    name: 'CSS3',
+    logo: css3Logo,
+    logoLong: true,
+    progress: css3Progress,
+    fullValue: 100
+  },
+  {
+    name: 'JavaScript',
     logo: javascriptLogo,
+    logoLong: false,
     progress: javascriptProgress,
     fullValue: 100
   },
-  typescript: {
+  {
+    name: 'TypeScript',
     logo: typescriptLogo,
+    logoLong: false,
     progress: typescriptProgress,
     fullValue: 100
   },
-  flutter: { logo: flutterLogo, progress: flutterProgress, fullValue: 100 }
-};
+  {
+    name: 'Flutter',
+    logo: flutterLogo,
+    logoLong: true,
+    progress: flutterProgress,
+    fullValue: 100
+  }
+];
