@@ -14,25 +14,18 @@ class Skill extends React.Component {
       <div className={`skill-bar ${name.toLowerCase()}`}>
         <h5>{name}</h5>
         <div className='bar'>
-          <div
-            className='progress'
-            style={{ width: width ? width + '%' : 0 }}
-          />
-          {width !== undefined ? (
-            <div
-              className='logo'
-              style={{
-                left: `calc(${width}% - 22px)`
-              }}
-            >
-              <img
-                alt={name}
-                src={img}
-                width={width}
-                className={long ? ' long' : ''}
-              />
-            </div>
-          ) : null}
+          <div className='progress' style={{ width: width ? width + '%' : 0 }}>
+            {width !== undefined ? (
+              <div className='logo'>
+                <img
+                  alt={name}
+                  src={img}
+                  width={width}
+                  className={long ? ' long' : ''}
+                />
+              </div>
+            ) : null}
+          </div>
         </div>
       </div>
     );

@@ -1317,7 +1317,7 @@ textarea:focus {
   left: -2px;
   top: -2px;
   font-size: 1.3em;
-  color: red;
+  color: #db2828;
   display: block;
 }
 .skills .date .checkbox .fas.fa-check.none {
@@ -1354,18 +1354,20 @@ textarea:focus {
   margin-top: 5px;
 }
 .progress {
+  position: relative;
+  overflow: inherit;
   -webkit-appearance: none;
   height: 15px;
   border-radius: 5px;
   background-color: rgba(0, 0, 0, 0.7);
   outline: none;
-  opacity: 0.7;
+  /* opacity: 0.7; */
   -webkit-transition: width 50ms ease-in, background-color 0.1s ease;
   transition: width 50ms ease-in, background-color 0.1s ease;
 }
 .bar .logo {
   position: absolute;
-  /* left: 22px; */
+  right: -18px;
   top: -14px;
   width: 39px;
   height: 39px;
@@ -1373,16 +1375,15 @@ textarea:focus {
   border-radius: 50%;
   padding: 5px;
   opacity: 1;
-  -webkit-transition: left 50ms ease-in;
-  transition: left 50ms ease-in;
+  -webkit-transition: right 50ms ease-in;
+  transition: right 50ms ease-in;
   text-align: center;
   background-color: #fff;
-  border: #000 solid 2px;
 }
 .skill-bars.slow .bar .logo,
 .skill-bars.slow .progress {
-  -webkit-transition: all 250ms ease-in;
-  transition: all 250ms ease-in;
+  -webkit-transition: all 300ms ease-in;
+  transition: all 300ms ease-in;
 }
 .bar .logo img {
   width: 100%;
@@ -1412,29 +1413,29 @@ textarea:focus {
 }
 .redux img {
   margin-left: -1px;
-  margin-top: -2px;
+  margin-top: -1px;
   width: 106% !important;
 }
 .react .progress {
-  background-color: #00deff;
+  background-color: rgba(0, 222, 255, 0.7);
 }
 .flutter .progress {
-  background-color: #1ecaff;
+  background-color: rgba(30, 202, 255, 0.7);
 }
 .redux .progress {
-  background-color: #8130c2;
+  background-color: rgba(129, 48, 194, 0.7);
 }
 .html5 .progress {
-  background-color: #ff5400;
+  background-color: rgba(255, 84, 0, 0.7);
 }
 .css3 .progress {
-  background-color: #2452fb;
+  background-color: rgba(36, 82, 251, 0.7);
 }
 .javascript .progress {
-  background-color: #fae500;
+  background-color: rgba(250, 229, 0, 0.7);
 }
 .typescript .progress {
-  background-color: #0075d3;
+  background-color: rgba(0, 117, 211, 0.7);
 }
 .react .logo {
   border: #00deff solid 3px;

@@ -122,8 +122,6 @@ class Frontend extends React.Component {
   };
 
   render() {
-    console.log(this.state.intDate);
-    console.log(this.state.currentDate);
     return (
       <div ref={this.body} id='frontend'>
         <div ref={this.date} className='date-info'>
