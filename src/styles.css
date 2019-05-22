@@ -579,50 +579,12 @@ footer .copylight {
   height: 100vh;
   text-align: left;
   padding: 50px 90px;
-  /* background-color: rgba(255, 255, 255, 0.6); */
+  /* padding: 6% 10%; */
   background-color: rgba(0, 0, 0, 0.2);
   margin: 0 auto;
 }
 
-/* .vertical-center.additional {
-  position: relative;
-  vertical-align: middle;
-  animation: show 1.5s linear 0s;
-}
-@keyframes show {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-} */
-/* .vertical-center .link-to-portfolio {
-  display: none;
-} */
-/* .vertical-center.additional .link-to-portfolio.show {
-  display: block;
-  animation: show 1.5s linear 0s;
-}
-.vertical-center.additional .link-to-portfolio a {
-  display: inline-block;
-  border: solid 3px #fff;
-  color: #fff;
-  width: fit-content;
-  margin-top: 40px;
-
-  padding: 20px;
-  font-weight: bold;
-} */
-/* .top-container {
-  padding: 20px;
-  margin: 10%;
-} */
-
 @media only screen and (max-width: 767px) {
-  /* .vertical-center.additional .link-to-portfolio a {
-    margin-top: 40px;
-  } */
   .wrapper {
     padding-top: 120px !important;
   }
@@ -640,7 +602,7 @@ footer .copylight {
     margin-bottom: 5px;
   }
   .top-container {
-    padding: 100px;
+    /* padding: 100px; */
   }
 }
 @media only screen and (max-width: 575px) {
@@ -661,7 +623,7 @@ footer .copylight {
     margin-bottom: 2px;
   }
   .top-container {
-    padding: 100px 40px;
+    padding: 50px 40px;
   }
 }
 @media only screen and (min-width: 768px) {
@@ -669,20 +631,11 @@ footer .copylight {
     max-width: 950px;
     margin: 0 auto;
   }
-  /* .index-banner {
-    display: table;
-    text-align: center;
+}
+@media only screen and (max-width: 767px) and (orientation: landscape) {
+  .index-banner {
+    background-position: center !important;
   }
-  */
-  /* .vertical-center.additional { */
-  /* padding-left: 130px;
-    text-align: left;
-  }
-  .vertical-center.additional .link-to-portfolio a {
-    position: absolute;
-    right: 150px;
-    top: 75%;
-  } */
 }
 
 .pulse:hover,
@@ -742,6 +695,7 @@ footer .copylight {
 .wrapper {
   padding: 0 2rem;
   padding-top: 100px !important;
+  margin-bottom: 50px !important;
 }
 @media only screen and (min-width: 1000px) {
   .wrapper {
@@ -832,7 +786,6 @@ footer .copylight {
   }
   .projects .data {
     width: 100%;
-    /* text-align: center; */
   }
   .portfolio .project-container + button {
     display: block;
@@ -858,10 +811,10 @@ footer .copylight {
   }
   .projects .data {
     width: 48%;
-    margin: 10px;
+    margin: 10px 0 10px 20px;
   }
   .project-container {
-    margin-bottom: 20px;
+    margin-bottom: 70px;
   }
   .portfolio .project-container + button span:after {
     visibility: hidden;
@@ -1056,8 +1009,8 @@ footer .copylight {
   max-width: 750px;
 }
 .about h3 {
-  margin-bottom: 15px;
-  font-size: 1.5em;
+  margin-bottom: 30px;
+  font-size: 1.8em;
 }
 .about-container .main-content {
   width: 100%;
@@ -1082,7 +1035,7 @@ footer .copylight {
   font-size: 1.5em;
 }
 .about .bullet {
-  margin-bottom: 50px;
+  margin-bottom: 80px;
 }
 .about .bullet ul li {
   display: flex;
@@ -1107,15 +1060,12 @@ footer .copylight {
   font-size: 1.2em;
 }
 .about .skills-container h4 {
-  font-size: 1.1em;
+  font-size: 1.2em;
   font-weight: 700;
   margin-bottom: 5px;
 }
 .about .skills-container h4 + p {
-  margin-bottom: 15px;
-}
-.about .skill-bars {
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 @media only screen and (max-width: 767px) {
   .about-container {
@@ -1186,9 +1136,9 @@ textarea:focus {
 }
 
 /* Skill */
-/* #frontend {
-  max-width: 650px;
-} */
+#frontend {
+  margin-bottom: 70px;
+}
 .date-info {
   overflow: hidden;
   height: 20px; /* -> 65px */
@@ -1317,7 +1267,8 @@ textarea:focus {
   left: -2px;
   top: -2px;
   font-size: 1.3em;
-  color: #db2828;
+  /* color: #db2828; */
+  color: #111;
   display: block;
 }
 .skills .date .checkbox .fas.fa-check.none {
