@@ -28,7 +28,7 @@ class Frontend extends React.Component {
     window.addEventListener('scroll', () => {
       if (
         !this.state.initialAnimation &&
-        this.body.current.getBoundingClientRect().top < 200
+        this.body.current.getBoundingClientRect().top < window.innerHeight
       ) {
         this.setState({ initialAnimation: true });
         this.initalAnimation();

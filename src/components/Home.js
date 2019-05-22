@@ -23,10 +23,10 @@ class Home extends React.Component {
         }, 1500);
         setTimeout(() => {
           this.input2.current.className = 'fas fa-check-square';
-        }, 2000);
+        }, 1700);
         setTimeout(() => {
           this.input3.current.className = 'fas fa-check-square';
-        }, 2500);
+        }, 1900);
       }
     );
   }
@@ -39,12 +39,6 @@ class Home extends React.Component {
             <div className='top-container'>
               <h2>Sayaka Ono</h2>
               <h1>React Developer</h1>
-              {/* <p>Vancouver</p> */}
-              {/* <div ref={this.linkToPortfolio} className='link-to-portfolio'>
-              <a className='hvr-icon-float-away pulse' href='#portfolio'>
-                PORTFOLIO <i className='fas fa-angle-double-right hvr-icon' />
-              </a>
-            </div> */}
               <div className='checkboxes'>
                 <ul>
                   <li>
