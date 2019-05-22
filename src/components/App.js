@@ -64,13 +64,6 @@ class App extends React.Component {
     });
   };
 
-  toggleMenu = e => {
-    if (e.target.closest('ul#menu') && !e.target.closest('ul#menu li')) {
-      return;
-    }
-    this.toggleMenuOpenState();
-  };
-
   render() {
     return (
       <React.Fragment>
@@ -83,14 +76,14 @@ class App extends React.Component {
               <input
                 ref={this.inputBox}
                 type='checkbox'
-                onChange={this.toggleMenu}
+                onChange={this.toggleMenuOpenState}
                 checked={this.state.menuOpen}
               />
               <span />
               <span />
               <span />
 
-              <ul id='menu' onClick={this.toggleMenu}>
+              <ul id='menu'>
                 <li>
                   <Link
                     className='item'
@@ -98,6 +91,7 @@ class App extends React.Component {
                     spy={true}
                     smooth={true}
                     duration={500}
+                    onClick={this.toggleMenuOpenState}
                   >
                     Portfolio
                   </Link>
@@ -109,6 +103,7 @@ class App extends React.Component {
                     spy={true}
                     smooth={true}
                     duration={500}
+                    onClick={this.toggleMenuOpenState}
                   >
                     About
                   </Link>
@@ -120,6 +115,7 @@ class App extends React.Component {
                     spy={true}
                     smooth={true}
                     duration={500}
+                    onClick={this.toggleMenuOpenState}
                   >
                     Contact
                   </Link>
