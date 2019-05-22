@@ -15,18 +15,20 @@ class Frontend extends React.Component {
     this.state = {
       date: DATE[201609],
       intDate: DATE[201609],
-      initialAnimation: false
+      initialAnimation: false,
+      currentDate: null
     };
 
-    this.ref = React.createRef();
+    this.body = React.createRef();
+    this.date = React.createRef();
   }
 
   componentDidMount() {
+    this.setState({ currentDate: this.getCurrentDate() });
     window.addEventListener('scroll', () => {
-      console.log(this.ref.current.getBoundingClientRect().top);
       if (
         !this.state.initialAnimation &&
-        this.ref.current.getBoundingClientRect().top < 200
+        this.body.current.getBoundingClientRect().top < 200
       ) {
         this.setState({ initialAnimation: true });
         this.initalAnimation();
@@ -34,14 +36,18 @@ class Frontend extends React.Component {
     });
   }
 
-  initalAnimation = () => {
+  getCurrentDate = () => {
     let now = new Date();
-    let currentMonth = now.getMonth() + 1;
-    currentMonth = currentMonth < 10 ? '0' + currentMonth : currentMonth;
-    let currentDateKey = now.getFullYear() + currentMonth.toString();
+    let month = now.getMonth() + 1;
+    month = month < 10 ? '0' + month : month;
+    let variableName = now.getFullYear() + month.toString();
+    return DATE[variableName];
+  };
+
+  initalAnimation = () => {
     let counter = 0;
     let id = setInterval(() => {
-      if (counter < DATE[currentDateKey]) {
+      if (counter < this.state.currentDate) {
         this.setState({
           date: (counter = counter + 1),
           intDate: Math.floor(counter)
@@ -49,8 +55,15 @@ class Frontend extends React.Component {
       } else {
         clearInterval(id);
         window.removeEventListener('scroll', this.initalAnimation);
+        setInterval(this.showDateInfo, 500);
       }
     }, 50);
+  };
+
+  showDateInfo = () => {
+    this.date.current.style.height = '65px';
+    this.date.current.style.opacity = 1;
+    this.date.current.style.visibility = 'visible';
   };
 
   onBarChange = event => {
@@ -98,35 +111,49 @@ class Frontend extends React.Component {
     return <React.Fragment>{elems.map(elem => elem)}</React.Fragment>;
   };
 
+  onClickCurrent = () => {
+    if (this.state.intDate === this.state.currentDate) {
+      return;
+    }
+    this.setState({
+      intDate: this.state.currentDate,
+      date: this.state.currentDate
+    });
+  };
+
   render() {
+    console.log(this.state.intDate);
+    console.log(this.state.currentDate);
     return (
-      <div ref={this.ref} id='frontend'>
-        <div className='date'>
-          {this.state.date ? this.formatDateFromKey(this.state.date) : null}
-        </div>
-        <div className='slidecontainer'>
-          {this.renderYearBar()}
-          <input
-            type='range'
-            min='0'
-            max={Object.keys(DATE).length - 1}
-            value={this.state.date}
-            className='slider'
-            onChange={this.onBarChange}
-          />
-          {/* {this.state.date ? (
-            <span
-              className='ui red basic label'
-              style={{
-                left: `calc(${(this.state.date / DATE_FROM_INDEX.length) *
-                  100}% - 20px)`
-              }}
-            >
-              {this.formatDateFromKey(this.state.date)
-                .toString()
-                .substring(4, -4)}
+      <div ref={this.body} id='frontend'>
+        <div ref={this.date} className='date-info'>
+          <div className='date'>
+            <span className='text'>
+              {this.state.date ? this.formatDateFromKey(this.state.date) : null}
             </span>
-          ) : null} */}
+            <span className='current' onClick={this.onClickCurrent}>
+              <span className='checkbox'>
+                <i className='far fa-square' />
+                <i
+                  className={`fas fa-check${
+                    this.state.currentDate === this.state.intDate ? '' : ' none'
+                  }`}
+                />
+              </span>{' '}
+              current
+            </span>
+          </div>
+          <div className='slidecontainer'>
+            {this.renderYearBar()}
+            <input
+              type='range'
+              min='0'
+              max={Object.keys(DATE).length - 1}
+              value={this.state.date}
+              className='slider'
+              onChange={this.onBarChange}
+            />
+          </div>
         </div>
         <div
           className={`skill-bars${this.state.initialAnimation ? ' slow' : ''}`}
@@ -134,6 +161,7 @@ class Frontend extends React.Component {
           {skillData.map(skill => {
             return (
               <Skill
+                key={skill.name}
                 name={skill.name}
                 width={this.getProgressWidth(skill)}
                 img={skill.logo}
