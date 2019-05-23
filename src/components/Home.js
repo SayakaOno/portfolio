@@ -2,6 +2,7 @@ import React from 'react';
 import Fade from 'react-reveal/Fade';
 
 import imagesLoaded from 'imagesloaded';
+import { introduction } from '../data';
 
 class Home extends React.Component {
   constructor(props) {
@@ -9,6 +10,8 @@ class Home extends React.Component {
     this.input1 = React.createRef();
     this.input2 = React.createRef();
     this.input3 = React.createRef();
+    this.input4 = React.createRef();
+    this.input5 = React.createRef();
   }
 
   componentDidMount() {
@@ -27,6 +30,12 @@ class Home extends React.Component {
         setTimeout(() => {
           this.input3.current.className = 'fas fa-check-square';
         }, 1900);
+        setTimeout(() => {
+          this.input4.current.className = 'fas fa-check-square';
+        }, 2100);
+        setTimeout(() => {
+          this.input5.current.className = 'fas fa-check-square';
+        }, 2300);
       }
     );
   }
@@ -41,18 +50,15 @@ class Home extends React.Component {
               <h1>React Developer</h1>
               <div className='checkboxes'>
                 <ul>
-                  <li>
-                    {' '}
-                    <i className='far fa-square' ref={this.input1} /> Checkbox1
-                  </li>
-                  <li>
-                    {' '}
-                    <i className='far fa-square' ref={this.input2} /> Vancouver2
-                  </li>
-                  <li>
-                    {' '}
-                    <i className='far fa-square' ref={this.input3} /> Checkbox3
-                  </li>
+                  {introduction.map((elem, index) => (
+                    <li key={index}>
+                      <i
+                        className='far fa-square'
+                        ref={this['input' + (index + 1)]}
+                      />
+                      {` ${elem}`}
+                    </li>
+                  ))}
                 </ul>
               </div>
             </div>
