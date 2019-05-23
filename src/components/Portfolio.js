@@ -22,11 +22,11 @@ class Portfolio extends React.Component {
   };
 
   handleClick = e => {
-    const projectBox = e.target.closest('.project-box');
-    if (!projectBox || projectBox.className === 'project-box no-gallery') {
+    const projectImg = e.target.closest('.project-img');
+    if (!projectImg || projectImg.className === 'project-img no-gallery') {
       return;
     }
-    this.selectProject(projectBox.id);
+    this.selectProject(projectImg.id);
   };
 
   selectProject = id => {
@@ -117,16 +117,14 @@ class Portfolio extends React.Component {
                   return (
                     <React.Fragment key={data.name[lang]}>
                       <div className='project-container'>
-                        <div
+                        <figure
                           id={data.order}
-                          className={`project-box${
+                          className={`project-img${
                             !data.gallery.length ? ' no-gallery' : ''
                           }`}
                         >
-                          <figure className='cases-link hover-parent'>
-                            <img src={data.image} alt={data.name[lang]} />
-                          </figure>
-                        </div>
+                          <img src={data.image} alt={data.name[lang]} />
+                        </figure>
 
                         <div className='data'>
                           <h1>{data.name[lang]}</h1>
