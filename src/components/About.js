@@ -11,12 +11,9 @@ class About extends React.Component {
     this.state = { iconChange: false };
 
     this.aboutRef = React.createRef();
-    this.checkboxRef1 = React.createRef();
-    this.checkboxRef2 = React.createRef();
-    this.checkboxRef3 = React.createRef();
-    this.checkboxRef4 = React.createRef();
-    this.checkboxRef5 = React.createRef();
-    this.checkboxRef6 = React.createRef();
+    about.new[this.lang].bullet.forEach((e, index) => {
+      this['checkboxRef' + (index + 1)] = React.createRef();
+    });
   }
   lang = this.props.language;
 
@@ -84,14 +81,12 @@ class About extends React.Component {
                 <div className='skills'>
                   <h3>{about.skills[this.lang]}</h3>
                   <div className='skills-container'>
-                    <div>
-                      <h4>Frontend</h4>
-                      <Frontend />
-                      <h4>Backend</h4>
-                      <p>{about.sortedSkills['Backend'].join(', ')}</p>
-                      <h4>What else I can do</h4>
-                      <p>{about.sortedSkills['others'].join(', ')}</p>
-                    </div>
+                    <h4>Frontend</h4>
+                    <Frontend />
+                    <h4>Backend</h4>
+                    <p>{about.sortedSkills['Backend'].join(', ')}</p>
+                    <h4>What else I can do</h4>
+                    <p>{about.sortedSkills['others'].join(', ')}</p>
                   </div>
                 </div>
               </Fade>

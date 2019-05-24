@@ -8,19 +8,24 @@ import {
   skillData
 } from './constants';
 
+const initialState = {
+  date: DATE[201609],
+  intDate: DATE[201609]
+};
+
 class Frontend extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      date: DATE[201609],
-      intDate: DATE[201609],
+      ...initialState,
       initialAnimation: false,
       currentDate: null
     };
 
     this.body = React.createRef();
     this.date = React.createRef();
+    this.skillBar = React.createRef();
   }
 
   componentDidMount() {
@@ -28,10 +33,9 @@ class Frontend extends React.Component {
     window.addEventListener('scroll', () => {
       if (
         !this.state.initialAnimation &&
-        this.body.current.getBoundingClientRect().top < window.innerHeight
+        this.body.current.getBoundingClientRect().top < window.innerHeight * 0.7
       ) {
-        this.setState({ initialAnimation: true });
-        this.initalAnimation();
+        this.initialAnimation();
       }
     });
   }
@@ -44,7 +48,7 @@ class Frontend extends React.Component {
     return DATE[variableName];
   };
 
-  initalAnimation = () => {
+  initialAnimation = () => {
     let counter = 0;
     let id = setInterval(() => {
       if (counter < this.state.currentDate) {
@@ -54,14 +58,50 @@ class Frontend extends React.Component {
         });
       } else {
         clearInterval(id);
-        window.removeEventListener('scroll', this.initalAnimation);
+        window.removeEventListener('scroll', this.initialAnimation);
         setInterval(this.showDateInfo, 500);
       }
     }, 50);
+    this.setState({ initialAnimation: true });
+  };
+
+  autoPlay = () => {
+    let counter = this.state.intDate;
+    if (counter < this.state.currentDate) {
+      this.skillBar.current.classList.remove('slow');
+      let id = setInterval(() => {
+        if (counter < this.state.currentDate) {
+          this.setState({
+            date: (counter = counter + 1),
+            intDate: Math.floor(counter)
+          });
+        } else {
+          clearInterval(id);
+          this.skillBar.current.classList.add('slow');
+        }
+      }, 50);
+    } else {
+      this.setState({ ...initialState });
+      counter = 0;
+      setTimeout(() => {
+        this.skillBar.current.classList.remove('slow');
+        let id = setInterval(() => {
+          if (counter < this.state.currentDate) {
+            this.setState({
+              date: (counter = counter + 1),
+              intDate: Math.floor(counter)
+            });
+          } else {
+            clearInterval(id);
+            this.skillBar.current.classList.add('slow');
+          }
+        }, 50);
+      }, 300);
+    }
   };
 
   showDateInfo = () => {
-    this.date.current.style.height = '65px';
+    this.date.current.style.height = '75px';
     this.date.current.style.opacity = 1;
     this.date.current.style.visibility = 'visible';
   };
@@ -126,9 +166,14 @@ class Frontend extends React.Component {
       <div ref={this.body} id='frontend'>
         <div ref={this.date} className='date-info'>
           <div className='date'>
-            <span className='text'>
-              {this.state.date ? this.formatDateFromKey(this.state.date) : null}
-            </span>
+            <div className='container'>
+              <i onClick={this.autoPlay} className='far fa-play-circle' />
+              <span className='text'>
+                {this.state.date
+                  ? this.formatDateFromKey(this.state.date)
+                  : null}
+              </span>
+            </div>
             <span className='current' onClick={this.onClickCurrent}>
               <span className='checkbox'>
                 <i className='far fa-square' />
@@ -151,9 +196,10 @@ class Frontend extends React.Component {
               className='slider'
               onChange={this.onBarChange}
             />
-          </div>
+          </div>{' '}
         </div>
         <div
+          ref={this.skillBar}
           className={`skill-bars${this.state.initialAnimation ? ' slow' : ''}`}
         >
           {skillData.map(skill => {

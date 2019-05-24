@@ -695,7 +695,7 @@ footer .copylight {
   max-width: 950px;
 }
 .about-container {
-  max-width: 750px;
+  max-width: 500px;
 }
 .about h3 {
   margin-bottom: 30px;
@@ -790,9 +790,28 @@ footer .copylight {
   font-size: 0.85em;
   height: 19px;
 }
-.skills .date span.text {
-  width: 100px;
+.skills .date .text {
   display: inline-block;
+  width: 80px;
+  text-align: center;
+}
+.skills .date .container {
+  width: 110px;
+  display: inline-block;
+  padding: 0 !important;
+}
+.skills .date .container i:hover {
+  cursor: pointer;
+}
+.auto-play {
+  display: inline-block !important;
+  padding: 8px 8px !important;
+  font-size: 0.6em !important;
+}
+.date-info .warning {
+  font-size: 0.8em;
+  color: #db2828;
+  text-align: center;
 }
 .skills .current {
   position: absolute;
@@ -818,7 +837,7 @@ footer .copylight {
 /* slider background (year) */
 .slidecontainer {
   max-width: 400px;
-  margin: 0 auto 20px;
+  margin: 0 auto 10px;
   -webkit-appearance: none;
   outline: none;
   font-size: 0.7rem;
@@ -877,7 +896,7 @@ footer .copylight {
 
 /* skill bar */
 .skill-bar {
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 .skill-bar:after {
   display: table;
@@ -938,22 +957,6 @@ footer .copylight {
 .bar .logo img.long {
   width: auto;
   height: 100%;
-}
-@media only screen and (max-width: 575px) {
-  .about .skills-container h4 {
-    font-size: 1.1em;
-    font-weight: 700;
-    margin-bottom: 5px;
-  }
-  .skill-bar h5 {
-    line-height: 1.1em;
-    font-size: 0.8em;
-    width: 75px;
-    padding-top: 2px;
-  }
-  .skill-bar .bar {
-    width: calc(100% - 100px);
-  }
 }
 .react img {
   margin-left: -10.5px;
@@ -1018,6 +1021,51 @@ footer .copylight {
 }
 .typescript .logo {
   border: #0075d3 solid 3px;
+}
+@media only screen and (max-width: 575px) {
+  .about .skills-container h4 {
+    font-size: 1.1em;
+    font-weight: 700;
+    margin-bottom: 5px;
+  }
+  .skills .date span.text {
+    width: 75px;
+  }
+  .skills .date {
+    font-size: 0.8em;
+  }
+  .skill-bar {
+    margin-bottom: 15px;
+  }
+  .skill-bar h5 {
+    line-height: 1.1em;
+    font-size: 0.8em;
+    width: 73px;
+    padding-top: 2px;
+    margin-right: 22px;
+  }
+  .skill-bar .bar {
+    width: calc(100% - 95px);
+  }
+  .bar .logo {
+    right: -14px;
+    top: -9px;
+    width: 33px;
+    height: 33px;
+    padding: 4px;
+  }
+  .react img {
+    margin-left: -9px;
+  }
+  .flutter img {
+    margin-left: -4px;
+  }
+  .html5 img {
+    margin-left: -2px;
+  }
+  .css3 img {
+    margin-top: -2px;
+  }
 }
 
 /* CONTACT */
