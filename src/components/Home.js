@@ -7,11 +7,9 @@ import { introduction } from '../data';
 class Home extends React.Component {
   constructor(props) {
     super(props);
-    this.input1 = React.createRef();
-    this.input2 = React.createRef();
-    this.input3 = React.createRef();
-    this.input4 = React.createRef();
-    this.input5 = React.createRef();
+    introduction.forEach((e, index) => {
+      this['input' + (index + 1)] = React.createRef();
+    });
   }
 
   componentDidMount() {
@@ -21,21 +19,14 @@ class Home extends React.Component {
         background: true
       },
       () => {
-        setTimeout(() => {
-          this.input1.current.className = 'fas fa-check-square';
-        }, 1500);
-        setTimeout(() => {
-          this.input2.current.className = 'fas fa-check-square';
-        }, 1700);
-        setTimeout(() => {
-          this.input3.current.className = 'fas fa-check-square';
-        }, 1900);
-        setTimeout(() => {
-          this.input4.current.className = 'fas fa-check-square';
-        }, 2100);
-        setTimeout(() => {
-          this.input5.current.className = 'fas fa-check-square';
-        }, 2300);
+        let timeout = 1500;
+        introduction.forEach((li, index) => {
+          setTimeout(() => {
+            this['input' + (index + 1)].current.className =
+              'fas fa-check-square';
+          }, timeout);
+          timeout += 200;
+        });
       }
     );
   }
