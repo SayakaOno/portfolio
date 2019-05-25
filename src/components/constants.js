@@ -288,6 +288,13 @@ export const skillData = [
     fullValue: 100
   },
   {
+    name: 'JavaScript',
+    logo: javascriptLogo,
+    logoLong: false,
+    progress: javascriptProgress,
+    fullValue: 100
+  },
+  {
     name: 'HTML5',
     logo: html5Logo,
     logoLong: false,
@@ -299,13 +306,6 @@ export const skillData = [
     logo: css3Logo,
     logoLong: true,
     progress: css3Progress,
-    fullValue: 100
-  },
-  {
-    name: 'JavaScript',
-    logo: javascriptLogo,
-    logoLong: false,
-    progress: javascriptProgress,
     fullValue: 100
   },
   {

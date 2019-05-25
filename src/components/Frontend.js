@@ -169,7 +169,7 @@ class Frontend extends React.Component {
             <div className='container'>
               <i onClick={this.autoPlay} className='far fa-play-circle' />
               <span className='text'>
-                {this.state.date
+                {this.state.date !== undefined
                   ? this.formatDateFromKey(this.state.date)
                   : null}
               </span>
