@@ -1,5 +1,6 @@
 import React from 'react';
 import Fade from 'react-reveal/Fade';
+import { Link } from 'react-scroll';
 
 import imagesLoaded from 'imagesloaded';
 import { introduction } from '../data';
@@ -52,6 +53,15 @@ class Home extends React.Component {
                   ))}
                 </ul>
               </div>
+              <Link
+                className='ui inverted basic button'
+                to='portfolio'
+                spy={true}
+                smooth={true}
+                duration={400}
+              >
+                PORTFOLIO <i className='fas fa-angle-down' />
+              </Link>
             </div>
           </section>
         </Fade>

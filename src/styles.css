@@ -494,6 +494,14 @@ footer .copylight {
   background-color: rgba(0, 0, 0, 0.2);
   margin: 0 auto;
 }
+#home .checkboxes {
+  margin-bottom: 30px;
+}
+#home .ui.button {
+  font-family: 'Roboto', 'Helvetica Neue', 'Helvetica', Helvetica, Arial,
+    sans-serif;
+  font-size: 1.3em;
+}
 @media only screen and (min-width: 768px) {
   .vertical-center {
     max-width: 950px;
@@ -517,6 +525,9 @@ footer .copylight {
     font-size: 1.5em;
     margin-bottom: 5px;
   }
+  #home .ui.button {
+    font-size: 1em;
+  }
 }
 @media only screen and (max-width: 575px) {
   .index-banner {
@@ -537,6 +548,12 @@ footer .copylight {
   }
   .top-container {
     padding: 50px 40px;
+  }
+  #home .checkboxes {
+    margin-bottom: 20px;
+  }
+  #home .ui.button {
+    font-size: 0.9em;
   }
 }
 @media only screen and (max-width: 767px) and (orientation: landscape) {
