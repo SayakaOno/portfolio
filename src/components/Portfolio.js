@@ -148,7 +148,7 @@ class Portfolio extends React.Component {
                               target='_blank'
                               rel='noopener noreferrer'
                             >
-                              Demo
+                              Visit <i className='fas fa-external-link-alt' />
                             </a>
                             {data.githubUrl && (
                               <a
