@@ -796,7 +796,6 @@ footer .copylight {
   height: 20px; /* -> 65px */
   visibility: hidden;
   opacity: 0;
-  -webkit-transition: height 400ms ease-out, opacity 800ms ease-in;
   transition: height 400ms ease-out, opacity 800ms ease-in;
 }
 /* date & current */
@@ -862,7 +861,6 @@ footer .copylight {
   line-height: 1rem;
   text-align: center;
   position: relative;
-  -webkit-transition: width 50ms ease-in, background-color 0.1s ease;
   transition: width 50ms ease-in, background-color 0.1s ease;
 }
 .slidecontainer .progress-bar {
@@ -899,7 +897,6 @@ footer .copylight {
   border-radius: 50%;
   background: #bbb;
   cursor: pointer;
-  -webkit-transition: all 1000ms ease, background-color 0.1s ease;
   transition: all 1000ms ease, background-color 0.1s ease;
 }
 .slider::-moz-range-thumb {
@@ -908,7 +905,6 @@ footer .copylight {
   border-radius: 50%;
   background: #bbb;
   cursor: pointer;
-  -webkit-transition: all 1000ms ease, background-color 0.1s ease;
   transition: all 1000ms ease, background-color 0.1s ease;
 }
 
@@ -947,11 +943,9 @@ footer .copylight {
   height: 15px;
   border-radius: 5px;
   outline: none;
-  -webkit-transition: width 50ms ease-in;
   transition: width 50ms ease-in;
 }
 .skill-bars.slow .progress {
-  -webkit-transition: all 300ms ease-in;
   transition: all 300ms ease-in;
 }
 .bar .logo {
@@ -964,7 +958,6 @@ footer .copylight {
   padding: 5px;
   text-align: center;
   background-color: #fff;
-  -webkit-transition: right 50ms ease-in;
   transition: right 50ms ease-in;
 }
 .bar .logo img {

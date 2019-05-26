@@ -81,7 +81,7 @@ class Contact extends React.Component {
   renderResultMessage = () => {
     if (this.state.mailSent) {
       return this.props.language === 'en'
-        ? 'Thank you for contacting me.'
+        ? 'Thank you for contacting me :)'
         : 'メッセージをお送りくださり、ありがとうございます。';
     } else if (this.state.errorMessage) {
       return this.state.errorMessage;
