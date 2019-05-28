@@ -210,7 +210,7 @@ class Frontend extends React.Component {
                 ref={this.playLabel}
                 className='ui pointing below red basic label none'
               >
-                Watch again?
+                Animate my progress!
               </div>
               <i
                 ref={this.autoPlayRef}
