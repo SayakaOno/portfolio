@@ -792,7 +792,6 @@ footer .copylight {
   margin-bottom: 70px;
 }
 .date-info {
-  overflow: hidden;
   height: 20px; /* -> 65px */
   visibility: hidden;
   opacity: 0;
@@ -806,6 +805,18 @@ footer .copylight {
   color: #555;
   font-size: 0.85em;
   height: 19px;
+}
+.skills .date i.red {
+  color: #db2828;
+}
+.skills .date .label {
+  position: absolute;
+  top: -200%;
+  left: -42%;
+  width: 120px;
+}
+.skills .date .label.none {
+  display: none;
 }
 .skills .date .text {
   display: inline-block;
@@ -863,6 +874,14 @@ footer .copylight {
   position: relative;
   transition: width 50ms ease-in, background-color 0.1s ease;
 }
+.slidecontainer .label {
+  position: absolute !important;
+  top: -50%;
+  right: -46%;
+}
+.slidecontainer .label.none {
+  display: none;
+}
 .slidecontainer .progress-bar {
   display: inline-block;
   height: 15px;
@@ -906,6 +925,19 @@ footer .copylight {
   background: #bbb;
   cursor: pointer;
   transition: all 1000ms ease, background-color 0.1s ease;
+}
+.slider.red::-webkit-slider-thumb {
+  background: #db2828 !important;
+}
+.slider.red::-moz-range-thumb {
+  background: #db2828 !important;
+}
+/* animation instructions */
+@media only screen and (max-width: 767px) {
+  .slidecontainer .label,
+  .skills .date .label {
+    display: none;
+  }
 }
 
 /* skill bar */

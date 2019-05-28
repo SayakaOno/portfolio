@@ -26,6 +26,10 @@ class Frontend extends React.Component {
     this.body = React.createRef();
     this.date = React.createRef();
     this.skillBar = React.createRef();
+    this.playLabel = React.createRef();
+    this.barLabel = React.createRef();
+    this.autoPlayRef = React.createRef();
+    this.barRef = React.createRef();
   }
 
   componentDidMount() {
@@ -59,10 +63,51 @@ class Frontend extends React.Component {
       } else {
         clearInterval(id);
         window.removeEventListener('scroll', this.initialAnimation);
-        setInterval(this.showDateInfo, 500);
+        setTimeout(() => {
+          this.showDateInfo();
+          this.showAnimationInstructions();
+        }, 500);
       }
     }, 50);
     this.setState({ initialAnimation: true });
+  };
+
+  showDateInfo = () => {
+    this.date.current.style.height = '75px';
+    this.date.current.style.opacity = 1;
+    this.date.current.style.visibility = 'visible';
+  };
+
+  showAnimationInstructions = () => {
+    setTimeout(() => {
+      this.animateInstruction(this.playLabel, this.autoPlayRef, () =>
+        this.animateInstruction(this.barLabel, this.barRef)
+      );
+    }, 1000);
+  };
+
+  animateInstruction = (labelRef, blinkRef, callback = null) => {
+    labelRef.current.classList.toggle('none');
+    this.blinkClassName(blinkRef);
+
+    setTimeout(() => {
+      labelRef.current.classList.toggle('none');
+      if (callback) {
+        callback();
+      }
+    }, 2300);
+  };
+
+  blinkClassName = elementRef => {
+    let counter = 0;
+    let id = setInterval(() => {
+      if (counter < 6) {
+        elementRef.current.classList.toggle('red');
+        counter++;
+      } else {
+        clearInterval(id);
+      }
+    }, 350);
   };
 
   autoPlay = () => {
@@ -98,12 +143,6 @@ class Frontend extends React.Component {
         }, 50);
       }, 300);
     }
-  };
-
-  showDateInfo = () => {
-    this.date.current.style.height = '75px';
-    this.date.current.style.opacity = 1;
-    this.date.current.style.visibility = 'visible';
   };
 
   onBarChange = event => {
@@ -167,7 +206,17 @@ class Frontend extends React.Component {
         <div ref={this.date} className='date-info'>
           <div className='date'>
             <div className='container'>
-              <i onClick={this.autoPlay} className='far fa-play-circle' />
+              <div
+                ref={this.playLabel}
+                className='ui pointing below red basic label none'
+              >
+                Watch again?
+              </div>
+              <i
+                ref={this.autoPlayRef}
+                onClick={this.autoPlay}
+                className='far fa-play-circle'
+              />
               <span className='text'>
                 {this.state.date !== undefined
                   ? this.formatDateFromKey(this.state.date)
@@ -187,6 +236,12 @@ class Frontend extends React.Component {
             </span>
           </div>
           <div className='slidecontainer'>
+            <div
+              ref={this.barLabel}
+              className='ui left pointing red basic label none'
+            >
+              See monthly progress!
+            </div>
             {this.renderYearBar()}
             <input
               type='range'
@@ -195,6 +250,7 @@ class Frontend extends React.Component {
               value={this.state.date}
               className='slider'
               onChange={this.onBarChange}
+              ref={this.barRef}
             />
           </div>{' '}
         </div>
