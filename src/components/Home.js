@@ -14,22 +14,15 @@ class Home extends React.Component {
   }
 
   componentDidMount() {
-    imagesLoaded(
-      document.querySelector('.index-banner'),
-      {
-        background: true
-      },
-      () => {
-        let timeout = 1500;
-        introduction.forEach((li, index) => {
-          setTimeout(() => {
-            this['input' + (index + 1)].current.className =
-              'fas fa-check-square';
-          }, timeout);
-          timeout += 200;
-        });
-      }
-    );
+    imagesLoaded(document.querySelector('.index-banner'), () => {
+      let timeout = 1500;
+      introduction.forEach((li, index) => {
+        setTimeout(() => {
+          this['input' + (index + 1)].current.className = 'fas fa-check-square';
+        }, timeout);
+        timeout += 200;
+      });
+    });
   }
 
   render() {
