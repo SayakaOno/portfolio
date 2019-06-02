@@ -192,12 +192,13 @@ class Frontend extends React.Component {
 
   onClickCurrent = () => {
     if (this.state.intDate === this.state.currentDate) {
-      return;
+      this.setState(initialState);
+    } else {
+      this.setState({
+        intDate: this.state.currentDate,
+        date: this.state.currentDate
+      });
     }
-    this.setState({
-      intDate: this.state.currentDate,
-      date: this.state.currentDate
-    });
   };
 
   render() {
