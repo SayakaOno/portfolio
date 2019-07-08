@@ -29,16 +29,16 @@ class Home extends React.Component {
     return (
       <React.Fragment>
         <Fade>
-          <section name='home' id='home' className='index-banner home'>
-            <div className='top-container'>
+          <section name="home" id="home" className="index-banner home">
+            <div className="top-container">
               <h2>Sayaka Ono</h2>
               <h1>React Developer</h1>
-              <div className='checkboxes'>
+              <div className="checkboxes">
                 <ul>
                   {introduction.map((elem, index) => (
                     <li key={index}>
                       <i
-                        className='far fa-square'
+                        className="far fa-square"
                         ref={this['input' + (index + 1)]}
                       />
                       {` ${elem}`}
@@ -47,14 +47,30 @@ class Home extends React.Component {
                 </ul>
               </div>
               <Link
-                className='ui inverted basic button'
-                to='portfolio'
+                className="ui inverted basic button"
+                to="portfolio"
                 spy={true}
                 smooth={true}
                 duration={400}
               >
-                PORTFOLIO <i className='fas fa-angle-down' />
+                PORTFOLIO <i className="fas fa-angle-down" />
               </Link>
+              <div className="hero_sns_icons">
+                <a
+                  href="https://github.com/SayakaOno"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i className="github icon" />
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/sayakaono/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i className="linkedin icon" />
+                </a>
+              </div>
             </div>
           </section>
         </Fade>

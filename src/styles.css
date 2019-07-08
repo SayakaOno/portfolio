@@ -488,6 +488,7 @@ footer .copylight {
   margin-bottom: 5px;
 }
 .top-container {
+  position: relative;
   height: 100vh;
   text-align: left;
   padding: 50px 90px;
@@ -501,6 +502,21 @@ footer .copylight {
   font-family: 'Roboto', 'Helvetica Neue', 'Helvetica', Helvetica, Arial,
     sans-serif;
   font-size: 1.3em;
+}
+.hero_sns_icons {
+  position: absolute;
+  vertical-align: bottom;
+  bottom: 70px;
+  right: 90px;
+}
+.hero_sns_icons a {
+  font-size: 3em;
+  color: #f9fafbe1;
+  padding: 0 3px;
+  transition: color ease-in 200ms;
+}
+.hero_sns_icons a:hover {
+  color: #fff;
 }
 @media only screen and (min-width: 768px) {
   .vertical-center {
@@ -554,6 +570,13 @@ footer .copylight {
   }
   #home .ui.button {
     font-size: 0.9em;
+  }
+  .hero_sns_icons {
+    right: 40px;
+  }
+  .hero_sns_icons a {
+    font-size: 2em;
+    padding: 0;
   }
 }
 @media only screen and (max-width: 767px) and (orientation: landscape) {
