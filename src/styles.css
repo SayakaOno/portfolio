@@ -338,6 +338,10 @@ header .sns_icons a {
 header .sns_icons a:hover {
   color: #585858;
 }
+header .sns_icons a:focus {
+  outline: none;
+  text-decoration: none;
+}
 header a.header-brand {
   float: left;
   font-family: arial;
@@ -517,6 +521,10 @@ footer .copylight {
 }
 .hero_sns_icons a:hover {
   color: #fff;
+}
+.hero_sns_icons a:focus {
+  outline: none;
+  text-decoration: none;
 }
 @media only screen and (min-width: 768px) {
   .vertical-center {
