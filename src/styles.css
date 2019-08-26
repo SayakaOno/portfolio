@@ -1054,6 +1054,12 @@ footer .copylight {
   margin-top: -1px;
   width: 106% !important;
 }
+.gatsby img {
+  margin-left: -1px;
+  margin-top: -1px;
+  width: 110% !important;
+  height: auto;
+}
 .react .progress {
   background-color: rgba(0, 222, 255, 0.8);
 }
@@ -1075,6 +1081,9 @@ footer .copylight {
 .typescript .progress {
   background-color: rgba(0, 117, 211, 0.8);
 }
+.gatsby .progress {
+  background-color: rgba(102, 51, 153, 0.8);
+}
 .react .logo {
   border: #00deff solid 3px;
 }
@@ -1095,6 +1104,9 @@ footer .copylight {
 }
 .typescript .logo {
   border: #0075d3 solid 3px;
+}
+.gatsby .logo {
+  border: #663399 solid 3px;
 }
 @media only screen and (max-width: 575px) {
   .about .skills-container h4 {

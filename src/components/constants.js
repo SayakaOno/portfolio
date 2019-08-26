@@ -5,6 +5,7 @@ import css3Logo from '../img/css3.png';
 import javascriptLogo from '../img/js.png';
 import typescriptLogo from '../img/ts.png';
 import flutterLogo from '../img/flutter.png';
+import gatsbyLogo from '../img/gatsby.png';
 
 export const DATE = {
   201609: 0,
@@ -254,11 +255,11 @@ export const typescriptProgress = {
   [DATE[201905]]: 30,
   [DATE[201906]]: 40,
   [DATE[201907]]: 40,
-  [DATE[201908]]: 30,
-  [DATE[201909]]: 30,
-  [DATE[201910]]: 50,
-  [DATE[201911]]: 70,
-  [DATE[201912]]: 90
+  [DATE[201908]]: 0,
+  [DATE[201909]]: 0,
+  [DATE[201910]]: 0,
+  [DATE[201911]]: 0,
+  [DATE[201912]]: 0
 };
 
 export const flutterProgress = {
@@ -270,6 +271,14 @@ export const flutterProgress = {
   [DATE[201910]]: 1,
   [DATE[201911]]: 0,
   [DATE[201912]]: 1
+};
+
+export const gatsbyProgress = {
+  [DATE[201908]]: 0,
+  [DATE[201909]]: 75,
+  [DATE[201910]]: 75,
+  [DATE[201911]]: 75,
+  [DATE[201912]]: 75
 };
 
 export const skillData = [
@@ -315,11 +324,18 @@ export const skillData = [
     progress: typescriptProgress,
     fullValue: 100
   },
+  // {
+  //   name: 'Flutter',
+  //   logo: flutterLogo,
+  //   logoLong: true,
+  //   progress: flutterProgress,
+  //   fullValue: 100
+  // },
   {
-    name: 'Flutter',
-    logo: flutterLogo,
-    logoLong: true,
-    progress: flutterProgress,
+    name: 'Gatsby',
+    logo: gatsbyLogo,
+    logoLong: false,
+    progress: gatsbyProgress,
     fullValue: 100
   }
 ];
