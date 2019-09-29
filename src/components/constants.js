@@ -129,8 +129,8 @@ export const reduxProgress = {
   [DATE[201906]]: 75,
   [DATE[201907]]: 80,
   [DATE[201908]]: 80,
-  [DATE[201909]]: 90,
-  [DATE[201910]]: 93,
+  [DATE[201909]]: 80,
+  [DATE[201910]]: 95,
   [DATE[201911]]: 97,
   [DATE[201912]]: 100
 };
@@ -317,13 +317,13 @@ export const skillData = [
     progress: css3Progress,
     fullValue: 100
   },
-  {
-    name: 'TypeScript',
-    logo: typescriptLogo,
-    logoLong: false,
-    progress: typescriptProgress,
-    fullValue: 100
-  },
+  // {
+  //   name: 'TypeScript',
+  //   logo: typescriptLogo,
+  //   logoLong: false,
+  //   progress: typescriptProgress,
+  //   fullValue: 100
+  // },
   // {
   //   name: 'Flutter',
   //   logo: flutterLogo,
