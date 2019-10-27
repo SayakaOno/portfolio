@@ -246,8 +246,8 @@ export const css3Progress = {
   [DATE[201908]]: 85,
   [DATE[201909]]: 85,
   [DATE[201910]]: 90,
-  [DATE[201911]]: 95,
-  [DATE[201912]]: 100
+  [DATE[201911]]: 90,
+  [DATE[201912]]: 90
 };
 
 export const typescriptProgress = {
