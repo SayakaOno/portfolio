@@ -47,7 +47,19 @@ export const DATE = {
   201909: 36,
   201910: 37,
   201911: 38,
-  201912: 39
+  201912: 39,
+  202001: 40,
+  202002: 41,
+  202003: 42,
+  202004: 43,
+  202005: 44,
+  202006: 45,
+  202007: 46,
+  202008: 47,
+  202009: 48,
+  202010: 49,
+  202011: 50,
+  202012: 51
 };
 
 export const DATE_FROM_INDEX = Object.keys(DATE);
@@ -116,7 +128,19 @@ export const reactProgress = {
   [DATE[201909]]: 97,
   [DATE[201910]]: 98,
   [DATE[201911]]: 99,
-  [DATE[201912]]: 100
+  [DATE[201912]]: 100,
+  [DATE[202001]]: 104,
+  [DATE[202002]]: 108,
+  [DATE[202003]]: 112,
+  [DATE[202004]]: 116,
+  [DATE[202005]]: 120,
+  [DATE[202006]]: 124,
+  [DATE[202007]]: 127,
+  [DATE[202008]]: 130,
+  [DATE[202009]]: 130,
+  [DATE[202010]]: 130,
+  [DATE[202011]]: 130,
+  [DATE[202012]]: 130
 };
 
 export const reduxProgress = {
@@ -132,7 +156,19 @@ export const reduxProgress = {
   [DATE[201909]]: 80,
   [DATE[201910]]: 95,
   [DATE[201911]]: 97,
-  [DATE[201912]]: 100
+  [DATE[201912]]: 100,
+  [DATE[202001]]: 104,
+  [DATE[202002]]: 108,
+  [DATE[202003]]: 112,
+  [DATE[202004]]: 116,
+  [DATE[202005]]: 120,
+  [DATE[202006]]: 124,
+  [DATE[202007]]: 127,
+  [DATE[202008]]: 130,
+  [DATE[202009]]: 130,
+  [DATE[202010]]: 130,
+  [DATE[202011]]: 130,
+  [DATE[202012]]: 130
 };
 
 export const javascriptProgress = {
@@ -161,7 +197,19 @@ export const javascriptProgress = {
   [DATE[201909]]: 97,
   [DATE[201910]]: 98,
   [DATE[201911]]: 99,
-  [DATE[201912]]: 100
+  [DATE[201912]]: 100,
+  [DATE[202001]]: 102,
+  [DATE[202002]]: 104,
+  [DATE[202003]]: 106,
+  [DATE[202004]]: 108,
+  [DATE[202005]]: 110,
+  [DATE[202006]]: 112,
+  [DATE[202007]]: 115,
+  [DATE[202008]]: 120,
+  [DATE[202009]]: 120,
+  [DATE[202010]]: 120,
+  [DATE[202011]]: 120,
+  [DATE[202012]]: 120
 };
 
 export const html5Progress = {
@@ -204,7 +252,19 @@ export const html5Progress = {
   [DATE[201909]]: 85,
   [DATE[201910]]: 86,
   [DATE[201911]]: 85,
-  [DATE[201912]]: 86
+  [DATE[201912]]: 86,
+  [DATE[202001]]: 86,
+  [DATE[202002]]: 86,
+  [DATE[202003]]: 86,
+  [DATE[202004]]: 86,
+  [DATE[202005]]: 86,
+  [DATE[202006]]: 86,
+  [DATE[202007]]: 86,
+  [DATE[202008]]: 86,
+  [DATE[202009]]: 86,
+  [DATE[202010]]: 86,
+  [DATE[202011]]: 86,
+  [DATE[202012]]: 86
 };
 
 export const css3Progress = {
@@ -247,7 +307,19 @@ export const css3Progress = {
   [DATE[201909]]: 85,
   [DATE[201910]]: 90,
   [DATE[201911]]: 90,
-  [DATE[201912]]: 90
+  [DATE[201912]]: 90,
+  [DATE[202001]]: 90,
+  [DATE[202002]]: 90,
+  [DATE[202003]]: 90,
+  [DATE[202004]]: 90,
+  [DATE[202005]]: 90,
+  [DATE[202006]]: 90,
+  [DATE[202007]]: 90,
+  [DATE[202008]]: 90,
+  [DATE[202009]]: 90,
+  [DATE[202010]]: 90,
+  [DATE[202011]]: 90,
+  [DATE[202012]]: 90
 };
 
 export const typescriptProgress = {
@@ -259,7 +331,19 @@ export const typescriptProgress = {
   [DATE[201909]]: 0,
   [DATE[201910]]: 0,
   [DATE[201911]]: 0,
-  [DATE[201912]]: 0
+  [DATE[201912]]: 0,
+  [DATE[202001]]: 0,
+  [DATE[202002]]: 40,
+  [DATE[202003]]: 50,
+  [DATE[202004]]: 60,
+  [DATE[202005]]: 70,
+  [DATE[202006]]: 80,
+  [DATE[202007]]: 90,
+  [DATE[202008]]: 100,
+  [DATE[202009]]: 100,
+  [DATE[202010]]: 100,
+  [DATE[202011]]: 100,
+  [DATE[202012]]: 100
 };
 
 export const flutterProgress = {
@@ -278,7 +362,19 @@ export const gatsbyProgress = {
   [DATE[201909]]: 75,
   [DATE[201910]]: 75,
   [DATE[201911]]: 75,
-  [DATE[201912]]: 75
+  [DATE[201912]]: 75,
+  [DATE[202001]]: 75,
+  [DATE[202002]]: 75,
+  [DATE[202003]]: 75,
+  [DATE[202004]]: 75,
+  [DATE[202005]]: 75,
+  [DATE[202006]]: 75,
+  [DATE[202007]]: 75,
+  [DATE[202008]]: 75,
+  [DATE[202009]]: 75,
+  [DATE[202010]]: 75,
+  [DATE[202011]]: 75,
+  [DATE[202012]]: 75
 };
 
 export const skillData = [
@@ -287,21 +383,21 @@ export const skillData = [
     logo: reactLogo,
     logoLong: true,
     progress: reactProgress,
-    fullValue: 100
+    fullValue: 130
   },
   {
     name: 'Redux',
     logo: reduxLogo,
     logoLong: false,
     progress: reduxProgress,
-    fullValue: 100
+    fullValue: 130
   },
   {
     name: 'JavaScript',
     logo: javascriptLogo,
     logoLong: false,
     progress: javascriptProgress,
-    fullValue: 100
+    fullValue: 120
   },
   {
     name: 'HTML5',
@@ -317,13 +413,13 @@ export const skillData = [
     progress: css3Progress,
     fullValue: 100
   },
-  // {
-  //   name: 'TypeScript',
-  //   logo: typescriptLogo,
-  //   logoLong: false,
-  //   progress: typescriptProgress,
-  //   fullValue: 100
-  // },
+  {
+    name: 'TypeScript',
+    logo: typescriptLogo,
+    logoLong: false,
+    progress: typescriptProgress,
+    fullValue: 100
+  },
   // {
   //   name: 'Flutter',
   //   logo: flutterLogo,
