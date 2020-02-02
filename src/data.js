@@ -80,7 +80,14 @@ export const about = {
   },
   sortedSkills: {
     Frontend: ['React', 'Redux', 'JavaScript', 'HTML5', 'CSS3'],
-    Backend: ['Node.js', 'RESTful API', 'MySQL', 'MongoDB', 'PHP'],
+    Backend: [
+      'Node.js',
+      'RESTful API',
+      'MySQL',
+      'PostgreSQL',
+      'MongoDB',
+      'PHP'
+    ],
     others: ['WordPress', 'Sass', 'Java', 'Android']
   }
 };
