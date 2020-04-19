@@ -26,9 +26,6 @@ class Frontend extends React.Component {
     this.body = React.createRef();
     this.date = React.createRef();
     this.skillBar = React.createRef();
-    this.playLabel = React.createRef();
-    this.barLabel = React.createRef();
-    this.autoPlayRef = React.createRef();
     this.barRef = React.createRef();
   }
 
@@ -65,7 +62,6 @@ class Frontend extends React.Component {
         window.removeEventListener('scroll', this.initialAnimation);
         setTimeout(() => {
           this.showDateInfo();
-          this.showAnimationInstructions();
         }, 500);
       }
     }, 50);
@@ -203,30 +199,20 @@ class Frontend extends React.Component {
 
   render() {
     return (
-      <div ref={this.body} id='frontend'>
-        <div ref={this.date} className='date-info'>
-          <div className='date'>
-            <div className='container'>
-              <div
-                ref={this.playLabel}
-                className='ui pointing below red basic label none'
-              >
-                Animate my progress!
-              </div>
-              <i
-                ref={this.autoPlayRef}
-                onClick={this.autoPlay}
-                className='far fa-play-circle'
-              />
-              <span className='text'>
+      <div ref={this.body} id="frontend">
+        <div ref={this.date} className="date-info">
+          <div className="date">
+            <div className="container">
+              <i onClick={this.autoPlay} className="far fa-play-circle" />
+              <span className="text">
                 {this.state.date !== undefined
                   ? this.formatDateFromKey(this.state.date)
                   : null}
               </span>
             </div>
-            <span className='current' onClick={this.onClickCurrent}>
-              <span className='checkbox'>
-                <i className='far fa-square' />
+            <span className="current" onClick={this.onClickCurrent}>
+              <span className="checkbox">
+                <i className="far fa-square" />
                 <i
                   className={`fas fa-check${
                     this.state.currentDate === this.state.intDate ? '' : ' none'
@@ -236,20 +222,14 @@ class Frontend extends React.Component {
               current
             </span>
           </div>
-          <div className='slidecontainer'>
-            <div
-              ref={this.barLabel}
-              className='ui left pointing red basic label none'
-            >
-              See monthly progress!
-            </div>
+          <div className="slidecontainer">
             {this.renderYearBar()}
             <input
-              type='range'
-              min='0'
+              type="range"
+              min="0"
               max={Object.keys(DATE).length - 1}
               value={this.state.date}
-              className='slider'
+              className="slider"
               onChange={this.onBarChange}
               ref={this.barRef}
             />
