@@ -278,6 +278,14 @@ body {
   font-family: 'Roboto', 'Helvetica Neue', 'Helvetica', Helvetica, Arial,
     sans-serif;
 }
+h1,
+h2,
+h3,
+h4,
+h5,
+.ui.button {
+  font-family: sans-serif;
+}
 #root {
   display: flex;
   min-height: 100vh;
