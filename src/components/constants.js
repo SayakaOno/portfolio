@@ -340,10 +340,10 @@ export const typescriptProgress = {
   [DATE[202006]]: 10,
   [DATE[202007]]: 10,
   [DATE[202008]]: 10,
-  [DATE[202009]]: 30,
-  [DATE[202010]]: 50,
-  [DATE[202011]]: 70,
-  [DATE[202012]]: 80
+  [DATE[202009]]: 10,
+  [DATE[202010]]: 30,
+  [DATE[202011]]: 50,
+  [DATE[202012]]: 70
 };
 
 export const flutterProgress = {
