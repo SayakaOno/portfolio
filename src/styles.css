@@ -752,7 +752,7 @@ footer .copylight {
   max-width: 950px;
 }
 .about-container {
-  max-width: 500px;
+  max-width: 100%;
 }
 .about h3 {
   margin-bottom: 30px;
@@ -829,6 +829,7 @@ footer .copylight {
 /* Skill */
 #frontend {
   margin-bottom: 70px;
+  max-width: 500px;
 }
 .date-info {
   height: 20px; /* -> 65px */
