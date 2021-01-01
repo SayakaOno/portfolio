@@ -83,6 +83,7 @@ export const about = {
     Backend: [
       'Node.js',
       'RESTful API',
+      'GraphQL',
       'MySQL',
       'PostgreSQL',
       'MongoDB',
