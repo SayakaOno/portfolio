@@ -81,7 +81,19 @@ export const DATE = {
 	202209: 72,
 	202210: 73,
 	202211: 74,
-	202212: 75
+	202212: 75,
+	202301: 76,
+	202302: 77,
+	202303: 78,
+	202304: 79,
+	202305: 80,
+	202306: 81,
+	202307: 82,
+	202308: 83,
+	202309: 84,
+	202310: 85,
+	202311: 86,
+	202312: 87,
 };
 
 export const DATE_FROM_INDEX = Object.keys(DATE);
@@ -167,12 +179,24 @@ export const reactProgress = {
 	[DATE[202204]]: 181,
 	[DATE[202205]]: 182,
 	[DATE[202206]]: 183,
-	[DATE[202207]]: 184,
-	[DATE[202208]]: 185,
-	[DATE[202209]]: 186,
-	[DATE[202210]]: 187,
-	[DATE[202211]]: 188,
-	[DATE[202212]]: 189
+	[DATE[202207]]: 183,
+	[DATE[202208]]: 183,
+	[DATE[202209]]: 183,
+	[DATE[202210]]: 183,
+	[DATE[202211]]: 183,
+	[DATE[202212]]: 183,
+	[DATE[202301]]: 183,
+	[DATE[202302]]: 184,
+	[DATE[202303]]: 185,
+	[DATE[202304]]: 186,
+	[DATE[202305]]: 187,
+	[DATE[202306]]: 188,
+	[DATE[202307]]: 189,
+	[DATE[202308]]: 190,
+	[DATE[202309]]: 191,
+	[DATE[202310]]: 192,
+	[DATE[202311]]: 193,
+	[DATE[202312]]: 194,
 };
 
 export const reduxProgress = {
@@ -224,7 +248,19 @@ export const reduxProgress = {
 	[DATE[202209]]: 130,
 	[DATE[202210]]: 130,
 	[DATE[202211]]: 130,
-	[DATE[202212]]: 130
+	[DATE[202212]]: 130,
+	[DATE[202301]]: 131,
+	[DATE[202302]]: 132,
+	[DATE[202303]]: 133,
+	[DATE[202304]]: 134,
+	[DATE[202305]]: 135,
+	[DATE[202306]]: 136,
+	[DATE[202307]]: 137,
+	[DATE[202308]]: 138,
+	[DATE[202309]]: 139,
+	[DATE[202310]]: 140,
+	[DATE[202311]]: 141,
+	[DATE[202312]]: 142
 };
 
 export const javascriptProgress = {
@@ -312,8 +348,20 @@ export const javascriptProgress = {
 	[DATE[202208]]: 120,
 	[DATE[202209]]: 120,
 	[DATE[202210]]: 120,
+	[DATE[202211]]: 120,
 	[DATE[202212]]: 120,
-	[DATE[202212]]: 120
+	[DATE[202301]]: 121,
+	[DATE[202302]]: 122,
+	[DATE[202303]]: 123,
+	[DATE[202304]]: 124,
+	[DATE[202305]]: 125,
+	[DATE[202306]]: 126,
+	[DATE[202307]]: 127,
+	[DATE[202308]]: 128,
+	[DATE[202309]]: 129,
+	[DATE[202310]]: 130,
+	[DATE[202311]]: 131,
+	[DATE[202312]]: 132
 };
 
 export const html5Progress = {
@@ -392,7 +440,19 @@ export const html5Progress = {
 	[DATE[202209]]: 86,
 	[DATE[202210]]: 86,
 	[DATE[202211]]: 86,
-	[DATE[202212]]: 86
+	[DATE[202212]]: 86,
+	[DATE[202301]]: 86,
+	[DATE[202302]]: 86,
+	[DATE[202303]]: 86,
+	[DATE[202304]]: 86,
+	[DATE[202305]]: 86,
+	[DATE[202306]]: 86,
+	[DATE[202307]]: 86,
+	[DATE[202308]]: 86,
+	[DATE[202309]]: 86,
+	[DATE[202310]]: 86,
+	[DATE[202311]]: 86,
+	[DATE[202312]]: 86
 };
 
 export const css3Progress = {
@@ -471,7 +531,19 @@ export const css3Progress = {
 	[DATE[202209]]: 110,
 	[DATE[202210]]: 110,
 	[DATE[202211]]: 110,
-	[DATE[202212]]: 110
+	[DATE[202212]]: 110,
+	[DATE[202301]]: 110,
+	[DATE[202302]]: 110,
+	[DATE[202303]]: 110,
+	[DATE[202304]]: 110,
+	[DATE[202305]]: 110,
+	[DATE[202306]]: 110,
+	[DATE[202307]]: 110,
+	[DATE[202308]]: 110,
+	[DATE[202309]]: 110,
+	[DATE[202310]]: 110,
+	[DATE[202311]]: 110,
+	[DATE[202312]]: 110
 };
 
 export const typescriptProgress = {
@@ -508,18 +580,30 @@ export const typescriptProgress = {
 	[DATE[202110]]: 10,
 	[DATE[202111]]: 10,
 	[DATE[202112]]: 10,
-	[DATE[202201]]: 30,
-	[DATE[202202]]: 50,
-	[DATE[202203]]: 60,
-	[DATE[202204]]: 80,
-	[DATE[202205]]: 90,
-	[DATE[202206]]: 91,
-	[DATE[202207]]: 92,
-	[DATE[202208]]: 93,
-	[DATE[202209]]: 94,
-	[DATE[202210]]: 95,
-	[DATE[202211]]: 96,
-	[DATE[202212]]: 97
+	[DATE[202201]]: 10,
+	[DATE[202202]]: 10,
+	[DATE[202203]]: 10,
+	[DATE[202204]]: 10,
+	[DATE[202205]]: 20,
+	[DATE[202206]]: 30,
+	[DATE[202207]]: 20,
+	[DATE[202208]]: 10,
+	[DATE[202209]]: 10,
+	[DATE[202210]]: 10,
+	[DATE[202211]]: 10,
+	[DATE[202212]]: 10,
+	[DATE[202301]]: 30,
+	[DATE[202302]]: 50,
+	[DATE[202303]]: 60,
+	[DATE[202304]]: 80,
+	[DATE[202305]]: 90,
+	[DATE[202306]]: 91,
+	[DATE[202307]]: 92,
+	[DATE[202308]]: 93,
+	[DATE[202309]]: 94,
+	[DATE[202310]]: 95,
+	[DATE[202311]]: 96,
+	[DATE[202312]]: 97
 };
 
 export const skillData = [
@@ -528,41 +612,41 @@ export const skillData = [
 		logo: reactLogo,
 		logoLong: true,
 		progress: reactProgress,
-		fullValue: 190
+		fullValue: 0 || reactProgress[Object.values(DATE)[DATE_FROM_INDEX.length - 1]],
 	},
 	{
 		name: 'Redux',
 		logo: reduxLogo,
 		logoLong: false,
 		progress: reduxProgress,
-		fullValue: 160
+		fullValue:  0 || reduxProgress[Object.values(DATE)[DATE_FROM_INDEX.length - 1]],
 	},
 	{
 		name: 'JavaScript',
 		logo: javascriptLogo,
 		logoLong: false,
 		progress: javascriptProgress,
-		fullValue: 120
+		fullValue:  0 || javascriptProgress[Object.values(DATE)[DATE_FROM_INDEX.length - 1]],
 	},
 	{
 		name: 'HTML5',
 		logo: html5Logo,
 		logoLong: false,
 		progress: html5Progress,
-		fullValue: 100
+		fullValue: 100 || html5Progress[Object.values(DATE)[DATE_FROM_INDEX.length - 1]],
 	},
 	{
 		name: 'CSS3',
 		logo: css3Logo,
 		logoLong: true,
 		progress: css3Progress,
-		fullValue: 130
+		fullValue: 130 || css3Progress[Object.values(DATE)[DATE_FROM_INDEX.length - 1]],
 	},
 	{
 		name: 'TypeScript',
 		logo: typescriptLogo,
 		logoLong: false,
 		progress: typescriptProgress,
-		fullValue: 100
+		fullValue: 110 || typescriptProgress[Object.values(DATE)[DATE_FROM_INDEX.length - 1]],
 	}
 ];
