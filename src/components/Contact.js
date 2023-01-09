@@ -1,10 +1,6 @@
 import React from 'react';
-import axios from 'axios';
-import path from 'path';
 import Fade from 'react-reveal/Fade';
 import { contactData } from '../data';
-
-const API_PATH = path.join(window.location.href, '../contact.php');
 
 function ValidateEmail(mail) {
   if (/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(.\w{2,3})+$/.test(mail)) {
@@ -21,13 +17,8 @@ class Contact extends React.Component {
       name: { text: '', error: true },
       email: { text: '', error: true },
       message: { text: '', error: true },
-      mailSent: null,
       errorMessage: null
     };
-  }
-
-  componentWillUnmount() {
-    this.setState({ mailSent: null, error: null });
   }
 
   formClass = (name, element) => {
@@ -72,46 +63,10 @@ class Contact extends React.Component {
       }
     }
     return (
-      <button type='submit' className='ui button' onClick={this.handleSubmit}>
+      <button type='submit' className='ui button'>
         {contactData.send[lang]}
       </button>
     );
-  };
-
-  renderResultMessage = () => {
-    if (this.state.mailSent) {
-      return this.props.language === 'en'
-        ? 'Thank you for contacting me :)'
-        : 'メッセージをお送りくださり、ありがとうございます。';
-    } else if (this.state.errorMessage) {
-      return this.state.errorMessage;
-    } else {
-      return null;
-    }
-  };
-
-  handleSubmit = async e => {
-    e.preventDefault();
-    const { name, email, message } = this.state;
-    const response = await axios({
-      method: 'post',
-      url: `${API_PATH}`,
-      headers: { 'content-type': 'application/json' },
-      data: { name: name.text, email: email.text, message: message.text }
-    });
-    if (!response || response.data.message) {
-      this.setState({
-        errorMessage: response.data.message[this.props.language]
-      });
-    } else {
-      this.setState({
-        mailSent: response.data.sent,
-        error: response.data.error && response.data.error,
-        name: { text: '', error: true },
-        email: { text: '', error: true },
-        message: { text: '', error: true }
-      });
-    }
   };
 
   render() {
@@ -122,7 +77,10 @@ class Contact extends React.Component {
           <div name='contact' id='contact' className='wrapper contact page'>
             <h2>Contact</h2>
             {contactData.description[lang]}
-            <form>
+            <form
+              action="https://formspree.io/f/xrgvgrvk"
+              method="POST"
+            >
               <div className={this.formClass('name', 'div')}>
                 <div className='col-12'>
                   <input
@@ -170,7 +128,6 @@ class Contact extends React.Component {
               </div>
               <div className='button-container'>{this.renderButton(lang)}</div>
             </form>
-            <div className='result-message'>{this.renderResultMessage()}</div>
           </div>
         </Fade>
       </React.Fragment>
