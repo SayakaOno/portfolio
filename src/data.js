@@ -167,7 +167,7 @@ const portfolioDetail = [
 		},
 		image: japaneseTraining,
 		gallery: [japaneseTrainingGif],
-		demoUrl: 'https://japanese-training.herokuapp.com/',
+		// demoUrl: 'https://japanese-training.herokuapp.com/',
 		githubUrl: 'https://github.com/SayakaOno/japanese-training'
 	},
 	{
@@ -274,7 +274,7 @@ const portfolioDetail = [
 		},
 		image: translator,
 		gallery: [translatorGif1, translatorGif2],
-		demoUrl: 'https://translator-81.herokuapp.com/',
+		// demoUrl: 'https://translator-81.herokuapp.com/',
 		githubUrl: 'https://github.com/SayakaOno/translator-converter'
 	},
 
